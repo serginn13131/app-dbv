@@ -1,165 +1,160 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* ============================================
+   DESBRAVA+
+   CONFIGURAÇÃO SUPABASE
+============================================ */
 
-    /* ========================================
-       MENU LATERAL
-    ======================================== */
+const SUPABASE_URL =
+    "https://iibdvkxztgrlrwzqbfrg.supabase.co";
 
-    const menuItems = document.querySelectorAll(".menu-item");
+const SUPABASE_KEY =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpYmR2a3h6dGdybHJ3enFiZnJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzMTcxMDgsImV4cCI6MjEwMTg5MzEwOH0.qotf9MTLi7YBfKgHWuH5qd3Wrb0_BEsATM6AGeqsEes";
 
-    menuItems.forEach((item) => {
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
 
-        item.addEventListener("click", () => {
 
-            menuItems.forEach((menu) => {
-                menu.classList.remove("active");
+/* ============================================
+   LOGIN
+============================================ */
+
+const loginForm =
+    document.getElementById("loginForm");
+
+if (loginForm) {
+
+    loginForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+
+        if (!email || !password) {
+
+            alert("Preencha seu e-mail e sua senha.");
+
+            return;
+        }
+
+
+        const { data, error } =
+            await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
             });
 
-            item.classList.add("active");
 
-        });
+        if (error) {
 
-    });
-
-
-    /* ========================================
-       MENU MOBILE
-    ======================================== */
-
-    const mobileItems = document.querySelectorAll(".mobile-item");
-
-    mobileItems.forEach((item) => {
-
-        item.addEventListener("click", () => {
-
-            mobileItems.forEach((mobile) => {
-                mobile.classList.remove("active");
-            });
-
-            item.classList.add("active");
-
-        });
-
-    });
-
-
-    /* ========================================
-       ABAS DO RANKING
-    ======================================== */
-
-    const tabs = document.querySelectorAll(".tab");
-
-    tabs.forEach((tab) => {
-
-        tab.addEventListener("click", () => {
-
-            tabs.forEach((button) => {
-                button.classList.remove("active");
-            });
-
-            tab.classList.add("active");
-
-            console.log(
-                "Ranking selecionado:",
-                tab.textContent.trim()
-            );
-
-        });
-
-    });
-
-
-    /* ========================================
-       DESAFIO
-    ======================================== */
-
-    const challengeButton =
-        document.querySelector(".primary-button");
-
-    if (challengeButton) {
-
-        challengeButton.addEventListener("click", () => {
+            console.error(error);
 
             alert(
-                "🔥 Desafio selecionado!\n\n" +
-                "Em breve você poderá participar deste desafio."
+                "Não foi possível entrar.\n\n" +
+                error.message
             );
 
-        });
-
-    }
-
-
-    /* ========================================
-       DETALHES DO DESAFIO
-    ======================================== */
-
-    const detailsButton =
-        document.querySelector(".secondary-button");
-
-    if (detailsButton) {
-
-        detailsButton.addEventListener("click", () => {
-
-            alert(
-                "🎯 DESAFIO DA SEMANA\n\n" +
-                "Ajude sua família em uma tarefa de casa.\n\n" +
-                "Envie uma foto antes e depois.\n\n" +
-                "Recompensa: +50 pontos."
-            );
-
-        });
-
-    }
+            return;
+        }
 
 
-    /* ========================================
-       ANIMAÇÃO DO PROGRESSO
-    ======================================== */
+        console.log("Usuário autenticado:", data.user);
 
-    const progress =
-        document.querySelector(".progress-fill");
-
-    if (progress) {
-
-        progress.style.width = "0%";
-
-        setTimeout(() => {
-            progress.style.width = "80%";
-        }, 300);
-
-    }
-
-
-    /* ========================================
-       ANIMAÇÃO DOS CARDS
-    ======================================== */
-
-    const cards =
-        document.querySelectorAll(".card, .hero-card");
-
-    cards.forEach((card, index) => {
-
-        card.style.opacity = "0";
-        card.style.transform = "translateY(12px)";
-
-        setTimeout(() => {
-
-            card.style.transition =
-                "opacity 0.5s ease, transform 0.5s ease";
-
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-
-        }, 100 + index * 80);
+        window.location.href = "index.html";
 
     });
 
+}
 
-    /* ========================================
-       INICIALIZAÇÃO
-    ======================================== */
 
-    console.log("DESBRAVA+ iniciado 🚀");
-    console.log("Desenvolvido por Sérgio");
+/* ============================================
+   MOSTRAR / ESCONDER SENHA
+============================================ */
 
-});
+const togglePassword =
+    document.getElementById("togglePassword");
+
+const passwordInput =
+    document.getElementById("password");
+
+if (togglePassword && passwordInput) {
+
+    togglePassword.addEventListener("click", () => {
+
+        if (passwordInput.type === "password") {
+
+            passwordInput.type = "text";
+
+            togglePassword.textContent = "🙈";
+
+        } else {
+
+            passwordInput.type = "password";
+
+            togglePassword.textContent = "👁️";
+
+        }
+
+    });
+
+}
+
+
+/* ============================================
+   VERIFICAR USUÁRIO LOGADO
+============================================ */
+
+async function verificarUsuario() {
+
+    const {
+        data: { user }
+    } = await supabaseClient.auth.getUser();
+
+
+    return user;
+
+}
+
+
+/* ============================================
+   PROTEGER INDEX
+============================================ */
+
+async function protegerPagina() {
+
+    const usuario =
+        await verificarUsuario();
+
+
+    if (!usuario) {
+
+        window.location.href = "login.html";
+
+        return null;
+    }
+
+
+    return usuario;
+
+}
+
+
+/* ============================================
+   EXECUTAR PROTEÇÃO
+============================================ */
+
+if (
+    window.location.pathname.endsWith("index.html")
+    ||
+    window.location.pathname === "/"
+) {
+
+    protegerPagina();
+
+}
