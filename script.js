@@ -1,61 +1,120 @@
-const SUPABASE_URL =
-    "https://iibdvkxztgrlrwzqbfrg.supabase.co";
-
-const SUPABASE_ANON_KEY =
-    "sb_publishable_qMjvqXKJW_5onSUZjymiSw_0KfZi44D";
-
-const supabaseClient =
-    window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_ANON_KEY
-    );
+```javascript
+/* =========================================================
+   DESBRAVA+
+   SCRIPT PRINCIPAL
+========================================================= */
 
 
-/* =====================================================
-   SAIR DA CONTA
-===================================================== */
+/* =========================================================
+   NAVEGAÇÃO DO MENU
+========================================================= */
 
-const logoutButton =
-    document.getElementById("logoutButton");
+document.addEventListener("DOMContentLoaded", () => {
 
+    const menuItems = document.querySelectorAll(".menu-item");
 
-if (logoutButton) {
+    menuItems.forEach((item) => {
 
-    logoutButton.addEventListener("click", async function () {
+        item.addEventListener("click", () => {
 
-        logoutButton.disabled = true;
+            /* Remove ativo de todos */
 
-        logoutButton.innerHTML =
-            "<span>⏳</span><span>Saindo...</span>";
-
-
-        const { error } =
-            await supabaseClient.auth.signOut();
+            menuItems.forEach((button) => {
+                button.classList.remove("active");
+            });
 
 
-        if (error) {
+            /* Ativa o botão clicado */
 
-            console.error(
-                "Erro ao sair:",
-                error
-            );
-
-            alert(
-                "Não foi possível sair da conta."
-            );
-
-            logoutButton.disabled = false;
-
-            logoutButton.innerHTML =
-                "<span>🚪</span><span>Sair da conta</span>";
-
-            return;
-        }
+            item.classList.add("active");
 
 
-        window.location.href =
-            "login.html";
+            /* Nome da função */
+
+            const funcao =
+                item.querySelector("span:last-child")?.textContent.trim();
+
+
+            console.log("Função selecionada:", funcao);
+
+
+            /* Aqui vamos conectar cada tela depois */
+
+            switch (funcao) {
+
+                case "Início":
+
+                    mostrarMensagem("Início");
+                    break;
+
+
+                case "Desafios":
+
+                    mostrarMensagem("Desafios");
+                    break;
+
+
+                case "Ranking":
+
+                    mostrarMensagem("Ranking");
+                    break;
+
+
+                case "Minha Unidade":
+
+                    mostrarMensagem("Minha Unidade");
+                    break;
+
+
+                case "Conquistas":
+
+                    mostrarMensagem("Conquistas");
+                    break;
+
+
+                case "Reuniões":
+
+                    mostrarMensagem("Reuniões");
+                    break;
+
+
+                case "Suporte":
+
+                    mostrarMensagem("Suporte");
+                    break;
+
+
+                case "Perfil":
+
+                    mostrarMensagem("Perfil");
+                    break;
+
+
+                default:
+
+                    console.log(
+                        "Função não encontrada."
+                    );
+            }
+
+        });
 
     });
 
+
+});
+
+
+/* =========================================================
+   FUNÇÃO TEMPORÁRIA
+========================================================= */
+
+function mostrarMensagem(nome) {
+
+    console.log(
+        "Abrindo a função:",
+        nome
+    );
+
 }
+```
