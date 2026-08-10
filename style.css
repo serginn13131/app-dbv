@@ -85,17 +85,14 @@ button {
 
 .sidebar {
     width: 260px;
-
-    min-height: 100vh;
+    height: 100vh;
 
     background: var(--dark);
-
     color: white;
 
     padding: 25px 18px;
 
     display: flex;
-
     flex-direction: column;
 
     position: fixed;
@@ -105,60 +102,27 @@ button {
     bottom: 0;
 
     z-index: 100;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-
-.logo-area {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 5px 10px 35px;
+/* Barra de rolagem da lateral */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
 }
 
-
-.logo-icon {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 13px;
-
-    background: var(--primary);
-
-    color: var(--dark);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 25px;
-
-    font-weight: 900;
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-
-.logo-area h1 {
-    font-size: 19px;
-
-    font-weight: 900;
+.sidebar::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
 }
 
-
-.logo-area h1 span {
-    color: var(--primary);
-}
-
-
-.logo-area p {
-    margin-top: 3px;
-
-    font-size: 10px;
-
-    color: #94a3b8;
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #475569;
 }
 
 
