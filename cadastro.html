@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar conta | Desbrava+</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+            <!-- LOGO -->
+
+            <div class="login-logo">
+
+                <div class="login-logo-icon">
+                    +
+                </div>
+
+                <div>
+                    <h1>
+                        DESBRAVA<span>+</span>
+                    </h1>
+
+                    <p>
+                        Clube de Desbravadores
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- TÍTULO -->
+
+            <div class="login-title">
+
+                <h2>
+                    Criar minha conta 🚀
+                </h2>
+
+                <p>
+                    Faça seu cadastro para começar
+                    sua jornada no clube.
+                </p>
+
+            </div>
+
+
+            <!-- CADASTRO -->
+
+            <form id="cadastroForm">
+
+                <div class="form-group">
+
+                    <label for="nome">
+                        Nome completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seu@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <div class="password-field">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Crie uma senha"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleCadastroPassword"
+                            class="password-toggle"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="passwordConfirm">
+                        Confirmar senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="passwordConfirm"
+                        placeholder="Digite a senha novamente"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CLUBE -->
+
+                <div class="form-group">
+
+                    <label for="clube">
+                        Clube
+                    </label>
+
+                    <select
+                        id="clube"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione seu clube
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- UNIDADE -->
+
+                <div class="form-group">
+
+                    <label for="unidade">
+                        Unidade
+                    </label>
+
+                    <select
+                        id="unidade"
+                        disabled
+                    >
+
+                        <option value="">
+                            Selecione primeiro o clube
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CARGO -->
+
+                <div class="form-group">
+
+                    <label for="cargo">
+                        Cargo
+                    </label>
+
+                    <select
+                        id="cargo"
+                        disabled
+                    >
+
+                        <option value="">
+                            Seu cargo será definido pelo clube
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    Criar minha conta
+                </button>
+
+            </form>
+
+
+            <!-- LOGIN -->
+
+            <div class="create-account">
+
+                <span>
+                    Já possui uma conta?
+                </span>
+
+                <a href="login.html">
+                    Entrar
+                </a>
+
+            </div>
+
+
+            <!-- SUPORTE -->
+
+            <div class="login-support">
+
+                <span>
+                    Precisa de ajuda?
+                </span>
+
+                <a href="suporte.html">
+                    Falar com o suporte
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+
+        <footer class="login-footer">
+
+            <span>
+                DESBRAVA+ • Crescer, servir e competir juntos.
+            </span>
+
+            <small>
+                Desenvolvido por Sérgio
+            </small>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
