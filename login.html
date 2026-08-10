@@ -45,8 +45,21 @@
 <body class="login-page">
 
 
+    <!-- LOGO DE FUNDO -->
+
+    <img
+        src="imagens/dbv.png"
+        alt=""
+        class="login-background-logo"
+    >
+
+
+    <!-- CONTAINER -->
+
     <main class="login-container">
 
+
+        <!-- CARD DE LOGIN -->
 
         <section class="login-card">
 
@@ -55,8 +68,14 @@
 
             <div class="login-logo">
 
-                <div class="login-logo-icon">
-                    +
+
+                <div class="login-logo-image">
+
+                    <img
+                        src="imagens/dbv.png"
+                        alt="Desbrava+"
+                    >
+
                 </div>
 
 
@@ -71,6 +90,7 @@
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -106,6 +126,7 @@
                         E-mail
                     </label>
 
+
                     <input
                         type="email"
                         id="email"
@@ -129,6 +150,7 @@
 
                     <div class="password-field">
 
+
                         <input
                             type="password"
                             id="password"
@@ -146,6 +168,7 @@
                         >
                             👁️
                         </button>
+
 
                     </div>
 
@@ -178,6 +201,7 @@
                     >
                         Esqueci minha senha
                     </a>
+
 
                 </div>
 
@@ -225,7 +249,7 @@
 
 
                 <a href="suporte.html">
-                    Falar com o suporte
+                    🆘 Falar com o suporte
                 </a>
 
             </div>
@@ -255,22 +279,20 @@
 
 
 
-    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT DO LOGIN -->
 
     <script>
 
-        /*
-        ============================================
-        CONFIGURAÇÃO SUPABASE
-        ============================================
-        */
+        /* ============================================
+           SUPABASE
+        ============================================ */
 
         const SUPABASE_URL =
             "https://iibdvkxztgrlrwzqbfrg.supabase.co";
 
 
         const SUPABASE_KEY =
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpYmR2a3h6dGdybHJ3enFiZnJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzMTcxMDgsImV4cCI6MjEwMTg5MzEwOH0.qotf9MTLi7YBfKgHWuH5qd3Wrb0_BEsATM6AGeqsEes";
+            "COLE_AQUI_SUA_CHAVE_PUBLICA";
 
 
         const supabaseClient =
@@ -281,11 +303,9 @@
 
 
 
-        /*
-        ============================================
-        LOGIN
-        ============================================
-        */
+        /* ============================================
+           LOGIN
+        ============================================ */
 
         const loginForm =
             document.getElementById("loginForm");
@@ -322,22 +342,15 @@
                     );
 
                     return;
+
                 }
 
-
-                /*
-                DESABILITA BOTÃO
-                */
 
                 loginButton.disabled = true;
 
                 loginButton.textContent =
                     "Entrando...";
 
-
-                /*
-                AUTENTICA NO SUPABASE
-                */
 
                 const {
                     data,
@@ -352,10 +365,6 @@
 
                     });
 
-
-                /*
-                ERRO
-                */
 
                 if (error) {
 
@@ -372,24 +381,16 @@
                         "E-mail ou senha incorretos."
                     );
 
-
                     return;
+
                 }
 
 
-                /*
-                LOGIN REALIZADO
-                */
-
                 console.log(
                     "Usuário conectado:",
-                    data.user
+                    data.user.email
                 );
 
-
-                /*
-                VAI PARA O SISTEMA
-                */
 
                 window.location.href =
                     "index.html";
@@ -399,11 +400,9 @@
 
 
 
-        /*
-        ============================================
-        MOSTRAR / ESCONDER SENHA
-        ============================================
-        */
+        /* ============================================
+           MOSTRAR / ESCONDER SENHA
+        ============================================ */
 
         const togglePassword =
             document.getElementById(
@@ -447,11 +446,9 @@
 
 
 
-        /*
-        ============================================
-        ESQUECI MINHA SENHA
-        ============================================
-        */
+        /* ============================================
+           RECUPERAÇÃO DE SENHA
+        ============================================ */
 
         const forgotPassword =
             document.getElementById(
@@ -484,6 +481,7 @@
                     .focus();
 
                     return;
+
                 }
 
 
@@ -503,13 +501,14 @@
 
                 if (error) {
 
+                    console.error(error);
+
                     alert(
                         "Não foi possível enviar o e-mail."
                     );
 
-                    console.error(error);
-
                     return;
+
                 }
 
 
@@ -522,11 +521,9 @@
 
 
 
-        /*
-        ============================================
-        SE JÁ ESTIVER LOGADO
-        ============================================
-        */
+        /* ============================================
+           VERIFICAR SE JÁ ESTÁ LOGADO
+        ============================================ */
 
         async function verificarSessao() {
 
