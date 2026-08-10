@@ -1,120 +1,133 @@
-```javascript
-/* =========================================================
-   DESBRAVA+
-   SCRIPT PRINCIPAL
-========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-
-/* =========================================================
-   NAVEGAÇÃO DO MENU
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
+    /* =========================================================
+       NAVEGAÇÃO DO MENU
+    ========================================================= */
 
     const menuItems = document.querySelectorAll(".menu-item");
 
-    menuItems.forEach((item) => {
+    menuItems.forEach(function (item) {
 
-        item.addEventListener("click", () => {
+        item.addEventListener("click", function () {
 
-            /* Remove ativo de todos */
+            const funcao = item.querySelector("span:last-child");
 
-            menuItems.forEach((button) => {
+            if (!funcao) {
+                return;
+            }
+
+            const nome = funcao.textContent.trim();
+
+            /* Sair da conta */
+            if (nome === "Sair da conta") {
+                sairDaConta();
+                return;
+            }
+
+            /* Ativa o item */
+            menuItems.forEach(function (button) {
                 button.classList.remove("active");
             });
 
-
-            /* Ativa o botão clicado */
-
             item.classList.add("active");
 
-
-            /* Nome da função */
-
-            const funcao =
-                item.querySelector("span:last-child")?.textContent.trim();
-
-
-            console.log("Função selecionada:", funcao);
-
-
-            /* Aqui vamos conectar cada tela depois */
-
-            switch (funcao) {
-
-                case "Início":
-
-                    mostrarMensagem("Início");
-                    break;
-
-
-                case "Desafios":
-
-                    mostrarMensagem("Desafios");
-                    break;
-
-
-                case "Ranking":
-
-                    mostrarMensagem("Ranking");
-                    break;
-
-
-                case "Minha Unidade":
-
-                    mostrarMensagem("Minha Unidade");
-                    break;
-
-
-                case "Conquistas":
-
-                    mostrarMensagem("Conquistas");
-                    break;
-
-
-                case "Reuniões":
-
-                    mostrarMensagem("Reuniões");
-                    break;
-
-
-                case "Suporte":
-
-                    mostrarMensagem("Suporte");
-                    break;
-
-
-                case "Perfil":
-
-                    mostrarMensagem("Perfil");
-                    break;
-
-
-                default:
-
-                    console.log(
-                        "Função não encontrada."
-                    );
-            }
-
+            console.log("Função selecionada:", nome);
         });
 
     });
 
 
+    /* =========================================================
+       MOSTRAR / ESCONDER SENHA
+    ========================================================= */
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+    const passwordInput =
+        document.getElementById("password");
+
+    if (togglePassword && passwordInput) {
+
+        togglePassword.addEventListener("click", function () {
+
+            if (passwordInput.type === "password") {
+
+                passwordInput.type = "text";
+                togglePassword.textContent = "🙈";
+
+            } else {
+
+                passwordInput.type = "password";
+                togglePassword.textContent = "👁️";
+
+            }
+
+        });
+
+    }
+
 });
 
 
 /* =========================================================
-   FUNÇÃO TEMPORÁRIA
+   SAIR DA CONTA
 ========================================================= */
 
-function mostrarMensagem(nome) {
+async function sairDaConta() {
 
-    console.log(
-        "Abrindo a função:",
-        nome
+    const confirmar = confirm(
+        "Tem certeza que deseja sair da sua conta?"
     );
 
+    if (!confirmar) {
+        return;
+    }
+
+    try {
+
+        if (
+            typeof supabaseClient === "undefined"
+        ) {
+
+            alert(
+                "O Supabase não foi carregado nesta página."
+            );
+
+            return;
+        }
+
+
+        const { error } =
+            await supabaseClient.auth.signOut();
+
+
+        if (error) {
+
+            console.error(
+                "Erro ao sair:",
+                error
+            );
+
+            alert(
+                "Não foi possível sair da conta."
+            );
+
+            return;
+        }
+
+
+        window.location.href = "login.html";
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Ocorreu um erro ao sair da conta."
+        );
+
+    }
+
 }
-```
