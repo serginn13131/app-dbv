@@ -1,4 +1,4 @@
-
+```css
 /* =========================================================
    DESBRAVA+
    STYLE.CSS COMPLETO
@@ -107,7 +107,9 @@ button {
     overflow-x: hidden;
 }
 
-/* Barra de rolagem da lateral */
+
+/* Barra de rolagem */
+
 .sidebar::-webkit-scrollbar {
     width: 5px;
 }
@@ -123,6 +125,63 @@ button {
 
 .sidebar::-webkit-scrollbar-thumb:hover {
     background: #475569;
+}
+
+
+/* =========================================================
+   LOGO SIDEBAR
+========================================================= */
+
+.logo-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 5px 10px 35px;
+}
+
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+
+    background: var(--primary);
+
+    color: var(--dark);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    font-weight: 900;
+}
+
+
+.logo-area h1 {
+    font-size: 19px;
+
+    font-weight: 900;
+}
+
+
+.logo-area h1 span {
+    color: var(--primary);
+}
+
+
+.logo-area p {
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    color: #94a3b8;
 }
 
 
@@ -283,7 +342,6 @@ button {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-size: 20px;
@@ -825,7 +883,7 @@ footer small {
 
 
 /* =========================================================
-   RESPONSIVE TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -855,7 +913,6 @@ footer small {
     .main-grid {
         grid-template-columns: 1fr;
     }
-
 }
 
 
@@ -1038,7 +1095,6 @@ footer small {
     footer {
         padding-bottom: 15px;
     }
-
 }
 
 
@@ -1066,7 +1122,6 @@ footer small {
     .unit-icon {
         font-size: 19px;
     }
-
 }
 
 
@@ -1075,7 +1130,6 @@ footer small {
 ========================================================= */
 
 .login-page {
-
     min-height: 100vh;
 
     width: 100%;
@@ -1097,16 +1151,19 @@ footer small {
 
 
 /* =========================================================
-   LOGO DE FUNDO DO LOGIN
+   LOGO COLORIDA NO FUNDO DO LOGIN
 ========================================================= */
 
 .login-background-logo {
-
     position: fixed;
 
-    width: min(720px, 85vw);
+    width: 900px;
 
-    height: min(720px, 85vw);
+    height: 900px;
+
+    max-width: none;
+
+    max-height: none;
 
     object-fit: contain;
 
@@ -1117,10 +1174,13 @@ footer small {
     transform:
         translate(-50%, -50%);
 
-    opacity: 0.035;
+    /* Transparência da logo */
 
-    filter:
-        grayscale(100%);
+    opacity: 0.18;
+
+    /* Mantém as cores originais */
+
+    filter: none;
 
     pointer-events: none;
 
@@ -1135,14 +1195,13 @@ footer small {
 ========================================================= */
 
 .login-container {
-
     width: 100%;
 
     max-width: 430px;
 
     position: relative;
 
-    z-index: 2;
+    z-index: 10;
 }
 
 
@@ -1151,9 +1210,10 @@ footer small {
 ========================================================= */
 
 .login-card {
+    position: relative;
 
     background:
-        rgba(255, 255, 255, 0.97);
+        rgba(255, 255, 255, 0.96);
 
     border: 1px solid var(--border);
 
@@ -1174,7 +1234,6 @@ footer small {
 ========================================================= */
 
 .login-logo {
-
     display: flex;
 
     align-items: center;
@@ -1188,7 +1247,6 @@ footer small {
 
 
 .login-logo-image {
-
     width: 55px;
 
     height: 55px;
@@ -1202,7 +1260,6 @@ footer small {
 
 
 .login-logo-image img {
-
     width: 100%;
 
     height: 100%;
@@ -1212,7 +1269,6 @@ footer small {
 
 
 .login-logo h1 {
-
     font-size: 21px;
 
     font-weight: 900;
@@ -1220,13 +1276,11 @@ footer small {
 
 
 .login-logo h1 span {
-
     color: var(--primary-dark);
 }
 
 
 .login-logo p {
-
     margin-top: 3px;
 
     color: var(--text-light);
@@ -1240,7 +1294,6 @@ footer small {
 ========================================================= */
 
 .login-title {
-
     text-align: center;
 
     margin-bottom: 28px;
@@ -1248,7 +1301,6 @@ footer small {
 
 
 .login-title h2 {
-
     font-size: 24px;
 
     font-weight: 900;
@@ -1258,7 +1310,6 @@ footer small {
 
 
 .login-title p {
-
     margin-top: 8px;
 
     color: var(--text-light);
@@ -1274,13 +1325,11 @@ footer small {
 ========================================================= */
 
 .form-group {
-
     margin-bottom: 18px;
 }
 
 
 .form-group label {
-
     display: block;
 
     margin-bottom: 7px;
@@ -1294,7 +1343,6 @@ footer small {
 
 
 .form-group input {
-
     width: 100%;
 
     height: 48px;
@@ -1318,7 +1366,6 @@ footer small {
 
 
 .form-group input:focus {
-
     border-color: var(--primary);
 
     background: white;
@@ -1330,7 +1377,6 @@ footer small {
 
 
 .form-group input::placeholder {
-
     color: #94a3b8;
 }
 
@@ -1340,19 +1386,16 @@ footer small {
 ========================================================= */
 
 .password-field {
-
     position: relative;
 }
 
 
 .password-field input {
-
     padding-right: 50px;
 }
 
 
 .password-toggle {
-
     position: absolute;
 
     right: 8px;
@@ -1375,7 +1418,6 @@ footer small {
 
 
 .password-toggle:hover {
-
     background: #f1f5f9;
 }
 
@@ -1385,7 +1427,6 @@ footer small {
 ========================================================= */
 
 .login-options {
-
     display: flex;
 
     align-items: center;
@@ -1399,7 +1440,6 @@ footer small {
 
 
 .remember {
-
     display: flex;
 
     align-items: center;
@@ -1413,13 +1453,11 @@ footer small {
 
 
 .remember input {
-
     accent-color: var(--primary-dark);
 }
 
 
 .login-options a {
-
     color: var(--primary-dark);
 
     font-size: 10px;
@@ -1431,7 +1469,6 @@ footer small {
 
 
 .login-options a:hover {
-
     text-decoration: underline;
 }
 
@@ -1441,7 +1478,6 @@ footer small {
 ========================================================= */
 
 .login-button {
-
     width: 100%;
 
     height: 50px;
@@ -1461,7 +1497,6 @@ footer small {
 
 
 .login-button:hover {
-
     background: #1e293b;
 
     transform: translateY(-1px);
@@ -1473,7 +1508,6 @@ footer small {
 
 
 .login-button:disabled {
-
     opacity: 0.65;
 
     cursor: wait;
@@ -1487,7 +1521,6 @@ footer small {
 ========================================================= */
 
 .create-account {
-
     display: flex;
 
     justify-content: center;
@@ -1501,13 +1534,11 @@ footer small {
 
 
 .create-account span {
-
     color: var(--text-light);
 }
 
 
 .create-account a {
-
     color: var(--primary-dark);
 
     font-weight: 900;
@@ -1517,7 +1548,6 @@ footer small {
 
 
 .create-account a:hover {
-
     text-decoration: underline;
 }
 
@@ -1527,7 +1557,6 @@ footer small {
 ========================================================= */
 
 .login-support {
-
     display: flex;
 
     flex-direction: column;
@@ -1549,7 +1578,6 @@ footer small {
 
 
 .login-support a {
-
     color: var(--text);
 
     font-size: 10px;
@@ -1561,7 +1589,6 @@ footer small {
 
 
 .login-support a:hover {
-
     color: var(--primary-dark);
 }
 
@@ -1571,7 +1598,6 @@ footer small {
 ========================================================= */
 
 .login-footer {
-
     display: flex;
 
     flex-direction: column;
@@ -1591,7 +1617,6 @@ footer small {
 
 
 .login-footer small {
-
     color: #64748b;
 
     font-size: 9px;
@@ -1604,16 +1629,14 @@ footer small {
    LOGIN MOBILE
 ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
     .login-page {
-
         padding: 15px;
     }
 
 
     .login-card {
-
         padding: 25px 20px;
 
         border-radius: 20px;
@@ -1621,32 +1644,50 @@ footer small {
 
 
     .login-logo {
-
         margin-bottom: 28px;
     }
 
 
     .login-title h2 {
-
         font-size: 21px;
     }
 
 
     .login-options {
-
         align-items: flex-start;
     }
 
 
+    /* Logo maior no celular */
+
     .login-background-logo {
+        width: 600px;
 
-        width: 520px;
+        height: 600px;
 
-        height: 520px;
+        opacity: 0.14;
+    }
+}
 
-        opacity: 0.025;
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .login-background-logo {
+        width: 500px;
+
+        height: 500px;
+
+        opacity: 0.12;
     }
 
+
+    .login-card {
+        padding: 22px 18px;
+    }
 }
 
 
@@ -1655,7 +1696,6 @@ footer small {
 ========================================================= */
 
 select {
-
     width: 100%;
 
     height: 48px;
@@ -1679,7 +1719,6 @@ select {
 
 
 select:focus {
-
     border-color: var(--primary);
 
     background: white;
@@ -1691,81 +1730,8 @@ select:focus {
 
 
 select:disabled {
-
     cursor: not-allowed;
 
     opacity: 0.6;
 }
-```css
-/* ========================================
-   LOGO NO FUNDO DO LOGIN
-======================================== */
-
-.login-page {
-    position: relative !important;
-    min-height: 100vh !important;
-
-    background: #f8fafc !important;
-
-    overflow: hidden !important;
-}
-
-
-/* LOGO DE FUNDO */
-
-.login-background-logo {
-    display: block !important;
-
-    position: fixed !important;
-
-    width: 900px !important;
-    height: 900px !important;
-
-    object-fit: contain !important;
-
-    left: 50% !important;
-    top: 50% !important;
-
-    transform: translate(-50%, -50%) !important;
-
-    opacity: 0.20 !important;
-
-    z-index: 1 !important;
-
-    pointer-events: none !important;
-}
-
-
-/* LOGIN POR CIMA DA LOGO */
-
-.login-container {
-    position: relative !important;
-
-    z-index: 10 !important;
-}
-
-
-/* CARD */
-
-.login-card {
-    position: relative !important;
-
-    background: rgba(255, 255, 255, 0.96) !important;
-}
-
-
-/* CELULAR */
-
-@media (max-width: 600px) {
-
-    .login-background-logo {
-        width: 420px !important;
-        height: 420px !important;
-
-        opacity: 0.09 !important;
-    }
-
-}
-
-
-
+```
