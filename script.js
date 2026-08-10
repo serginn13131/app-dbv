@@ -46,6 +46,13 @@
                 throw erroPerfil;
             }
 
+            if (!perfil) {
+                const { data: perfilCriado, error: erroCriacao } = await cliente.rpc("ensure_my_profile");
+                if (!erroCriacao && perfilCriado?.length) {
+                    return { usuario, perfil: perfilCriado[0] };
+                }
+            }
+
             return { usuario, perfil };
     }
 
