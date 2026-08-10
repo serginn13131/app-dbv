@@ -1,4 +1,4 @@
-```css
+
 /* =========================================================
    DESBRAVA+
    STYLE.CSS COMPLETO
@@ -1696,4 +1696,89 @@ select:disabled {
 
     opacity: 0.6;
 }
+```css
+/* ========================================
+   LOGO DE FUNDO DO LOGIN
+======================================== */
+
+.login-page {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #f8fafc;
+}
+
+
+/* Logo grande no fundo */
+
+.login-background-logo {
+    position: fixed;
+
+    width: 520px;
+    height: 520px;
+
+    object-fit: contain;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0.045;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Conteúdo fica por cima da logo */
+
+.login-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 430px;
+}
+
+
+/* Card continua branco */
+
+.login-card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.10);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .login-background-logo {
+        width: 380px;
+        height: 380px;
+
+        opacity: 0.04;
+    }
+
+}
 ```
+
