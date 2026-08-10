@@ -1,11 +1,7 @@
-/* ========================================
-   DESBRAVA+ — SCRIPT PRINCIPAL
-======================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ========================================
-       MENU
+       MENU LATERAL
     ======================================== */
 
     const menuItems = document.querySelectorAll(".menu-item");
@@ -47,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ========================================
-       RANKING — ABAS
+       ABAS DO RANKING
     ======================================== */
 
     const tabs = document.querySelectorAll(".tab");
@@ -73,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ========================================
-       BOTÃO DO DESAFIO
+       DESAFIO
     ======================================== */
 
     const challengeButton =
@@ -85,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             alert(
                 "🔥 Desafio selecionado!\n\n" +
-                "Na próxima etapa vamos criar a página completa do desafio."
+                "Em breve você poderá participar deste desafio."
             );
 
         });
@@ -94,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ========================================
-       BOTÃO VER DETALHES
+       DETALHES DO DESAFIO
     ======================================== */
 
     const detailsButton =
@@ -105,8 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
         detailsButton.addEventListener("click", () => {
 
             alert(
-                "🎯 Detalhes do desafio\n\n" +
+                "🎯 DESAFIO DA SEMANA\n\n" +
                 "Ajude sua família em uma tarefa de casa.\n\n" +
+                "Envie uma foto antes e depois.\n\n" +
                 "Recompensa: +50 pontos."
             );
 
@@ -127,9 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         progress.style.width = "0%";
 
         setTimeout(() => {
-
             progress.style.width = "80%";
-
         }, 300);
 
     }
@@ -161,16 +156,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ========================================
-       CONSOLE
+       INICIALIZAÇÃO
     ======================================== */
 
-    console.log(
-        "%cDESBRAVA+",
-        "font-size: 24px; font-weight: 900;"
-    );
-
-    console.log(
-        "Sistema iniciado com sucesso 🚀"
-    );
+    console.log("DESBRAVA+ iniciado 🚀");
+    console.log("Desenvolvido por Sérgio");
 
 });
