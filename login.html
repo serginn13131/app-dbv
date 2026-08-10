@@ -1,44 +1,88 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Entrar | Desbrava+</title>
 
-    <link rel="stylesheet" href="style.css">
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- FONTE -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"
     >
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body class="login-page">
 
+
     <main class="login-container">
 
+
         <section class="login-card">
+
 
             <!-- LOGO -->
 
             <div class="login-logo">
-                <div class="login-logo-icon">+</div>
+
+                <div class="login-logo-icon">
+                    +
+                </div>
+
 
                 <div>
-                    <h1>DESBRAVA<span>+</span></h1>
-                    <p>Clube de Desbravadores</p>
+
+                    <h1>
+                        DESBRAVA<span>+</span>
+                    </h1>
+
+                    <p>
+                        Clube de Desbravadores
+                    </p>
+
                 </div>
+
             </div>
+
 
 
             <!-- TÍTULO -->
 
             <div class="login-title">
 
-                <h2>Bem-vindo de volta! 👋</h2>
+                <h2>
+                    Bem-vindo de volta! 👋
+                </h2>
 
                 <p>
                     Entre na sua conta para continuar
@@ -48,9 +92,13 @@
             </div>
 
 
+
             <!-- FORMULÁRIO -->
 
             <form id="loginForm">
+
+
+                <!-- E-MAIL -->
 
                 <div class="form-group">
 
@@ -61,13 +109,16 @@
                     <input
                         type="email"
                         id="email"
-                        name="email"
                         placeholder="seu@email.com"
+                        autocomplete="email"
                         required
                     >
 
                 </div>
 
+
+
+                <!-- SENHA -->
 
                 <div class="form-group">
 
@@ -75,20 +126,23 @@
                         Senha
                     </label>
 
+
                     <div class="password-field">
 
                         <input
                             type="password"
                             id="password"
-                            name="password"
                             placeholder="Digite sua senha"
+                            autocomplete="current-password"
                             required
                         >
+
 
                         <button
                             type="button"
                             id="togglePassword"
                             class="password-toggle"
+                            aria-label="Mostrar senha"
                         >
                             👁️
                         </button>
@@ -98,7 +152,11 @@
                 </div>
 
 
+
+                <!-- OPÇÕES -->
+
                 <div class="login-options">
+
 
                     <label class="remember">
 
@@ -113,30 +171,41 @@
 
                     </label>
 
-                    <a href="#" id="forgotPassword">
+
+                    <a
+                        href="#"
+                        id="forgotPassword"
+                    >
                         Esqueci minha senha
                     </a>
 
                 </div>
 
 
+
+                <!-- BOTÃO -->
+
                 <button
                     type="submit"
                     class="login-button"
+                    id="loginButton"
                 >
                     Entrar
                 </button>
 
+
             </form>
 
 
-            <!-- CRIAR CONTA -->
+
+            <!-- CADASTRO -->
 
             <div class="create-account">
 
                 <span>
-                    Ainda não tem uma conta?
+                    Ainda não possui uma conta?
                 </span>
+
 
                 <a href="cadastro.html">
                     Criar conta
@@ -145,11 +214,15 @@
             </div>
 
 
+
             <!-- SUPORTE -->
 
             <div class="login-support">
 
-                <span>Precisa de ajuda?</span>
+                <span>
+                    Precisa de ajuda?
+                </span>
+
 
                 <a href="suporte.html">
                     Falar com o suporte
@@ -157,7 +230,9 @@
 
             </div>
 
+
         </section>
+
 
 
         <!-- RODAPÉ -->
@@ -168,16 +243,317 @@
                 DESBRAVA+ • Crescer, servir e competir juntos.
             </span>
 
+
             <small>
                 Desenvolvido por Sérgio
             </small>
 
         </footer>
 
+
     </main>
 
 
-    <script src="script.js"></script>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /*
+        ============================================
+        CONFIGURAÇÃO SUPABASE
+        ============================================
+        */
+
+        const SUPABASE_URL =
+            "https://iibdvkxztgrlrwzqbfrg.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlpYmR2a3h6dGdybHJ3enFiZnJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzMTcxMDgsImV4cCI6MjEwMTg5MzEwOH0.qotf9MTLi7YBfKgHWuH5qd3Wrb0_BEsATM6AGeqsEes";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
+
+
+
+        /*
+        ============================================
+        LOGIN
+        ============================================
+        */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        const loginButton =
+            document.getElementById("loginButton");
+
+
+        loginForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+
+                const password =
+                    document
+                    .getElementById("password")
+                    .value;
+
+
+                if (!email || !password) {
+
+                    alert(
+                        "Preencha seu e-mail e sua senha."
+                    );
+
+                    return;
+                }
+
+
+                /*
+                DESABILITA BOTÃO
+                */
+
+                loginButton.disabled = true;
+
+                loginButton.textContent =
+                    "Entrando...";
+
+
+                /*
+                AUTENTICA NO SUPABASE
+                */
+
+                const {
+                    data,
+                    error
+                } =
+                    await supabaseClient.auth
+                    .signInWithPassword({
+
+                        email: email,
+
+                        password: password
+
+                    });
+
+
+                /*
+                ERRO
+                */
+
+                if (error) {
+
+                    console.error(error);
+
+
+                    loginButton.disabled = false;
+
+                    loginButton.textContent =
+                        "Entrar";
+
+
+                    alert(
+                        "E-mail ou senha incorretos."
+                    );
+
+
+                    return;
+                }
+
+
+                /*
+                LOGIN REALIZADO
+                */
+
+                console.log(
+                    "Usuário conectado:",
+                    data.user
+                );
+
+
+                /*
+                VAI PARA O SISTEMA
+                */
+
+                window.location.href =
+                    "index.html";
+
+            }
+        );
+
+
+
+        /*
+        ============================================
+        MOSTRAR / ESCONDER SENHA
+        ============================================
+        */
+
+        const togglePassword =
+            document.getElementById(
+                "togglePassword"
+            );
+
+
+        const passwordInput =
+            document.getElementById(
+                "password"
+            );
+
+
+        togglePassword.addEventListener(
+            "click",
+            function() {
+
+                if (
+                    passwordInput.type ===
+                    "password"
+                ) {
+
+                    passwordInput.type =
+                        "text";
+
+                    togglePassword.textContent =
+                        "🙈";
+
+                } else {
+
+                    passwordInput.type =
+                        "password";
+
+                    togglePassword.textContent =
+                        "👁️";
+
+                }
+
+            }
+        );
+
+
+
+        /*
+        ============================================
+        ESQUECI MINHA SENHA
+        ============================================
+        */
+
+        const forgotPassword =
+            document.getElementById(
+                "forgotPassword"
+            );
+
+
+        forgotPassword.addEventListener(
+            "click",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+
+                if (!email) {
+
+                    alert(
+                        "Digite seu e-mail primeiro."
+                    );
+
+                    document
+                    .getElementById("email")
+                    .focus();
+
+                    return;
+                }
+
+
+                const {
+                    error
+                } =
+                    await supabaseClient.auth
+                    .resetPasswordForEmail(
+                        email,
+                        {
+                            redirectTo:
+                                window.location.origin +
+                                "/redefinir-senha.html"
+                        }
+                    );
+
+
+                if (error) {
+
+                    alert(
+                        "Não foi possível enviar o e-mail."
+                    );
+
+                    console.error(error);
+
+                    return;
+                }
+
+
+                alert(
+                    "Enviamos as instruções para seu e-mail."
+                );
+
+            }
+        );
+
+
+
+        /*
+        ============================================
+        SE JÁ ESTIVER LOGADO
+        ============================================
+        */
+
+        async function verificarSessao() {
+
+            const {
+                data
+            } =
+                await supabaseClient
+                .auth
+                .getSession();
+
+
+            if (data.session) {
+
+                window.location.href =
+                    "index.html";
+
+            }
+
+        }
+
+
+        verificarSessao();
+
+    </script>
+
 
 </body>
+
 </html>
+```
