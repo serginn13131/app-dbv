@@ -15,25 +15,27 @@
         }
     }
 
-    async function protegerPagina() {
+    async function requireAuth() {
         const cliente = clienteSupabase();
 
         if (!cliente) {
             console.error("O cliente Supabase não foi inicializado.");
-            mostrarMensagem("Não foi possível carregar a autenticação.");
             redirecionarParaLogin();
-            return;
+            return null;
         }
 
-        try {
-            const { data, error } = await cliente.auth.getSession();
+        const { data, error } = await cliente.auth.getSession();
 
-            if (error || !data.session) {
-                redirecionarParaLogin();
-                return;
-            }
+        if (error || !data.session) {
+            redirecionarParaLogin();
+            return null;
+        }
 
-            const usuario = data.session.user;
+        return data.session;
+    }
+
+    async function carregarPerfilDaSessao(sessao, cliente) {
+        const usuario = sessao.user;
             const { data: perfil, error: erroPerfil } = await cliente
                 .from("profiles")
                 .select("id, nome, email, avatar, cargo, unidade_id, ativo")
@@ -41,12 +43,22 @@
                 .maybeSingle();
 
             if (erroPerfil) {
-                console.error("Erro ao carregar perfil:", erroPerfil);
-                mostrarMensagem("Não foi possível carregar seu perfil.");
-                await cliente.auth.signOut();
-                redirecionarParaLogin();
-                return;
+                throw erroPerfil;
             }
+
+            return { usuario, perfil };
+    }
+
+    async function protegerPagina() {
+        const cliente = clienteSupabase();
+        const sessao = await requireAuth();
+
+        if (!sessao || !cliente) {
+            return;
+        }
+
+        try {
+            const { usuario, perfil } = await carregarPerfilDaSessao(sessao, cliente);
 
             if (!perfil || perfil.ativo === false) {
                 mostrarMensagem("Seu perfil ainda não está ativo ou não foi encontrado.");
@@ -58,6 +70,8 @@
             window.desbravaUsuario = usuario;
             window.desbravaPerfil = perfil;
             preencherDadosDoDashboard(perfil, usuario);
+            await carregarDadosDoDashboard(perfil, usuario, cliente);
+            await carregarRanking(cliente);
         } catch (erro) {
             console.error("Erro inesperado ao verificar sessão:", erro);
             redirecionarParaLogin();
@@ -67,13 +81,91 @@
     function preencherDadosDoDashboard(perfil, usuario) {
         const nome = perfil.nome || usuario.user_metadata?.nome || usuario.email || "Desbravador";
         const elementoNome = document.getElementById("userName");
+        const elementoData = document.getElementById("currentDate");
 
         if (elementoNome) {
             elementoNome.textContent = nome.split(" ")[0];
         }
 
+        if (elementoData) {
+            elementoData.textContent = new Intl.DateTimeFormat("pt-BR", {
+                weekday: "long",
+                day: "numeric",
+                month: "long"
+            }).format(new Date());
+        }
+
         document.querySelectorAll("[data-user-email]").forEach((elemento) => {
             elemento.textContent = perfil.email || usuario.email || "";
+        });
+    }
+
+    async function carregarDadosDoDashboard(perfil, usuario, cliente) {
+        const elementoUnidade = document.getElementById("userUnit");
+        const elementoPontos = document.getElementById("userPoints");
+        const elementoNivel = document.getElementById("userLevel");
+        const elementoProgresso = document.getElementById("levelProgressPercent");
+        const barraProgresso = document.getElementById("levelProgressFill");
+        const rotuloProgresso = document.getElementById("levelProgressLabel");
+        const dicaProgresso = document.getElementById("levelProgressHint");
+
+        const { data: registros, error: erroPontos } = await cliente
+            .from("points")
+            .select("amount")
+            .eq("user_id", usuario.id);
+
+        if (erroPontos) {
+            console.warn("Não foi possível carregar os pontos:", erroPontos);
+        }
+
+        const pontos = (registros || []).reduce((total, registro) => total + Number(registro.amount || 0), 0);
+        const pontosPorNivel = 200;
+        const nivel = Math.max(1, Math.floor(pontos / pontosPorNivel) + 1);
+        const pontosNoNivel = pontos % pontosPorNivel;
+        const percentual = Math.min(100, Math.round((pontosNoNivel / pontosPorNivel) * 100));
+        const faltam = pontosPorNivel - pontosNoNivel;
+
+        if (elementoPontos) elementoPontos.textContent = `${pontos.toLocaleString("pt-BR")} pontos`;
+        if (elementoNivel) elementoNivel.textContent = `Nível ${nivel} • ${perfil.cargo || "Desbravador"}`;
+        if (elementoProgresso) elementoProgresso.textContent = `${percentual}%`;
+        if (barraProgresso) barraProgresso.style.width = `${percentual}%`;
+        if (rotuloProgresso) rotuloProgresso.textContent = `Progresso para o nível ${nivel + 1}`;
+        if (dicaProgresso) dicaProgresso.textContent = `Faltam ${faltam} XP para subir de nível.`;
+
+        if (perfil.unidade_id) {
+            const { data: unidade, error: erroUnidade } = await cliente
+                .from("units")
+                .select("nome, simbolo")
+                .eq("id", perfil.unidade_id)
+                .maybeSingle();
+
+            if (erroUnidade) {
+                console.warn("Não foi possível carregar a unidade:", erroUnidade);
+            } else if (unidade && elementoUnidade) {
+                elementoUnidade.textContent = `${unidade.simbolo || "👥"} UNIDADE ${(unidade.nome || "").toUpperCase()}`;
+            }
+        }
+    }
+
+    async function carregarRanking(cliente) {
+        const itens = Array.from(document.querySelectorAll(".ranking-item"));
+        if (!itens.length) return;
+
+        const { data: ranking, error } = await cliente.rpc("get_unit_ranking");
+        if (error) {
+            console.warn("Não foi possível carregar o ranking:", error);
+            return;
+        }
+
+        (ranking || []).slice(0, itens.length).forEach((unidade, indice) => {
+            const item = itens[indice];
+            const nome = item.querySelector(".ranking-left strong");
+            const pontuacao = item.querySelector(":scope > strong");
+            const icone = item.querySelector(".unit-icon");
+
+            if (nome) nome.textContent = unidade.unit_name;
+            if (pontuacao) pontuacao.textContent = `${Number(unidade.total_points || 0).toLocaleString("pt-BR")} pts`;
+            if (icone && unidade.unit_symbol) icone.textContent = unidade.unit_symbol;
         });
     }
 
@@ -107,6 +199,16 @@
 
     function configurarMenu() {
         const itensMenu = document.querySelectorAll(".menu-item, .mobile-item");
+        const rotas = {
+            "Desafios": "desafios.html",
+            "Ranking": "ranking.html",
+            "Minha Unidade": "unidade.html",
+            "Unidade": "unidade.html",
+            "Conquistas": "conquistas.html",
+            "Reuniões": "reunioes.html",
+            "Suporte": "suporte.html",
+            "Perfil": "perfil.html"
+        };
 
         itensMenu.forEach((item) => {
             item.addEventListener("click", () => {
@@ -114,6 +216,11 @@
 
                 if (texto === "Sair da conta") {
                     sairDaConta();
+                    return;
+                }
+
+                if (rotas[texto]) {
+                    window.location.href = rotas[texto];
                     return;
                 }
 
@@ -252,7 +359,22 @@
         });
     }
 
+    function observarSessao() {
+        const cliente = clienteSupabase();
+        if (!cliente) return;
+
+        cliente.auth.onAuthStateChange((evento, sessao) => {
+            if (!sessao && document.querySelector(".app")) {
+                redirecionarParaLogin();
+            }
+        });
+    }
+
+    window.requireAuth = requireAuth;
+    window.desbravaRequireProfile = carregarPerfilDaSessao;
+
     document.addEventListener("DOMContentLoaded", () => {
+        observarSessao();
         configurarAlternanciaSenha();
         configurarMenu();
 

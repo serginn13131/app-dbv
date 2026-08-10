@@ -340,8 +340,8 @@
 
             <div>
 
-                <p class="date">
-                    Domingo, 9 de agosto
+                <p class="date" id="currentDate">
+                    Carregando data...
                 </p>
 
                 <h2>
@@ -351,8 +351,8 @@
             </div>
 
 
-            <div class="profile-avatar">
-                👦
+            <div class="profile-avatar" id="profileAvatar" aria-label="Avatar do usuário">
+                👤
             </div>
 
 
@@ -374,20 +374,20 @@
                 <div class="hero-info">
 
 
-                    <div class="unit-badge">
+                    <div class="unit-badge" id="userUnit">
 
-                        🦅 UNIDADE ÁGUIAS
+                        Unidade não definida
 
                     </div>
 
 
-                    <h3>
-                        1.240 pontos
+                    <h3 id="userPoints">
+                        0 pontos
                     </h3>
 
 
-                    <p>
-                        Nível 7 • Desbravador
+                    <p id="userLevel">
+                        Nível 1 • Desbravador
                     </p>
 
 
@@ -398,12 +398,12 @@
 
                         <div class="progress-label">
 
-                            <span>
-                                Progresso para o nível 8
+                            <span id="levelProgressLabel">
+                                Progresso para o nível 2
                             </span>
 
-                            <span>
-                                80%
+                            <span id="levelProgressPercent">
+                                0%
                             </span>
 
                         </div>
@@ -411,13 +411,13 @@
 
                         <div class="progress-bar">
 
-                            <div class="progress-fill"></div>
+                            <div class="progress-fill" id="levelProgressFill"></div>
 
                         </div>
 
 
-                        <small>
-                            Faltam 120 XP para subir de nível.
+                        <small id="levelProgressHint">
+                            Comece a acumular pontos para subir de nível.
                         </small>
 
 
@@ -870,7 +870,7 @@
 ========================================================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-config.js"></script>
+<script src="supabase.js"></script>
 
 
 <!-- =========================================================

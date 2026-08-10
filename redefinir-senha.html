@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Redefinir senha | Desbrava+</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-page"><section class="auth-card"><img src="imagens/dbv.png" alt="Desbrava+" class="auth-logo"><h1>Redefinir senha</h1><p>Escolha uma nova senha para sua conta.</p><form id="resetForm"><input id="password" type="password" minlength="6" placeholder="Nova senha" required><input id="confirm" type="password" minlength="6" placeholder="Confirme a nova senha" required><button class="primary-button" type="submit">Salvar nova senha</button></form><p id="message" role="status"></p></section></main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase.js"></script>
+  <script>
+    document.getElementById('resetForm').addEventListener('submit', async function (event) {
+      event.preventDefault(); const message = document.getElementById('message'); const password = document.getElementById('password').value; const confirm = document.getElementById('confirm').value;
+      if (password !== confirm) { message.textContent = 'As senhas não coincidem.'; return; }
+      const { error } = await window.supabaseClient.auth.updateUser({ password });
+      if (error) { message.textContent = error.message; return; }
+      message.textContent = 'Senha atualizada. Redirecionando...'; setTimeout(() => window.location.replace('index.html'), 800);
+    });
+  </script>
+</body>
+</html>
