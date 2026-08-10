@@ -278,25 +278,15 @@
          JAVASCRIPT
     ========================================== -->
 
+    <script src="supabase-config.js"></script>
+
     <script>
 
         /* =========================================
-           CONFIGURAÇÃO DO SUPABASE
+           CLIENTE SUPABASE
         ========================================== */
 
-        const SUPABASE_URL =
-            "https://iibdvkxztgrlrwzqbfrg.supabase.co";
-
-
-        const SUPABASE_KEY =
-            "sb_publishable_qMjvqXKJW_5onSUZjymiSw_0KfZi44D";
-
-
-        const supabaseClient =
-            window.supabase.createClient(
-                SUPABASE_URL,
-                SUPABASE_KEY
-            );
+        const supabaseClient = window.supabaseClient;
 
 
         /* =========================================
@@ -435,43 +425,7 @@
            MOSTRAR / ESCONDER SENHA
         ========================================== */
 
-        togglePassword.addEventListener(
-            "click",
-            function() {
-
-                if (
-                    passwordInput.type ===
-                    "password"
-                ) {
-
-                    passwordInput.type =
-                        "text";
-
-                    togglePassword.textContent =
-                        "🙈";
-
-                    togglePassword.setAttribute(
-                        "aria-label",
-                        "Esconder senha"
-                    );
-
-                } else {
-
-                    passwordInput.type =
-                        "password";
-
-                    togglePassword.textContent =
-                        "👁️";
-
-                    togglePassword.setAttribute(
-                        "aria-label",
-                        "Mostrar senha"
-                    );
-
-                }
-
-            }
-        );
+        /* A alternância de senha é configurada globalmente em script.js. */
 
 
         /* =========================================
