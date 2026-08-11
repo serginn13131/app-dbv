@@ -1,1 +1,1170 @@
 
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Criar conta | Desbrava+</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+>
+```
+
+</head>
+
+<body class="login-page">
+
+```
+<!-- =====================================================
+     LOGO DE FUNDO
+====================================================== -->
+
+<img
+    src="logo.png"
+    class="login-background-logo"
+    alt=""
+    aria-hidden="true"
+>
+
+
+<!-- =====================================================
+     CONTAINER
+====================================================== -->
+
+<main class="login-container">
+
+
+    <!-- =================================================
+         CARD
+    ================================================== -->
+
+    <section class="login-card">
+
+
+        <!-- =================================================
+             LOGO
+        ================================================== -->
+
+        <div class="login-logo">
+
+
+            <div class="login-logo-image">
+
+                <img
+                    src="logo.png"
+                    alt="Desbrava+"
+                >
+
+            </div>
+
+
+            <div>
+
+                <h1>
+                    DESBRAVA<span>+</span>
+                </h1>
+
+                <p>
+                    Clube de Desbravadores
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             TÍTULO
+        ================================================== -->
+
+        <div class="login-title">
+
+            <h2>
+                Criar minha conta 🚀
+            </h2>
+
+            <p>
+                Faça seu cadastro para começar
+                sua jornada no clube.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FORMULÁRIO
+        ================================================== -->
+
+        <form id="cadastroForm">
+
+
+            <!-- =================================================
+                 NOME
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="nome">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome completo"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 EMAIL
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="seu@email.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 SENHA
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Senha
+                </label>
+
+
+                <div class="password-field">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Crie uma senha"
+                        minlength="6"
+                        autocomplete="new-password"
+                        required
+                    >
+
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        id="togglePassword"
+                        aria-label="Mostrar senha"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONFIRMAR SENHA
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="passwordConfirm">
+                    Confirmar senha
+                </label>
+
+                <input
+                    type="password"
+                    id="passwordConfirm"
+                    placeholder="Digite a senha novamente"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 CLUBE
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="clube">
+                    Clube
+                </label>
+
+                <select
+                    id="clube"
+                    required
+                >
+
+                    <option value="">
+                        Selecione seu clube
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 UNIDADE
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="unidade">
+                    Unidade
+                </label>
+
+                <select
+                    id="unidade"
+                    disabled
+                >
+
+                    <option value="">
+                        Selecione primeiro o clube
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 CARGO
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="cargo">
+                    Cargo
+                </label>
+
+                <select
+                    id="cargo"
+                    disabled
+                >
+
+                    <option value="">
+                        O cargo será definido pelo ADM
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 MENSAGEM
+            ================================================== -->
+
+            <div
+                id="cadastroMessage"
+                style="display:none;"
+            ></div>
+
+
+            <!-- =================================================
+                 BOTÃO
+            ================================================== -->
+
+            <button
+                type="submit"
+                class="login-button"
+                id="cadastroButton"
+            >
+                Criar minha conta
+            </button>
+
+
+        </form>
+
+
+        <!-- =================================================
+             LOGIN
+        ================================================== -->
+
+        <div class="create-account">
+
+            <span>
+                Já possui uma conta?
+            </span>
+
+            <a href="login.html">
+                Entrar
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             SUPORTE
+        ================================================== -->
+
+        <div class="login-support">
+
+            <span>
+                Precisa de ajuda?
+            </span>
+
+            <a href="login.html">
+                Voltar para o login
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="login-footer">
+
+        <span>
+            DESBRAVA+ • Crescer, servir e competir juntos.
+        </span>
+
+        <small>
+            Desenvolvido por Sérgio
+        </small>
+
+    </footer>
+
+
+</main>
+
+
+<!-- =====================================================
+     SUPABASE
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+
+<!-- =====================================================
+     CADASTRO
+====================================================== -->
+
+<script>
+
+    "use strict";
+
+
+    /* =====================================================
+       ELEMENTOS
+    ===================================================== */
+
+    const cadastroForm =
+        document.getElementById("cadastroForm");
+
+    const nomeInput =
+        document.getElementById("nome");
+
+    const emailInput =
+        document.getElementById("email");
+
+    const passwordInput =
+        document.getElementById("password");
+
+    const passwordConfirmInput =
+        document.getElementById("passwordConfirm");
+
+    const clubeSelect =
+        document.getElementById("clube");
+
+    const unidadeSelect =
+        document.getElementById("unidade");
+
+    const cargoSelect =
+        document.getElementById("cargo");
+
+    const cadastroButton =
+        document.getElementById("cadastroButton");
+
+    const cadastroMessage =
+        document.getElementById("cadastroMessage");
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+
+    /* =====================================================
+       VERIFICAR SUPABASE
+    ====================================================== */
+
+    if (
+        !window.supabaseClient ||
+        typeof window.supabaseClient.auth !== "object"
+    ) {
+
+        mostrarMensagem(
+            "Erro ao conectar com o sistema. Verifique o arquivo supabase.js.",
+            "error"
+        );
+
+        cadastroButton.disabled = true;
+
+    }
+
+
+    /* =====================================================
+       MOSTRAR / OCULTAR SENHA
+    ====================================================== */
+
+    togglePassword.addEventListener(
+        "click",
+        function () {
+
+            const mostrando =
+                passwordInput.type === "text";
+
+
+            if (mostrando) {
+
+                passwordInput.type =
+                    "password";
+
+                togglePassword.textContent =
+                    "👁️";
+
+                togglePassword.setAttribute(
+                    "aria-label",
+                    "Mostrar senha"
+                );
+
+            } else {
+
+                passwordInput.type =
+                    "text";
+
+                togglePassword.textContent =
+                    "🙈";
+
+                togglePassword.setAttribute(
+                    "aria-label",
+                    "Ocultar senha"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       MENSAGEM
+    ====================================================== */
+
+    function mostrarMensagem(
+        mensagem,
+        tipo
+    ) {
+
+        cadastroMessage.style.display =
+            "block";
+
+        cadastroMessage.textContent =
+            mensagem;
+
+        cadastroMessage.style.padding =
+            "12px";
+
+        cadastroMessage.style.borderRadius =
+            "10px";
+
+        cadastroMessage.style.marginBottom =
+            "15px";
+
+        cadastroMessage.style.fontSize =
+            "11px";
+
+        cadastroMessage.style.fontWeight =
+            "600";
+
+        cadastroMessage.style.lineHeight =
+            "1.5";
+
+
+        if (tipo === "success") {
+
+            cadastroMessage.style.background =
+                "#dcfce7";
+
+            cadastroMessage.style.color =
+                "#166534";
+
+            cadastroMessage.style.border =
+                "1px solid #bbf7d0";
+
+        } else {
+
+            cadastroMessage.style.background =
+                "#fee2e2";
+
+            cadastroMessage.style.color =
+                "#991b1b";
+
+            cadastroMessage.style.border =
+                "1px solid #fecaca";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       CARREGAR CLUBES
+       
+       Se ainda não existir tabela de clubes,
+       mantém uma opção temporária.
+    ====================================================== */
+
+    async function carregarClubes() {
+
+        try {
+
+            const {
+                data,
+                error
+            } =
+                await window.supabaseClient
+
+                    .from("clubes")
+
+                    .select("id,nome")
+
+                    .order(
+                        "nome",
+                        {
+                            ascending: true
+                        }
+                    );
+
+
+            if (error) {
+
+                console.warn(
+                    "Tabela clubes ainda não disponível:",
+                    error.message
+                );
+
+                return;
+
+            }
+
+
+            clubeSelect.innerHTML =
+                '<option value="">Selecione seu clube</option>';
+
+
+            if (!data || data.length === 0) {
+
+                return;
+
+            }
+
+
+            data.forEach(
+                function (clube) {
+
+                    const option =
+                        document.createElement("option");
+
+                    option.value =
+                        clube.id;
+
+                    option.textContent =
+                        clube.nome;
+
+                    clubeSelect.appendChild(
+                        option
+                    );
+
+                }
+            );
+
+
+        } catch (erro) {
+
+            console.warn(
+                "Não foi possível carregar os clubes.",
+                erro
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       CLUBES → UNIDADES
+    ====================================================== */
+
+    clubeSelect.addEventListener(
+        "change",
+        async function () {
+
+            const clubeId =
+                this.value;
+
+
+            unidadeSelect.innerHTML =
+                '<option value="">Carregando unidades...</option>';
+
+
+            unidadeSelect.disabled =
+                true;
+
+
+            if (!clubeId) {
+
+                unidadeSelect.innerHTML =
+                    '<option value="">Selecione primeiro o clube</option>';
+
+                return;
+
+            }
+
+
+            try {
+
+                const {
+                    data,
+                    error
+                } =
+                    await window.supabaseClient
+
+                        .from("unidades")
+
+                        .select("id,nome")
+
+                        .eq(
+                            "clube_id",
+                            clubeId
+                        )
+
+                        .order(
+                            "nome",
+                            {
+                                ascending: true
+                            }
+                        );
+
+
+                if (error) {
+
+                    console.error(
+                        "Erro ao carregar unidades:",
+                        error
+                    );
+
+                    unidadeSelect.innerHTML =
+                        '<option value="">Não foi possível carregar</option>';
+
+                    return;
+
+                }
+
+
+                unidadeSelect.innerHTML =
+                    '<option value="">Selecione sua unidade</option>';
+
+
+                if (data && data.length > 0) {
+
+                    data.forEach(
+                        function (unidade) {
+
+                            const option =
+                                document.createElement("option");
+
+                            option.value =
+                                unidade.id;
+
+                            option.textContent =
+                                unidade.nome;
+
+                            unidadeSelect.appendChild(
+                                option
+                            );
+
+                        }
+                    );
+
+
+                    unidadeSelect.disabled =
+                        false;
+
+                } else {
+
+                    unidadeSelect.innerHTML =
+                        '<option value="">Nenhuma unidade cadastrada</option>';
+
+                }
+
+
+            } catch (erro) {
+
+                console.error(
+                    erro
+                );
+
+                unidadeSelect.innerHTML =
+                    '<option value="">Erro ao carregar unidades</option>';
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       CADASTRO
+    ====================================================== */
+
+    cadastroForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+
+            const nome =
+                nomeInput.value.trim();
+
+            const email =
+                emailInput.value.trim();
+
+            const password =
+                passwordInput.value;
+
+            const passwordConfirm =
+                passwordConfirmInput.value;
+
+            const clubeId =
+                clubeSelect.value;
+
+            const unidadeId =
+                unidadeSelect.value;
+
+
+            /* =============================================
+               VALIDAÇÕES
+            ============================================== */
+
+            if (nome.length < 3) {
+
+                mostrarMensagem(
+                    "Digite seu nome completo.",
+                    "error"
+                );
+
+                nomeInput.focus();
+
+                return;
+
+            }
+
+
+            if (password.length < 6) {
+
+                mostrarMensagem(
+                    "A senha precisa ter pelo menos 6 caracteres.",
+                    "error"
+                );
+
+                passwordInput.focus();
+
+                return;
+
+            }
+
+
+            if (
+                password !==
+                passwordConfirm
+            ) {
+
+                mostrarMensagem(
+                    "As senhas não são iguais.",
+                    "error"
+                );
+
+                passwordConfirmInput.focus();
+
+                return;
+
+            }
+
+
+            if (!clubeId) {
+
+                mostrarMensagem(
+                    "Selecione seu clube.",
+                    "error"
+                );
+
+                clubeSelect.focus();
+
+                return;
+
+            }
+
+
+            if (!unidadeId) {
+
+                mostrarMensagem(
+                    "Selecione sua unidade.",
+                    "error"
+                );
+
+                unidadeSelect.focus();
+
+                return;
+
+            }
+
+
+            /* =============================================
+               BOTÃO
+            ============================================== */
+
+            cadastroButton.disabled =
+                true;
+
+            cadastroButton.textContent =
+                "Criando conta...";
+
+
+            cadastroMessage.style.display =
+                "none";
+
+
+            try {
+
+
+                /* =========================================
+                   CRIAR USUÁRIO NO AUTH
+                ========================================== */
+
+                const {
+                    data: authData,
+                    error: authError
+                } =
+                    await window.supabaseClient.auth.signUp({
+
+                        email:
+                            email,
+
+                        password:
+                            password
+
+                    });
+
+
+                if (authError) {
+
+                    console.error(
+                        "Erro Auth:",
+                        authError
+                    );
+
+
+                    mostrarMensagem(
+                        interpretarErroCadastro(
+                            authError
+                        ),
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                if (!authData?.user) {
+
+                    mostrarMensagem(
+                        "Não foi possível criar sua conta.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                const authId =
+                    authData.user.id;
+
+
+                /* =========================================
+                   CRIAR PERFIL NA TABELA USUARIOS
+                ========================================== */
+
+                const {
+                    error: perfilError
+                } =
+                    await window.supabaseClient
+
+                        .from("usuarios")
+
+                        .insert({
+
+                            auth_id:
+                                authId,
+
+                            nome:
+                                nome,
+
+                            email:
+                                email,
+
+                            nivel_acesso:
+                                "usuario",
+
+                            status:
+                                "pendente",
+
+                            clube_id:
+                                clubeId,
+
+                            unidade_id:
+                                unidadeId
+
+                        });
+
+
+                if (perfilError) {
+
+                    console.error(
+                        "Erro ao criar perfil:",
+                        perfilError
+                    );
+
+
+                    /*
+                     * Não apagamos automaticamente o usuário
+                     * do Auth. Assim conseguimos identificar
+                     * o problema no banco.
+                     */
+
+                    mostrarMensagem(
+                        "A conta foi criada, mas não foi possível finalizar seu cadastro. Entre em contato com o suporte.",
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                /* =========================================
+                   SUCESSO
+                ========================================== */
+
+                mostrarMensagem(
+                    "Conta criada com sucesso! 🎉 Seu cadastro está aguardando aprovação do ADM.",
+                    "success"
+                );
+
+
+                cadastroForm.reset();
+
+
+                unidadeSelect.innerHTML =
+                    '<option value="">Selecione primeiro o clube</option>';
+
+                unidadeSelect.disabled =
+                    true;
+
+
+                cargoSelect.innerHTML =
+                    '<option value="">O cargo será definido pelo ADM</option>';
+
+                cargoSelect.disabled =
+                    true;
+
+
+                cadastroButton.textContent =
+                    "Cadastro enviado";
+
+
+                /* =========================================
+                   REDIRECIONAMENTO
+                ========================================== */
+
+                setTimeout(
+                    function () {
+
+                        window.location.href =
+                            "login.html";
+
+                    },
+                    2500
+                );
+
+
+            } catch (erro) {
+
+                console.error(
+                    "Erro inesperado:",
+                    erro
+                );
+
+
+                mostrarMensagem(
+                    "Ocorreu um erro inesperado. Tente novamente.",
+                    "error"
+                );
+
+
+            } finally {
+
+                cadastroButton.disabled =
+                    false;
+
+                cadastroButton.textContent =
+                    "Criar minha conta";
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       TRADUZIR ERROS DO SUPABASE
+    ====================================================== */
+
+    function interpretarErroCadastro(error) {
+
+        const mensagem =
+            String(
+                error?.message || ""
+            )
+            .toLowerCase();
+
+
+        if (
+            mensagem.includes(
+                "user already registered"
+            )
+        ) {
+
+            return "Este e-mail já possui uma conta.";
+
+        }
+
+
+        if (
+            mensagem.includes(
+                "already registered"
+            )
+        ) {
+
+            return "Este e-mail já possui uma conta.";
+
+        }
+
+
+        if (
+            mensagem.includes(
+                "password"
+            ) &&
+            mensagem.includes(
+                "6"
+            )
+        ) {
+
+            return "A senha precisa ter pelo menos 6 caracteres.";
+
+        }
+
+
+        if (
+            mensagem.includes(
+                "too many requests"
+            )
+        ) {
+
+            return "Muitas tentativas de cadastro. Aguarde alguns minutos.";
+
+        }
+
+
+        if (
+            mensagem.includes(
+                "rate limit"
+            )
+        ) {
+
+            return "Muitas tentativas. Aguarde um pouco antes de tentar novamente.";
+
+        }
+
+
+        return (
+            error?.message ||
+            "Não foi possível criar sua conta."
+        );
+
+    }
+
+
+    /* =====================================================
+       INICIALIZAÇÃO
+    ====================================================== */
+
+    carregarClubes();
+
+</script>
+```
+
+</body>
+
+</html>
