@@ -3,11 +3,7 @@
    DESBRAVA+
    STYLE.CSS COMPLETO
    Dashboard + Login + Cadastro + Suporte
-========================================================= */
-
-
-/* =========================================================
-   RESET
+   Logo: dbv.png
 ========================================================= */
 
 * {
@@ -19,23 +15,17 @@
 :root {
     --primary: #f5b700;
     --primary-dark: #d99f00;
-
     --dark: #0f172a;
     --dark-2: #172033;
-
     --background: #f1f5f9;
     --white: #ffffff;
-
     --text: #0f172a;
     --text-light: #64748b;
-
     --border: #e2e8f0;
-
     --orange: #f97316;
     --green: #16a34a;
     --red: #dc2626;
     --blue: #2563eb;
-
     --radius: 20px;
 }
 
@@ -66,7 +56,6 @@ a {
     color: inherit;
 }
 
-
 /* =========================================================
    APP
 ========================================================= */
@@ -75,7 +64,6 @@ a {
     min-height: 100vh;
     display: flex;
 }
-
 
 /* =========================================================
    SIDEBAR
@@ -117,21 +105,33 @@ a {
     border-radius: 10px;
 }
 
-
 /* =========================================================
-   LOGO
+   LOGO DO MENU
 ========================================================= */
 
 .logo-area {
     display: flex;
     align-items: center;
     gap: 12px;
-
     padding: 5px 10px 35px;
 }
 
+/* Logo real */
 
-/* LOGO REAL: dbv.png */
+.logo-image {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    flex-shrink: 0;
+
+    display: block;
+}
+
+/* Caso ainda exista o antigo logo-icon */
 
 .logo-icon {
     width: 42px;
@@ -140,23 +140,16 @@ a {
     border-radius: 13px;
 
     background: var(--primary);
+    color: var(--dark);
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;
+    font-size: 25px;
+    font-weight: 900;
 
     flex-shrink: 0;
-}
-
-.logo-icon img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    display: block;
 }
 
 .logo-area h1 {
@@ -173,7 +166,6 @@ a {
     font-size: 10px;
     color: #94a3b8;
 }
-
 
 /* =========================================================
    MENU
@@ -217,18 +209,14 @@ a {
     color: var(--dark);
 }
 
-
 /* =========================================================
    SIDEBAR INFERIOR
 ========================================================= */
 
 .sidebar-bottom {
     margin-top: auto;
-
     padding: 16px;
-
     background: var(--dark-2);
-
     border-radius: 16px;
 }
 
@@ -246,11 +234,9 @@ a {
 .sidebar-bottom small {
     display: block;
     margin-top: 4px;
-
     color: var(--primary);
     font-size: 11px;
 }
-
 
 /* =========================================================
    MAIN
@@ -259,10 +245,8 @@ a {
 .main {
     width: calc(100% - 260px);
     margin-left: 260px;
-
     min-height: 100vh;
 }
-
 
 /* =========================================================
    HEADER
@@ -292,6 +276,10 @@ a {
     font-weight: 800;
 }
 
+/* =========================================================
+   AVATAR
+========================================================= */
+
 .profile-avatar {
     width: 42px;
     height: 42px;
@@ -315,7 +303,6 @@ a {
     object-fit: cover;
 }
 
-
 /* =========================================================
    CONTENT
 ========================================================= */
@@ -323,10 +310,8 @@ a {
 .content {
     max-width: 1200px;
     margin: auto;
-
     padding: 30px;
 }
-
 
 /* =========================================================
    HERO
@@ -371,23 +356,19 @@ a {
 
 .hero-info h3 {
     margin-top: 15px;
-
     font-size: 36px;
     font-weight: 900;
 }
 
 .hero-info > p {
     margin-top: 3px;
-
     color: #94a3b8;
-
     font-size: 13px;
 }
 
 .progress-area {
     width: 400px;
     max-width: 100%;
-
     margin-top: 25px;
 }
 
@@ -453,7 +434,6 @@ a {
 
     font-size: 12px;
 }
-
 
 /* =========================================================
    CARDS
@@ -539,7 +519,6 @@ a {
     line-height: 1.7;
 }
 
-
 /* =========================================================
    BOTÕES
 ========================================================= */
@@ -547,7 +526,6 @@ a {
 .buttons {
     display: flex;
     gap: 10px;
-
     margin-top: 22px;
 }
 
@@ -582,7 +560,6 @@ a {
     background: #e2e8f0;
 }
 
-
 /* =========================================================
    REUNIÃO
 ========================================================= */
@@ -611,7 +588,6 @@ a {
     margin-top: 22px;
     font-size: 11px;
 }
-
 
 /* =========================================================
    RANKING
@@ -730,7 +706,6 @@ a {
     font-weight: 800;
 }
 
-
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -759,7 +734,6 @@ footer small {
     color: #64748b;
 }
 
-
 /* =========================================================
    MENU MOBILE
 ========================================================= */
@@ -768,9 +742,8 @@ footer small {
     display: none;
 }
 
-
 /* =========================================================
-   LOGIN / CADASTRO
+   LOGIN
 ========================================================= */
 
 .login-page {
@@ -801,9 +774,8 @@ footer small {
     overflow-x: hidden;
 }
 
-
 /* =========================================================
-   LOGO GRANDE NO FUNDO
+   LOGO GRANDE DE FUNDO
 ========================================================= */
 
 .login-background-logo {
@@ -811,9 +783,6 @@ footer small {
 
     width: 850px;
     height: 850px;
-
-    max-width: none;
-    max-height: none;
 
     object-fit: contain;
 
@@ -830,7 +799,6 @@ footer small {
     z-index: 0;
 }
 
-
 /* =========================================================
    CONTAINER LOGIN
 ========================================================= */
@@ -843,7 +811,6 @@ footer small {
 
     z-index: 10;
 }
-
 
 /* =========================================================
    CARD LOGIN
@@ -866,9 +833,8 @@ footer small {
     backdrop-filter: blur(10px);
 }
 
-
 /* =========================================================
-   LOGO LOGIN
+   LOGO DO LOGIN
 ========================================================= */
 
 .login-logo {
@@ -881,6 +847,47 @@ footer small {
 
     margin-bottom: 30px;
 }
+
+/* Logo usando dbv.png */
+
+.login-logo-image {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.login-logo-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Caso queira simplesmente usar uma img dentro de .login-logo */
+
+.login-logo > img {
+    width: 65px;
+    height: 65px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+/* Antigo ícone */
 
 .login-logo-icon {
     width: 50px;
@@ -901,35 +908,6 @@ footer small {
     font-weight: 900;
 
     flex-shrink: 0;
-
-    overflow: hidden;
-}
-
-.login-logo-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-.login-logo-image {
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-.login-logo-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    display: block;
 }
 
 .login-logo h1 {
@@ -949,22 +927,18 @@ footer small {
     font-size: 10px;
 }
 
-
 /* =========================================================
    TÍTULO LOGIN
 ========================================================= */
 
 .login-title {
     text-align: center;
-
     margin-bottom: 28px;
 }
 
 .login-title h2 {
     font-size: 24px;
-
     font-weight: 900;
-
     letter-spacing: -0.5px;
 }
 
@@ -977,7 +951,6 @@ footer small {
 
     line-height: 1.6;
 }
-
 
 /* =========================================================
    FORMULÁRIOS
@@ -1022,15 +995,12 @@ footer small {
 .form-group input,
 .form-group select {
     height: 48px;
-
     padding: 0 14px;
 }
 
 .form-group textarea {
     min-height: 120px;
-
     padding: 14px;
-
     resize: vertical;
 }
 
@@ -1054,7 +1024,6 @@ footer small {
     opacity: 0.6;
     cursor: not-allowed;
 }
-
 
 /* =========================================================
    SENHA
@@ -1089,7 +1058,6 @@ footer small {
 .password-toggle:hover {
     background: #f1f5f9;
 }
-
 
 /* =========================================================
    OPÇÕES LOGIN
@@ -1135,7 +1103,6 @@ footer small {
     text-decoration: underline;
 }
 
-
 /* =========================================================
    BOTÃO LOGIN
 ========================================================= */
@@ -1171,7 +1138,6 @@ footer small {
     transform: none;
 }
 
-
 /* =========================================================
    CRIAR CONTA
 ========================================================= */
@@ -1204,9 +1170,8 @@ footer small {
     text-decoration: underline;
 }
 
-
 /* =========================================================
-   SUPORTE DO LOGIN
+   SUPORTE LOGIN
 ========================================================= */
 
 .login-support {
@@ -1243,7 +1208,6 @@ footer small {
     color: var(--primary-dark);
 }
 
-
 /* =========================================================
    FOOTER LOGIN
 ========================================================= */
@@ -1274,7 +1238,6 @@ footer small {
     font-weight: 700;
 }
 
-
 /* =========================================================
    SUPORTE
 ========================================================= */
@@ -1297,7 +1260,6 @@ footer small {
 
 .support-title p {
     margin: 0;
-
     color: var(--text-light);
 }
 
@@ -1343,7 +1305,6 @@ footer small {
 
 .support-card h3 {
     margin: 0 0 8px;
-
     font-size: 18px;
 }
 
@@ -1379,7 +1340,6 @@ footer small {
 
 .support-button:hover {
     background: #1e293b;
-
     transform: translateY(-1px);
 }
 
@@ -1388,7 +1348,6 @@ footer small {
     cursor: wait;
     transform: none;
 }
-
 
 /* =========================================================
    SEÇÕES SUPORTE
@@ -1411,7 +1370,6 @@ footer small {
     margin-top: 0;
     margin-bottom: 15px;
 }
-
 
 /* =========================================================
    FAQ
@@ -1473,7 +1431,6 @@ footer small {
     display: block;
 }
 
-
 /* =========================================================
    CHAMADOS
 ========================================================= */
@@ -1485,7 +1442,6 @@ footer small {
 
 .ticket-form label {
     font-weight: 700;
-
     font-size: 12px;
 }
 
@@ -1522,7 +1478,6 @@ footer small {
 
 .ticket-form textarea {
     min-height: 130px;
-
     resize: vertical;
 }
 
@@ -1590,7 +1545,6 @@ footer small {
 
 .ticket small {
     color: #888;
-
     font-size: 10px;
 }
 
@@ -1601,7 +1555,6 @@ footer small {
 
     padding: 25px;
 }
-
 
 /* =========================================================
    MODAL
@@ -1675,9 +1628,8 @@ footer small {
     color: var(--red);
 }
 
-
 /* =========================================================
-   MENSAGENS / ALERTAS
+   ALERTAS
 ========================================================= */
 
 .alert {
@@ -1706,7 +1658,6 @@ footer small {
     background: #dbeafe;
     color: #1e40af;
 }
-
 
 /* =========================================================
    TABLET
@@ -1739,7 +1690,6 @@ footer small {
         grid-template-columns: 1fr;
     }
 }
-
 
 /* =========================================================
    MOBILE
@@ -1887,8 +1837,7 @@ footer small {
         padding-bottom: 15px;
     }
 
-
-    /* LOGIN MOBILE */
+    /* LOGIN */
 
     .login-page {
         padding: 15px;
@@ -1896,12 +1845,21 @@ footer small {
 
     .login-card {
         padding: 25px 20px;
-
         border-radius: 20px;
     }
 
     .login-logo {
         margin-bottom: 28px;
+    }
+
+    .login-logo-image {
+        width: 55px;
+        height: 55px;
+    }
+
+    .login-logo > img {
+        width: 55px;
+        height: 55px;
     }
 
     .login-title h2 {
@@ -1915,12 +1873,10 @@ footer small {
     .login-background-logo {
         width: 600px;
         height: 600px;
-
         opacity: 0.08;
     }
 
-
-    /* SUPORTE MOBILE */
+    /* SUPORTE */
 
     .support-title h2 {
         font-size: 24px;
@@ -1950,11 +1906,9 @@ footer small {
 
     .modal-content {
         padding: 20px;
-
         border-radius: 16px;
     }
 }
-
 
 /* =========================================================
    CELULAR PEQUENO
@@ -1985,8 +1939,17 @@ footer small {
     .login-background-logo {
         width: 500px;
         height: 500px;
-
         opacity: 0.06;
+    }
+
+    .login-logo-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .login-logo > img {
+        width: 50px;
+        height: 50px;
     }
 }
 ```
