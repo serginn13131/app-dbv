@@ -130,6 +130,9 @@ a {
     padding: 5px 10px 35px;
 }
 
+
+/* LOGO REAL: dbv.png */
+
 .logo-icon {
     width: 42px;
     height: 42px;
@@ -137,16 +140,23 @@ a {
     border-radius: 13px;
 
     background: var(--primary);
-    color: var(--dark);
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 25px;
-    font-weight: 900;
+    overflow: hidden;
 
     flex-shrink: 0;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
 }
 
 .logo-area h1 {
@@ -891,6 +901,15 @@ footer small {
     font-weight: 900;
 
     flex-shrink: 0;
+
+    overflow: hidden;
+}
+
+.login-logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .login-logo-image {
@@ -900,6 +919,8 @@ footer small {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
 }
 
 .login-logo-image img {
@@ -907,6 +928,8 @@ footer small {
     height: 100%;
 
     object-fit: contain;
+
+    display: block;
 }
 
 .login-logo h1 {
