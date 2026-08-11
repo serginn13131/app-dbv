@@ -1,167 +1,83 @@
+```html
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Entrar | Desbrava+</title>
+    <title>Entrar | Desbrava+</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
-```
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
 </head>
 
 <body class="login-page">
 
-```
-<!-- =====================================================
-     LOGO DE FUNDO
-====================================================== -->
+    <!-- =====================================================
+         LOGO DE FUNDO
+    ====================================================== -->
 
-<img
-    src="dbv.png"
-    class="login-background-logo"
-    alt=""
-    aria-hidden="true"
->
-
-
-<!-- =====================================================
-     CONTAINER
-====================================================== -->
-
-<main class="login-container">
+    <img
+        src="imagens/dbv.png"
+        class="login-background-logo"
+        alt=""
+        aria-hidden="true"
+    >
 
 
-    <!-- =================================================
-         CARD
-    ================================================== -->
+    <!-- =====================================================
+         CONTAINER
+    ====================================================== -->
 
-    <section class="login-card">
-
-
-        <!-- LOGO -->
-
-        <div class="login-logo">
-
-            <div class="login-logo-image">
-
-                <img
-                    src="dbv.png"
-                    alt="Desbrava+"
-                >
-
-            </div>
-
-
-            <div>
-
-                <h1>
-                    DESBRAVA<span>+</span>
-                </h1>
-
-                <p>
-                    Clube de Desbravadores
-                </p>
-
-            </div>
-
-        </div>
-
+    <main class="login-container">
 
         <!-- =================================================
-             TÍTULO
+             CARD
         ================================================== -->
 
-        <div class="login-title">
+        <section class="login-card">
 
-            <h2>
-                Bem-vindo de volta! 👋
-            </h2>
+            <!-- LOGO -->
 
-            <p>
-                Entre na sua conta para continuar
-                sua jornada no clube.
-            </p>
+            <div class="login-logo">
 
-        </div>
+                <div class="login-logo-image">
 
-
-        <!-- =================================================
-             FORMULÁRIO
-        ================================================== -->
-
-        <form id="loginForm">
-
-
-            <!-- EMAIL -->
-
-            <div class="form-group">
-
-                <label for="email">
-                    E-mail
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="seu@email.com"
-                    autocomplete="email"
-                    required
-                >
-
-            </div>
-
-
-            <!-- SENHA -->
-
-            <div class="form-group">
-
-                <label for="password">
-                    Senha
-                </label>
-
-
-                <div class="password-field">
-
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Digite sua senha"
-                        autocomplete="current-password"
-                        required
+                    <img
+                        src="imagens/dbv.png"
+                        alt="Desbrava+"
                     >
 
+                </div>
 
-                    <button
-                        type="button"
-                        class="password-toggle"
-                        id="togglePassword"
-                        aria-label="Mostrar senha"
-                    >
-                        👁️
-                    </button>
+                <div>
+
+                    <h1>
+                        DESBRAVA<span>+</span>
+                    </h1>
+
+                    <p>
+                        Clube de Desbravadores
+                    </p>
 
                 </div>
 
@@ -169,752 +85,747 @@
 
 
             <!-- =================================================
-                 OPÇÕES
+                 TÍTULO
             ================================================== -->
 
-            <div class="login-options">
+            <div class="login-title">
 
+                <h2>
+                    Bem-vindo de volta! 👋
+                </h2>
 
-                <label class="remember">
-
-                    <input
-                        type="checkbox"
-                        id="rememberMe"
-                    >
-
-                    <span>
-                        Lembrar de mim
-                    </span>
-
-                </label>
-
-
-                <a href="#" id="forgotPassword">
-                    Esqueci minha senha
-                </a>
-
+                <p>
+                    Entre na sua conta para continuar
+                    sua jornada no clube.
+                </p>
 
             </div>
 
 
             <!-- =================================================
-                 MENSAGEM
+                 FORMULÁRIO
             ================================================== -->
 
-            <div
-                id="loginMessage"
-                class="login-message"
-                style="display:none;"
-            ></div>
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seu@email.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SENHA -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <div class="password-field">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                            aria-label="Mostrar senha"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     OPÇÕES
+                ================================================== -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>
+                            Lembrar de mim
+                        </span>
+
+                    </label>
+
+                    <a href="#" id="forgotPassword">
+                        Esqueci minha senha
+                    </a>
+
+                </div>
+
+
+                <!-- =================================================
+                     MENSAGEM
+                ================================================== -->
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                    style="display: none;"
+                ></div>
+
+
+                <!-- =================================================
+                     BOTÃO
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+                    Entrar na minha conta
+                </button>
+
+            </form>
 
 
             <!-- =================================================
-                 BOTÃO
+                 CADASTRO
             ================================================== -->
 
-            <button
-                type="submit"
-                class="login-button"
-                id="loginButton"
-            >
-                Entrar na minha conta
-            </button>
+            <div class="create-account">
+
+                <span>
+                    Ainda não possui uma conta?
+                </span>
+
+                <a href="cadastro.html">
+                    Criar conta
+                </a>
+
+            </div>
 
 
-        </form>
+            <!-- =================================================
+                 SUPORTE
+            ================================================== -->
+
+            <div class="login-support">
+
+                <span>
+                    Precisa de ajuda?
+                </span>
+
+                <a href="suporte.html">
+                    Falar com o suporte
+                </a>
+
+            </div>
+
+        </section>
 
 
         <!-- =================================================
-             CADASTRO
+             RODAPÉ
         ================================================== -->
 
-        <div class="create-account">
+        <footer class="login-footer">
 
             <span>
-                Ainda não possui uma conta?
+                DESBRAVA+ • Crescer, servir e competir juntos.
             </span>
 
-            <a href="cadastro.html">
-                Criar conta
-            </a>
+            <small>
+                Desenvolvido por Sérgio
+            </small>
 
-        </div>
+        </footer>
 
-
-        <!-- =================================================
-             SUPORTE
-        ================================================== -->
-
-        <div class="login-support">
-
-            <span>
-                Precisa de ajuda?
-            </span>
-
-            <a href="suporte.html">
-                Falar com o suporte
-            </a>
-
-        </div>
+    </main>
 
 
-    </section>
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
 
 
-    <!-- =================================================
-         RODAPÉ
-    ================================================== -->
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
 
-    <footer class="login-footer">
+    <script>
 
-        <span>
-            DESBRAVA+ • Crescer, servir e competir juntos.
-        </span>
-
-        <small>
-            Desenvolvido por Sérgio
-        </small>
-
-    </footer>
+        "use strict";
 
 
-</main>
+        /* =====================================================
+           ELEMENTOS
+        ===================================================== */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const emailInput =
+            document.getElementById("email");
+
+        const passwordInput =
+            document.getElementById("password");
+
+        const loginButton =
+            document.getElementById("loginButton");
+
+        const loginMessage =
+            document.getElementById("loginMessage");
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+        const forgotPassword =
+            document.getElementById("forgotPassword");
 
 
-<!-- =====================================================
-     SUPABASE
-====================================================== -->
+        /* =====================================================
+           MENSAGEM
+        ===================================================== */
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        function mostrarMensagem(mensagem, tipo) {
 
-<script src="supabase.js"></script>
+            loginMessage.style.display = "block";
 
+            loginMessage.textContent = mensagem;
 
-<!-- =====================================================
-     LOGIN
-====================================================== -->
+            if (tipo === "success") {
 
-<script>
-
-    "use strict";
-
-
-    /* =====================================================
-       ELEMENTOS
-    ====================================================== */
-
-    const loginForm =
-        document.getElementById("loginForm");
-
-    const emailInput =
-        document.getElementById("email");
-
-    const passwordInput =
-        document.getElementById("password");
-
-    const loginButton =
-        document.getElementById("loginButton");
-
-    const loginMessage =
-        document.getElementById("loginMessage");
-
-    const togglePassword =
-        document.getElementById("togglePassword");
-
-    const forgotPassword =
-        document.getElementById("forgotPassword");
-
-
-    /* =====================================================
-       VERIFICAR SUPABASE
-    ====================================================== */
-
-    if (
-        !window.supabaseClient ||
-        typeof window.supabaseClient.auth !== "object"
-    ) {
-
-        mostrarMensagem(
-            "Erro ao conectar com o sistema. Verifique o arquivo supabase.js.",
-            "error"
-        );
-
-        loginButton.disabled = true;
-
-    }
-
-
-    /* =====================================================
-       MOSTRAR / OCULTAR SENHA
-    ====================================================== */
-
-    togglePassword.addEventListener(
-        "click",
-        function () {
-
-            const mostrando =
-                passwordInput.type === "text";
-
-
-            if (mostrando) {
-
-                passwordInput.type =
-                    "password";
-
-                togglePassword.textContent =
-                    "👁️";
-
-                togglePassword.setAttribute(
-                    "aria-label",
-                    "Mostrar senha"
-                );
+                loginMessage.style.background = "#dcfce7";
+                loginMessage.style.color = "#166534";
+                loginMessage.style.border = "1px solid #bbf7d0";
 
             } else {
 
-                passwordInput.type =
-                    "text";
-
-                togglePassword.textContent =
-                    "🙈";
-
-                togglePassword.setAttribute(
-                    "aria-label",
-                    "Ocultar senha"
-                );
+                loginMessage.style.background = "#fee2e2";
+                loginMessage.style.color = "#991b1b";
+                loginMessage.style.border = "1px solid #fecaca";
 
             }
 
-        }
-    );
-
-
-    /* =====================================================
-       MENSAGEM
-    ====================================================== */
-
-    function mostrarMensagem(
-        mensagem,
-        tipo
-    ) {
-
-        loginMessage.style.display =
-            "block";
-
-        loginMessage.textContent =
-            mensagem;
-
-
-        if (tipo === "success") {
-
-            loginMessage.style.background =
-                "#dcfce7";
-
-            loginMessage.style.color =
-                "#166534";
-
-            loginMessage.style.border =
-                "1px solid #bbf7d0";
-
-        } else {
-
-            loginMessage.style.background =
-                "#fee2e2";
-
-            loginMessage.style.color =
-                "#991b1b";
-
-            loginMessage.style.border =
-                "1px solid #fecaca";
-
+            loginMessage.style.padding = "12px";
+            loginMessage.style.borderRadius = "10px";
+            loginMessage.style.marginBottom = "15px";
+            loginMessage.style.fontSize = "11px";
+            loginMessage.style.fontWeight = "600";
+            loginMessage.style.lineHeight = "1.5";
         }
 
-        loginMessage.style.padding =
-            "12px";
 
-        loginMessage.style.borderRadius =
-            "10px";
+        /* =====================================================
+           VERIFICAR SUPABASE
+        ===================================================== */
 
-        loginMessage.style.marginBottom =
-            "15px";
+        if (
+            !window.supabaseClient ||
+            typeof window.supabaseClient.auth !== "object"
+        ) {
 
-        loginMessage.style.fontSize =
-            "11px";
+            mostrarMensagem(
+                "Erro ao conectar com o sistema. Verifique o arquivo supabase.js.",
+                "error"
+            );
 
-        loginMessage.style.fontWeight =
-            "600";
-
-        loginMessage.style.lineHeight =
-            "1.5";
-
-    }
+            loginButton.disabled = true;
+        }
 
 
-    /* =====================================================
-       LOGIN
-    ====================================================== */
+        /* =====================================================
+           MOSTRAR / OCULTAR SENHA
+        ===================================================== */
 
-    loginForm.addEventListener(
-        "submit",
-        async function (event) {
+        togglePassword.addEventListener(
+            "click",
+            function () {
 
-            event.preventDefault();
-
-
-            const email =
-                emailInput.value.trim();
-
-            const password =
-                passwordInput.value;
+                const mostrando =
+                    passwordInput.type === "text";
 
 
-            if (!email || !password) {
+                if (mostrando) {
 
-                mostrarMensagem(
-                    "Preencha seu e-mail e sua senha.",
-                    "error"
-                );
+                    passwordInput.type = "password";
 
-                return;
+                    togglePassword.textContent = "👁️";
+
+                    togglePassword.setAttribute(
+                        "aria-label",
+                        "Mostrar senha"
+                    );
+
+                } else {
+
+                    passwordInput.type = "text";
+
+                    togglePassword.textContent = "🙈";
+
+                    togglePassword.setAttribute(
+                        "aria-label",
+                        "Ocultar senha"
+                    );
+
+                }
 
             }
+        );
 
 
-            loginButton.disabled =
-                true;
+        /* =====================================================
+           LOGIN
+        ===================================================== */
 
-            loginButton.textContent =
-                "Entrando...";
+        loginForm.addEventListener(
+            "submit",
+            async function (event) {
 
-
-            loginMessage.style.display =
-                "none";
-
-
-            try {
+                event.preventDefault();
 
 
-                /* =========================================
-                   AUTENTICAÇÃO SUPABASE
-                ========================================== */
+                const email =
+                    emailInput.value.trim();
 
-                const {
-                    data,
-                    error
-                } =
-                    await window.supabaseClient.auth.signInWithPassword({
-
-                        email:
-                            email,
-
-                        password:
-                            password
-
-                    });
+                const password =
+                    passwordInput.value;
 
 
-                if (error) {
+                if (!email || !password) {
 
-                    console.error(
-                        "Erro no login:",
+                    mostrarMensagem(
+                        "Preencha seu e-mail e sua senha.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                loginButton.disabled = true;
+                loginButton.textContent = "Entrando...";
+
+                loginMessage.style.display = "none";
+
+
+                try {
+
+                    /* =========================================
+                       AUTENTICAÇÃO SUPABASE
+                    ========================================== */
+
+                    const {
+                        data,
                         error
-                    );
+                    } =
+                        await window.supabaseClient.auth.signInWithPassword({
 
+                            email: email,
+
+                            password: password
+
+                        });
+
+
+                    if (error) {
+
+                        console.error(
+                            "Erro no login:",
+                            error
+                        );
+
+                        mostrarMensagem(
+                            interpretarErroLogin(error),
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    if (!data?.user) {
+
+                        mostrarMensagem(
+                            "Não foi possível identificar sua conta.",
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    /* =========================================
+                       BUSCAR PERFIL
+                    ========================================== */
+
+                    const usuarioAuthId =
+                        data.user.id;
+
+
+                    const {
+                        data: perfil,
+                        error: perfilError
+                    } =
+                        await window.supabaseClient
+
+                            .from("usuarios")
+
+                            .select(
+                                "id,nome,email,nivel_acesso,status"
+                            )
+
+                            .eq(
+                                "auth_id",
+                                usuarioAuthId
+                            )
+
+                            .maybeSingle();
+
+
+                    if (perfilError) {
+
+                        console.error(
+                            "Erro ao buscar perfil:",
+                            perfilError
+                        );
+
+                        await window.supabaseClient.auth.signOut();
+
+                        mostrarMensagem(
+                            "Não foi possível carregar seu cadastro. Tente novamente.",
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    /* =========================================
+                       PERFIL NÃO ENCONTRADO
+                    ========================================== */
+
+                    if (!perfil) {
+
+                        await window.supabaseClient.auth.signOut();
+
+                        mostrarMensagem(
+                            "Sua conta foi criada, mas seu cadastro ainda não está vinculado ao clube. Entre em contato com o suporte.",
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    /* =========================================
+                       STATUS
+                    ========================================== */
+
+                    const status =
+                        String(
+                            perfil.status || ""
+                        )
+                        .toLowerCase()
+                        .trim();
+
+
+                    /* =========================================
+                       PENDENTE
+                    ========================================== */
+
+                    if (
+                        status === "pendente" ||
+                        status === "pending"
+                    ) {
+
+                        await window.supabaseClient.auth.signOut();
+
+                        mostrarMensagem(
+                            "Seu cadastro está aguardando aprovação do ADM. Assim que sua conta for aprovada, você poderá entrar.",
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    /* =========================================
+                       BLOQUEADO
+                    ========================================== */
+
+                    if (
+                        status === "bloqueado" ||
+                        status === "bloqueada" ||
+                        status === "inativo" ||
+                        status === "inativa"
+                    ) {
+
+                        await window.supabaseClient.auth.signOut();
+
+                        mostrarMensagem(
+                            "Sua conta está bloqueada ou inativa. Entre em contato com a administração.",
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    /* =========================================
+                       APROVADO
+                    ========================================== */
+
+                    if (
+                        status === "aprovado" ||
+                        status === "aprovada" ||
+                        status === "ativo" ||
+                        status === "ativa"
+                    ) {
+
+                        localStorage.setItem(
+                            "desbrava_usuario_nome",
+                            perfil.nome || ""
+                        );
+
+
+                        localStorage.setItem(
+                            "desbrava_usuario_email",
+                            perfil.email || email
+                        );
+
+
+                        localStorage.setItem(
+                            "desbrava_usuario_cargo",
+                            perfil.nivel_acesso || ""
+                        );
+
+
+                        mostrarMensagem(
+                            "Login realizado com sucesso! Entrando...",
+                            "success"
+                        );
+
+
+                        setTimeout(
+                            function () {
+
+                                window.location.href =
+                                    "index.html";
+
+                            },
+                            500
+                        );
+
+                        return;
+                    }
+
+
+                    /* =========================================
+                       STATUS DESCONHECIDO
+                    ========================================== */
+
+                    await window.supabaseClient.auth.signOut();
 
                     mostrarMensagem(
-                        interpretarErroLogin(error),
+                        "Sua conta ainda não está liberada para acesso. Entre em contato com a administração.",
                         "error"
                     );
 
-                    return;
 
-                }
-
-
-                if (!data?.user) {
-
-                    mostrarMensagem(
-                        "Não foi possível identificar sua conta.",
-                        "error"
-                    );
-
-                    return;
-
-                }
-
-
-                /* =========================================
-                   BUSCAR PERFIL DO USUÁRIO
-                ========================================== */
-
-                const usuarioAuthId =
-                    data.user.id;
-
-
-                const {
-                    data: perfil,
-                    error: perfilError
-                } =
-                    await window.supabaseClient
-
-                        .from("usuarios")
-
-                        .select(
-                            "id,nome,email,nivel_acesso,status"
-                        )
-
-                        .eq(
-                            "auth_id",
-                            usuarioAuthId
-                        )
-
-                        .maybeSingle();
-
-
-                if (perfilError) {
+                } catch (erro) {
 
                     console.error(
-                        "Erro ao buscar perfil:",
-                        perfilError
+                        "Erro inesperado:",
+                        erro
                     );
 
-
-                    await window.supabaseClient.auth.signOut();
-
-
                     mostrarMensagem(
-                        "Não foi possível carregar seu cadastro. Tente novamente.",
+                        "Ocorreu um erro inesperado. Tente novamente.",
                         "error"
                     );
 
-                    return;
+                } finally {
+
+                    loginButton.disabled = false;
+
+                    loginButton.textContent =
+                        "Entrar na minha conta";
 
                 }
 
+            }
+        );
 
-                /* =========================================
-                   PERFIL NÃO ENCONTRADO
-                ========================================== */
 
-                if (!perfil) {
+        /* =====================================================
+           ESQUECI MINHA SENHA
+        ===================================================== */
 
-                    await window.supabaseClient.auth.signOut();
+        forgotPassword.addEventListener(
+            "click",
+            async function (event) {
 
+                event.preventDefault();
+
+
+                const email =
+                    emailInput.value.trim();
+
+
+                if (!email) {
 
                     mostrarMensagem(
-                        "Sua conta foi criada, mas seu cadastro ainda não está vinculado ao clube. Entre em contato com o suporte.",
+                        "Digite seu e-mail primeiro para recuperar sua senha.",
                         "error"
                     );
 
-                    return;
+                    emailInput.focus();
 
+                    return;
                 }
 
 
-                /* =========================================
-                   VERIFICAR STATUS
-                ========================================== */
+                try {
 
-                const status =
-                    String(
-                        perfil.status || ""
-                    )
-                    .toLowerCase()
-                    .trim();
-
-
-                /* -----------------------------------------
-                   PENDENTE
-                ------------------------------------------ */
-
-                if (
-                    status === "pendente" ||
-                    status === "pending"
-                ) {
-
-                    await window.supabaseClient.auth.signOut();
+                    const {
+                        error
+                    } =
+                        await window.supabaseClient.auth
+                            .resetPasswordForEmail(
+                                email,
+                                {
+                                    redirectTo:
+                                        window.location.origin +
+                                        "/redefinir-senha.html"
+                                }
+                            );
 
 
-                    mostrarMensagem(
-                        "Seu cadastro está aguardando aprovação do ADM. Assim que sua conta for aprovada, você poderá entrar.",
-                        "error"
-                    );
+                    if (error) {
 
-                    return;
+                        console.error(error);
 
-                }
+                        mostrarMensagem(
+                            "Não foi possível enviar o e-mail de recuperação.",
+                            "error"
+                        );
 
-
-                /* -----------------------------------------
-                   BLOQUEADO
-                ------------------------------------------ */
-
-                if (
-                    status === "bloqueado" ||
-                    status === "bloqueada" ||
-                    status === "inativo" ||
-                    status === "inativa"
-                ) {
-
-                    await window.supabaseClient.auth.signOut();
+                        return;
+                    }
 
 
                     mostrarMensagem(
-                        "Sua conta está bloqueada ou inativa. Entre em contato com a administração.",
-                        "error"
-                    );
-
-                    return;
-
-                }
-
-
-                /* -----------------------------------------
-                   APROVADO
-                ------------------------------------------ */
-
-                if (
-                    status === "aprovado" ||
-                    status === "aprovada" ||
-                    status === "ativo" ||
-                    status === "ativa"
-                ) {
-
-                    /* Guardar nome localmente */
-
-                    localStorage.setItem(
-                        "desbrava_usuario_nome",
-                        perfil.nome || ""
-                    );
-
-
-                    localStorage.setItem(
-                        "desbrava_usuario_email",
-                        perfil.email || email
-                    );
-
-
-                    localStorage.setItem(
-                        "desbrava_usuario_cargo",
-                        perfil.nivel_acesso || ""
-                    );
-
-
-                    /* =====================================
-                       ENTRADA NO SISTEMA
-                    ====================================== */
-
-                    mostrarMensagem(
-                        "Login realizado com sucesso! Entrando...",
+                        "Enviamos um link para redefinir sua senha. Verifique seu e-mail.",
                         "success"
                     );
 
 
-                    setTimeout(
-                        function () {
+                } catch (erro) {
 
-                            window.location.href =
-                                "index.html";
-
-                        },
-                        500
-                    );
-
-
-                    return;
-
-                }
-
-
-                /* -----------------------------------------
-                   STATUS DESCONHECIDO
-                ------------------------------------------ */
-
-                await window.supabaseClient.auth.signOut();
-
-
-                mostrarMensagem(
-                    "Sua conta ainda não está liberada para acesso. Entre em contato com a administração.",
-                    "error"
-                );
-
-
-            } catch (erro) {
-
-                console.error(
-                    "Erro inesperado:",
-                    erro
-                );
-
-
-                mostrarMensagem(
-                    "Ocorreu um erro inesperado. Tente novamente.",
-                    "error"
-                );
-
-
-            } finally {
-
-                loginButton.disabled =
-                    false;
-
-                loginButton.textContent =
-                    "Entrar na minha conta";
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       ESQUECI MINHA SENHA
-    ====================================================== */
-
-    forgotPassword.addEventListener(
-        "click",
-        async function (event) {
-
-            event.preventDefault();
-
-
-            const email =
-                emailInput.value.trim();
-
-
-            if (!email) {
-
-                mostrarMensagem(
-                    "Digite seu e-mail primeiro para recuperar sua senha.",
-                    "error"
-                );
-
-                emailInput.focus();
-
-                return;
-
-            }
-
-
-            try {
-
-                const {
-                    error
-                } =
-                    await window.supabaseClient.auth
-                        .resetPasswordForEmail(
-                            email,
-                            {
-                                redirectTo:
-                                    window.location.origin +
-                                    "/redefinir-senha.html"
-                            }
-                        );
-
-
-                if (error) {
-
-                    console.error(error);
-
+                    console.error(erro);
 
                     mostrarMensagem(
-                        "Não foi possível enviar o e-mail de recuperação.",
+                        "Ocorreu um erro ao solicitar a recuperação da senha.",
                         "error"
                     );
 
-                    return;
-
                 }
 
-
-                mostrarMensagem(
-                    "Enviamos um link para redefinir sua senha. Verifique seu e-mail.",
-                    "success"
-                );
-
-
-            } catch (erro) {
-
-                console.error(erro);
-
-
-                mostrarMensagem(
-                    "Ocorreu um erro ao solicitar a recuperação da senha.",
-                    "error"
-                );
-
             }
-
-        }
-    );
-
-
-    /* =====================================================
-       TRADUZIR ERROS
-    ====================================================== */
-
-    function interpretarErroLogin(error) {
-
-        const mensagem =
-            String(
-                error?.message || ""
-            )
-            .toLowerCase();
-
-
-        if (
-            mensagem.includes(
-                "invalid login credentials"
-            )
-        ) {
-
-            return "E-mail ou senha incorretos.";
-
-        }
-
-
-        if (
-            mensagem.includes(
-                "email not confirmed"
-            )
-        ) {
-
-            return "Seu e-mail ainda não foi confirmado.";
-
-        }
-
-
-        if (
-            mensagem.includes(
-                "too many requests"
-            )
-        ) {
-
-            return "Muitas tentativas. Aguarde alguns minutos e tente novamente.";
-
-        }
-
-
-        if (
-            mensagem.includes(
-                "rate limit"
-            )
-        ) {
-
-            return "Muitas tentativas de acesso. Aguarde um pouco antes de tentar novamente.";
-
-        }
-
-
-        return (
-            error?.message ||
-            "Não foi possível entrar na sua conta."
         );
 
-    }
 
-</script>
-```
+        /* =====================================================
+           TRADUZIR ERROS
+        ===================================================== */
+
+        function interpretarErroLogin(error) {
+
+            const mensagem =
+                String(
+                    error?.message || ""
+                )
+                .toLowerCase();
+
+
+            if (
+                mensagem.includes(
+                    "invalid login credentials"
+                )
+            ) {
+
+                return "E-mail ou senha incorretos.";
+            }
+
+
+            if (
+                mensagem.includes(
+                    "email not confirmed"
+                )
+            ) {
+
+                return "Seu e-mail ainda não foi confirmado.";
+            }
+
+
+            if (
+                mensagem.includes(
+                    "too many requests"
+                )
+            ) {
+
+                return "Muitas tentativas. Aguarde alguns minutos e tente novamente.";
+            }
+
+
+            if (
+                mensagem.includes(
+                    "rate limit"
+                )
+            ) {
+
+                return "Muitas tentativas de acesso. Aguarde um pouco antes de tentar novamente.";
+            }
+
+
+            return (
+                error?.message ||
+                "Não foi possível entrar na sua conta."
+            );
+
+        }
+
+    </script>
 
 </body>
 
 </html>
+```
