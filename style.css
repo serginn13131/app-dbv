@@ -1,1737 +1,918 @@
-```css
-/* =========================================================
-   DESBRAVA+
-   STYLE.CSS COMPLETO
-========================================================= */
+<!DOCTYPE html>
 
+<html lang="pt-BR">
 
-/* =========================================================
-   RESET
-========================================================= */
+<head>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-:root {
-    --primary: #f5b700;
-    --primary-dark: #d99f00;
-
-    --dark: #0f172a;
-
-    --background: #f1f5f9;
-
-    --white: #ffffff;
-
-    --text: #0f172a;
-
-    --text-light: #64748b;
-
-    --border: #e2e8f0;
-
-    --orange: #f97316;
-
-    --radius: 20px;
-}
-
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-body {
-    font-family: "Inter", sans-serif;
-
-    background: var(--background);
-
-    color: var(--text);
-
-    min-height: 100vh;
-}
-
-
-button,
-input,
-select,
-textarea {
-    font-family: inherit;
-}
-
-
-button {
-    border: none;
-    cursor: pointer;
-}
-
-
-/* =========================================================
-   APP
-========================================================= */
-
-.app {
-    min-height: 100vh;
-
-    display: flex;
-}
-
-
-/* =========================================================
-   SIDEBAR
-========================================================= */
-
-.sidebar {
-    width: 260px;
-    height: 100vh;
-
-    background: var(--dark);
-    color: white;
-
-    padding: 25px 18px;
-
-    display: flex;
-    flex-direction: column;
-
-    position: fixed;
-
-    left: 0;
-    top: 0;
-    bottom: 0;
-
-    z-index: 100;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-
-/* Barra de rolagem */
-
-.sidebar::-webkit-scrollbar {
-    width: 5px;
-}
-
-.sidebar::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-    background: #334155;
-    border-radius: 10px;
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover {
-    background: #475569;
-}
-
-
-/* =========================================================
-   LOGO SIDEBAR
-========================================================= */
-
-.logo-area {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 5px 10px 35px;
-}
-
-
-.logo-icon {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 13px;
-
-    background: var(--primary);
-
-    color: var(--dark);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 25px;
-
-    font-weight: 900;
-}
-
-
-.logo-area h1 {
-    font-size: 19px;
-
-    font-weight: 900;
-}
-
-
-.logo-area h1 span {
-    color: var(--primary);
-}
-
-
-.logo-area p {
-    margin-top: 3px;
-
-    font-size: 10px;
-
-    color: #94a3b8;
-}
-
-
-/* =========================================================
-   MENU
-========================================================= */
-
-.menu {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 6px;
-}
-
-
-.menu-item {
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    padding: 13px 14px;
-
-    border-radius: 13px;
-
-    background: transparent;
-
-    color: #cbd5e1;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    text-align: left;
-
-    transition: 0.2s;
-}
-
-
-.menu-item:hover {
-    background: #1e293b;
-
-    color: white;
-}
-
-
-.menu-item.active {
-    background: var(--primary);
-
-    color: var(--dark);
-}
-
-
-/* =========================================================
-   SIDEBAR BOTTOM
-========================================================= */
-
-.sidebar-bottom {
-    margin-top: auto;
-
-    padding: 16px;
-
-    background: #172033;
-
-    border-radius: 16px;
-}
-
-
-.sidebar-bottom p {
-    color: #94a3b8;
-
-    font-size: 11px;
-}
-
-
-.sidebar-bottom strong {
-    display: block;
-
-    margin-top: 5px;
-
-    font-size: 16px;
-}
-
-
-.sidebar-bottom small {
-    display: block;
-
-    margin-top: 4px;
-
-    color: var(--primary);
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-.main {
-    width: calc(100% - 260px);
-
-    margin-left: 260px;
-
-    min-height: 100vh;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.header {
-    height: 78px;
-
-    background: white;
-
-    border-bottom: 1px solid var(--border);
-
-    padding: 0 35px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-}
-
-
-.date {
-    color: var(--text-light);
-
-    font-size: 11px;
-
-    margin-bottom: 3px;
-}
-
-
-.header h2 {
-    font-size: 19px;
-
-    font-weight: 800;
-}
-
-
-.profile-avatar {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    background: #fef3c7;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 20px;
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.content {
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 30px;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero-card {
-    min-height: 250px;
-
-    padding: 35px;
-
-    border-radius: 25px;
-
-    background: var(--dark);
-
-    color: white;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 30px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 15px 35px
-        rgba(15, 23, 42, 0.12);
-}
-
-
-.unit-badge {
-    display: inline-flex;
-
-    padding: 7px 11px;
-
-    border-radius: 50px;
-
-    background:
-        rgba(255, 255, 255, 0.08);
-
-    color: #fcd34d;
-
-    font-size: 10px;
-
-    font-weight: 800;
-}
-
-
-.hero-info h3 {
-    margin-top: 15px;
-
-    font-size: 36px;
-
-    font-weight: 900;
-}
-
-
-.hero-info > p {
-    margin-top: 3px;
-
-    color: #94a3b8;
-
-    font-size: 13px;
-}
-
-
-.progress-area {
-    width: 400px;
-
-    max-width: 100%;
-
-    margin-top: 25px;
-}
-
-
-.progress-label {
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-bottom: 7px;
-
-    color: #cbd5e1;
-
-    font-size: 10px;
-
-    font-weight: 600;
-}
-
-
-.progress-bar {
-    width: 100%;
-
-    height: 9px;
-
-    background:
-        rgba(255, 255, 255, 0.1);
-
-    border-radius: 50px;
-
-    overflow: hidden;
-}
-
-
-.progress-fill {
-    width: 80%;
-
-    height: 100%;
-
-    background: var(--primary);
-
-    border-radius: 50px;
-}
-
-
-.progress-area small {
-    display: block;
-
-    margin-top: 7px;
-
-    color: #64748b;
-
-    font-size: 9px;
-}
-
-
-.hero-trophy {
-    min-width: 170px;
-
-    text-align: center;
-}
-
-
-.trophy {
-    font-size: 80px;
-}
-
-
-.hero-trophy strong {
-    display: block;
-
-    margin-top: 8px;
-
-    color: #fcd34d;
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   CARDS
-========================================================= */
-
-.main-grid {
-    display: grid;
-
-    grid-template-columns: 2fr 1fr;
-
-    gap: 20px;
-
-    margin-top: 20px;
-}
-
-
-.card {
-    background: white;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    padding: 25px;
-
-    box-shadow:
-        0 5px 18px
-        rgba(15, 23, 42, 0.04);
-}
-
-
-.card-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-start;
-
-    gap: 15px;
-}
-
-
-.section-label {
-    display: block;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-
-    color: #475569;
-}
-
-
-.section-label.orange {
-    color: var(--orange);
-}
-
-
-.card h3 {
-    margin-top: 6px;
-
-    font-size: 21px;
-
-    font-weight: 900;
-}
-
-
-.points {
-    padding: 7px 10px;
-
-    border-radius: 50px;
-
-    background: #fff7ed;
-
-    color: var(--orange);
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    white-space: nowrap;
-}
-
-
-.description {
-    max-width: 650px;
-
-    margin-top: 15px;
-
-    color: var(--text-light);
-
-    font-size: 12px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.buttons {
-    display: flex;
-
-    gap: 10px;
-
-    margin-top: 22px;
-}
-
-
-.primary-button,
-.secondary-button {
-    padding: 11px 15px;
-
-    border-radius: 11px;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    transition: 0.2s;
-}
-
-
-.primary-button {
-    background: var(--dark);
-
-    color: white;
-}
-
-
-.primary-button:hover {
-    background: #1e293b;
-
-    transform: translateY(-1px);
-}
-
-
-.secondary-button {
-    background: #f8fafc;
-
-    color: var(--text);
-}
-
-
-.secondary-button:hover {
-    background: #e2e8f0;
-}
-
-
-/* =========================================================
-   REUNIÃO
-========================================================= */
-
-.meeting-card {
-    background: var(--primary);
-
-    border-color: transparent;
-}
-
-
-.meeting-icon {
-    font-size: 28px;
-
-    margin-bottom: 25px;
-}
-
-
-.meeting-card h3 {
-    font-size: 27px;
-}
-
-
-.meeting-card p {
-    margin-top: 4px;
-
-    font-size: 12px;
-}
-
-
-.meeting-card strong {
-    display: flex;
-
-    margin-top: 22px;
-
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   RANKING
-========================================================= */
-
-.ranking-card {
-    margin-top: 20px;
-}
-
-
-.ranking-header {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    margin-bottom: 20px;
-}
-
-
-.ranking-tabs {
-    display: flex;
-
-    padding: 4px;
-
-    background: #f1f5f9;
-
-    border-radius: 10px;
-}
-
-
-.tab {
-    padding: 8px 11px;
-
-    background: transparent;
-
-    color: #64748b;
-
-    border-radius: 7px;
-
-    font-size: 10px;
-
-    font-weight: 800;
-}
-
-
-.tab.active {
-    background: white;
-
-    color: var(--text);
-
-    box-shadow:
-        0 2px 5px
-        rgba(0, 0, 0, 0.05);
-}
-
-
-.ranking-item {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 14px;
-
-    margin-top: 8px;
-
-    border-radius: 14px;
-
-    background: #f8fafc;
-
-    font-size: 12px;
-}
-
-
-.ranking-item.highlight {
-    background: #fffbeb;
-
-    border: 1px solid #fde68a;
-}
-
-
-.ranking-left {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-
-.position {
-    width: 25px;
-
-    text-align: center;
-
-    font-weight: 900;
-}
-
-
-.unit-icon {
-    font-size: 22px;
-}
-
-
-.ranking-left small {
-    display: block;
-
-    margin-top: 2px;
-
-    color: #d97706;
-
-    font-size: 9px;
-
-    font-weight: 700;
-}
-
-
-.ranking-message {
-    margin-top: 14px;
-
-    padding: 13px;
-
-    border-radius: 12px;
-
-    background: var(--dark);
-
-    color: white;
-
-    text-align: center;
-
-    font-size: 11px;
-
-    font-weight: 800;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 5px;
-
-    padding: 25px 0 80px;
-
-    color: #94a3b8;
-
-    text-align: center;
-
-    font-size: 9px;
-}
-
-
-footer small {
-    font-size: 9px;
-
-    font-weight: 700;
-
-    color: #64748b;
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-.mobile-menu {
-    display: none;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .sidebar {
-        width: 220px;
-    }
-
-
-    .main {
-        width: calc(100% - 220px);
-
-        margin-left: 220px;
-    }
-
-
-    .content {
-        padding: 20px;
-    }
-
-
-    .hero-trophy {
-        display: none;
-    }
-
-
-    .main-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    body {
-        padding-bottom: 70px;
-    }
-
-
-    .sidebar {
-        display: none;
-    }
-
-
-    .main {
-        width: 100%;
-
-        margin-left: 0;
-    }
-
-
-    .header {
-        height: 70px;
-
-        padding: 0 18px;
-    }
-
-
-    .header h2 {
-        font-size: 17px;
-    }
-
-
-    .content {
-        padding: 15px;
-    }
-
-
-    .hero-card {
-        min-height: auto;
-
-        padding: 22px;
-
-        border-radius: 21px;
-    }
-
-
-    .hero-info h3 {
-        font-size: 30px;
-    }
-
-
-    .progress-area {
-        width: 100%;
-    }
-
-
-    .main-grid {
-        margin-top: 15px;
-
-        gap: 15px;
-    }
-
-
-    .card {
-        padding: 20px;
-
-        border-radius: 18px;
-    }
-
-
-    .card-header {
-        flex-direction: column;
-    }
-
-
-    .buttons {
-        flex-direction: column;
-    }
-
-
-    .primary-button,
-    .secondary-button {
-        width: 100%;
-    }
-
-
-    .ranking-card {
-        margin-top: 15px;
-    }
-
-
-    .ranking-header {
-        align-items: flex-start;
-
-        flex-direction: column;
-    }
-
-
-    .ranking-tabs {
-        width: 100%;
-    }
-
-
-    .tab {
-        flex: 1;
-    }
-
-
-    .ranking-item {
-        padding: 13px 10px;
-    }
-
-
-    .mobile-menu {
-        position: fixed;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-around;
-
-        bottom: 0;
-
-        left: 0;
-
-        right: 0;
-
-        height: 68px;
-
-        background: white;
-
-        border-top: 1px solid var(--border);
-
-        z-index: 999;
-
-        box-shadow:
-            0 -5px 20px
-            rgba(15, 23, 42, 0.08);
-    }
-
-
-    .mobile-item {
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 3px;
-
-        background: transparent;
-
-        color: #94a3b8;
-
-        font-size: 18px;
-    }
-
-
-    .mobile-item small {
-        font-size: 8px;
-
-        font-weight: 800;
-    }
-
-
-    .mobile-item.active {
-        color: var(--primary-dark);
-    }
-
-
-    footer {
-        padding-bottom: 15px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE PEQUENO
-========================================================= */
-
-@media (max-width: 400px) {
-
-    .content {
-        padding: 10px;
-    }
-
-
-    .hero-card {
-        padding: 18px;
-    }
-
-
-    .hero-info h3 {
-        font-size: 26px;
-    }
-
-
-    .unit-icon {
-        font-size: 19px;
-    }
-}
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-.login-page {
-    min-height: 100vh;
-
-    width: 100%;
-
-    background: #ffffff;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 30px 15px;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   LOGO COLORIDA NO FUNDO DO LOGIN
-========================================================= */
-
-.login-background-logo {
-    position: fixed;
-
-    width: 900px;
-
-    height: 900px;
-
-    max-width: none;
-
-    max-height: none;
-
-    object-fit: contain;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%, -50%);
-
-    /* Transparência da logo */
-
-    opacity: 0.18;
-
-    /* Mantém as cores originais */
-
-    filter: none;
-
-    pointer-events: none;
-
-    user-select: none;
-
-    z-index: 0;
-}
-
-
-/* =========================================================
-   CONTAINER LOGIN
-========================================================= */
-
-.login-container {
-    width: 100%;
-
-    max-width: 430px;
-
-    position: relative;
-
-    z-index: 10;
-}
-
-
-/* =========================================================
-   CARD LOGIN
-========================================================= */
-
-.login-card {
-    position: relative;
-
-    background:
-        rgba(255, 255, 255, 0.96);
-
-    border: 1px solid var(--border);
-
-    border-radius: 25px;
-
-    padding: 35px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(15, 23, 42, 0.10);
-
-    backdrop-filter: blur(8px);
-}
-
-
-/* =========================================================
-   LOGO LOGIN
-========================================================= */
-
-.login-logo {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    margin-bottom: 35px;
-}
-
-
-.login-logo-image {
-    width: 55px;
-
-    height: 55px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-.login-logo-image img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: contain;
-}
-
-
-.login-logo h1 {
-    font-size: 21px;
-
-    font-weight: 900;
-}
-
-
-.login-logo h1 span {
-    color: var(--primary-dark);
-}
-
-
-.login-logo p {
-    margin-top: 3px;
-
-    color: var(--text-light);
-
-    font-size: 10px;
-}
-
-
-/* =========================================================
-   TÍTULO LOGIN
-========================================================= */
-
-.login-title {
-    text-align: center;
-
-    margin-bottom: 28px;
-}
-
-
-.login-title h2 {
-    font-size: 24px;
-
-    font-weight: 900;
-
-    letter-spacing: -0.5px;
-}
-
-
-.login-title p {
-    margin-top: 8px;
-
-    color: var(--text-light);
-
-    font-size: 12px;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   FORM LOGIN
-========================================================= */
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-
-.form-group label {
-    display: block;
-
-    margin-bottom: 7px;
-
-    color: var(--text);
-
-    font-size: 11px;
-
-    font-weight: 800;
-}
-
-
-.form-group input {
-    width: 100%;
-
-    height: 48px;
-
-    padding: 0 14px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 12px;
-
-    outline: none;
-
-    background: #f8fafc;
-
-    color: var(--text);
-
-    font-size: 12px;
-
-    transition: 0.2s;
-}
-
-
-.form-group input:focus {
-    border-color: var(--primary);
-
-    background: white;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(245, 183, 0, 0.12);
-}
-
-
-.form-group input::placeholder {
-    color: #94a3b8;
-}
-
-
-/* =========================================================
-   SENHA
-========================================================= */
-
-.password-field {
-    position: relative;
-}
-
-
-.password-field input {
-    padding-right: 50px;
-}
-
-
-.password-toggle {
-    position: absolute;
-
-    right: 8px;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    width: 35px;
-
-    height: 35px;
-
-    border-radius: 9px;
-
-    background: transparent;
-
-    font-size: 15px;
-}
-
-
-.password-toggle:hover {
-    background: #f1f5f9;
-}
-
-
-/* =========================================================
-   OPÇÕES LOGIN
-========================================================= */
-
-.login-options {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    margin: 5px 0 22px;
-}
-
-
-.remember {
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    color: var(--text-light);
-
-    font-size: 10px;
-}
-
-
-.remember input {
-    accent-color: var(--primary-dark);
-}
-
-
-.login-options a {
-    color: var(--primary-dark);
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    text-decoration: none;
-}
-
-
-.login-options a:hover {
-    text-decoration: underline;
-}
-
-
-/* =========================================================
-   BOTÃO LOGIN
-========================================================= */
-
-.login-button {
-    width: 100%;
-
-    height: 50px;
-
-    border-radius: 13px;
-
-    background: var(--dark);
-
-    color: white;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    transition: 0.2s;
-}
-
-
-.login-button:hover {
-    background: #1e293b;
-
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 8px 20px
-        rgba(15, 23, 42, 0.15);
-}
-
-
-.login-button:disabled {
-    opacity: 0.65;
-
-    cursor: wait;
-
-    transform: none;
-}
-
-
-/* =========================================================
-   CRIAR CONTA
-========================================================= */
-
-.create-account {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 5px;
-
-    margin-top: 25px;
-
-    font-size: 10px;
-}
-
-
-.create-account span {
-    color: var(--text-light);
-}
-
-
-.create-account a {
-    color: var(--primary-dark);
-
-    font-weight: 900;
-
-    text-decoration: none;
-}
-
-
-.create-account a:hover {
-    text-decoration: underline;
-}
-
-
-/* =========================================================
-   SUPORTE LOGIN
-========================================================= */
-
-.login-support {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 5px;
-
-    margin-top: 25px;
-
-    padding-top: 20px;
-
-    border-top: 1px solid var(--border);
-
-    font-size: 9px;
-
-    color: var(--text-light);
-}
-
-
-.login-support a {
-    color: var(--text);
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    text-decoration: none;
-}
-
-
-.login-support a:hover {
-    color: var(--primary-dark);
-}
-
-
-/* =========================================================
-   FOOTER LOGIN
-========================================================= */
-
-.login-footer {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 5px;
-
-    padding-top: 20px;
-
-    text-align: center;
-
-    color: #94a3b8;
-
-    font-size: 9px;
-}
-
-
-.login-footer small {
-    color: #64748b;
-
-    font-size: 9px;
-
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   LOGIN MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .login-page {
-        padding: 15px;
-    }
-
-
-    .login-card {
-        padding: 25px 20px;
-
-        border-radius: 20px;
-    }
-
-
-    .login-logo {
-        margin-bottom: 28px;
-    }
-
-
-    .login-title h2 {
-        font-size: 21px;
-    }
-
-
-    .login-options {
-        align-items: flex-start;
-    }
-
-
-    /* Logo maior no celular */
-
-    .login-background-logo {
-        width: 600px;
-
-        height: 600px;
-
-        opacity: 0.14;
-    }
-}
-
-
-/* =========================================================
-   CELULAR PEQUENO
-========================================================= */
-
-@media (max-width: 400px) {
-
-    .login-background-logo {
-        width: 500px;
-
-        height: 500px;
-
-        opacity: 0.12;
-    }
-
-
-    .login-card {
-        padding: 22px 18px;
-    }
-}
-
-
-/* =========================================================
-   CADASTRO
-========================================================= */
-
-select {
-    width: 100%;
-
-    height: 48px;
-
-    padding: 0 14px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 12px;
-
-    outline: none;
-
-    background: #f8fafc;
-
-    color: var(--text);
-
-    font-size: 12px;
-
-    cursor: pointer;
-}
-
-
-select:focus {
-    border-color: var(--primary);
-
-    background: white;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(245, 183, 0, 0.12);
-}
-
-
-select:disabled {
-    cursor: not-allowed;
-
-    opacity: 0.6;
-}
 ```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Criar conta | Desbrava+</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+>
+```
+
+</head>
+
+<body class="login-page">
+
+```
+<!-- =====================================================
+     LOGO DE FUNDO
+====================================================== -->
+
+<img
+    src="logo.png"
+    class="login-background-logo"
+    alt=""
+    aria-hidden="true"
+>
+
+
+<!-- =====================================================
+     CONTAINER
+====================================================== -->
+
+<main class="login-container">
+
+
+    <!-- =================================================
+         CARD
+    ================================================== -->
+
+    <section class="login-card">
+
+
+        <!-- LOGO -->
+
+        <div class="login-logo">
+
+            <div class="login-logo-image">
+
+                <img
+                    src="logo.png"
+                    alt="Desbrava+"
+                >
+
+            </div>
+
+            <div>
+
+                <h1>
+                    DESBRAVA<span>+</span>
+                </h1>
+
+                <p>
+                    Clube de Desbravadores
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- TÍTULO -->
+
+        <div class="login-title">
+
+            <h2>
+                Criar minha conta 🚀
+            </h2>
+
+            <p>
+                Faça seu cadastro para começar
+                sua jornada no clube.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FORMULÁRIO
+        ================================================== -->
+
+        <form id="cadastroForm">
+
+
+            <!-- NOME -->
+
+            <div class="form-group">
+
+                <label for="nome">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome completo"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="seu@email.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- SENHA -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Senha
+                </label>
+
+                <div class="password-field">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Crie uma senha"
+                        minlength="6"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="toggleCadastroPassword"
+                        class="password-toggle"
+                        aria-label="Mostrar senha"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRMAR SENHA -->
+
+            <div class="form-group">
+
+                <label for="passwordConfirm">
+                    Confirmar senha
+                </label>
+
+                <input
+                    type="password"
+                    id="passwordConfirm"
+                    placeholder="Digite a senha novamente"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 CLUBE
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="clube">
+                    Clube
+                </label>
+
+                <select
+                    id="clube"
+                    required
+                >
+
+                    <option value="">
+                        Carregando clubes...
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 UNIDADE
+            ================================================== -->
+
+            <div class="form-group">
+
+                <label for="unidade">
+                    Unidade
+                </label>
+
+                <select
+                    id="unidade"
+                    disabled
+                    required
+                >
+
+                    <option value="">
+                        Selecione primeiro o clube
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =================================================
+                 AVISO SOBRE CARGO
+            ================================================== -->
+
+            <div
+                style="
+                    margin-bottom:18px;
+                    padding:12px 14px;
+                    border-radius:12px;
+                    background:#fffbeb;
+                    border:1px solid #fde68a;
+                    color:#92400e;
+                    font-size:10px;
+                    line-height:1.5;
+                "
+            >
+
+                🛡️ Seu cargo será definido pela administração
+                do clube após a aprovação do cadastro.
+
+            </div>
+
+
+            <!-- BOTÃO -->
+
+            <button
+                type="submit"
+                class="login-button"
+                id="cadastroButton"
+            >
+                Criar minha conta
+            </button>
+
+
+        </form>
+
+
+        <!-- =================================================
+             LOGIN
+        ================================================== -->
+
+        <div class="create-account">
+
+            <span>
+                Já possui uma conta?
+            </span>
+
+            <a href="login.html">
+                Entrar
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             SUPORTE
+        ================================================== -->
+
+        <div class="login-support">
+
+            <span>
+                Precisa de ajuda?
+            </span>
+
+            <a href="suporte.html">
+                Falar com o suporte
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         RODAPÉ
+    ================================================== -->
+
+    <footer class="login-footer">
+
+        <span>
+            DESBRAVA+ • Crescer, servir e competir juntos.
+        </span>
+
+        <small>
+            Desenvolvido por Sérgio
+        </small>
+
+    </footer>
+
+
+</main>
+
+
+<!-- =====================================================
+     SUPABASE
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+
+<!-- =====================================================
+     CADASTRO
+====================================================== -->
+
+<script>
+
+    "use strict";
+
+
+    // =====================================================
+    // SUPABASE
+    // =====================================================
+
+    const banco = window.supabaseClient;
+
+
+    if (!banco) {
+
+        console.error(
+            "Supabase não foi inicializado."
+        );
+
+    }
+
+
+    // =====================================================
+    // ELEMENTOS
+    // =====================================================
+
+    const cadastroForm =
+        document.getElementById("cadastroForm");
+
+    const cadastroButton =
+        document.getElementById("cadastroButton");
+
+    const clubeSelect =
+        document.getElementById("clube");
+
+    const unidadeSelect =
+        document.getElementById("unidade");
+
+    const password =
+        document.getElementById("password");
+
+    const passwordConfirm =
+        document.getElementById("passwordConfirm");
+
+    const togglePassword =
+        document.getElementById(
+            "toggleCadastroPassword"
+        );
+
+
+    // =====================================================
+    // MOSTRAR / OCULTAR SENHA
+    // =====================================================
+
+    togglePassword.addEventListener(
+        "click",
+        function () {
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                this.textContent = "🙈";
+
+                this.setAttribute(
+                    "aria-label",
+                    "Ocultar senha"
+                );
+
+            } else {
+
+                password.type = "password";
+
+                this.textContent = "👁️";
+
+                this.setAttribute(
+                    "aria-label",
+                    "Mostrar senha"
+                );
+
+            }
+
+        }
+    );
+
+
+    // =====================================================
+    // CARREGAR CLUBES
+    // =====================================================
+
+    async function carregarClubes() {
+
+        if (!banco) return;
+
+
+        clubeSelect.innerHTML = `
+            <option value="">
+                Carregando clubes...
+            </option>
+        `;
+
+
+        try {
+
+            const {
+                data,
+                error
+            } = await banco
+                .from("clubes")
+                .select("id,nome")
+                .order("nome");
+
+
+            if (error) {
+
+                console.error(
+                    "Erro ao carregar clubes:",
+                    error
+                );
+
+                clubeSelect.innerHTML = `
+                    <option value="">
+                        Não foi possível carregar os clubes
+                    </option>
+                `;
+
+                return;
+
+            }
+
+
+            if (!data || data.length === 0) {
+
+                clubeSelect.innerHTML = `
+                    <option value="">
+                        Nenhum clube cadastrado
+                    </option>
+                `;
+
+                return;
+
+            }
+
+
+            clubeSelect.innerHTML = `
+                <option value="">
+                    Selecione seu clube
+                </option>
+            `;
+
+
+            data.forEach(function (clube) {
+
+                const option =
+                    document.createElement("option");
+
+                option.value = clube.id;
+
+                option.textContent = clube.nome;
+
+                clubeSelect.appendChild(option);
+
+            });
+
+
+        } catch (erro) {
+
+            console.error(
+                "Erro:",
+                erro
+            );
+
+            clubeSelect.innerHTML = `
+                <option value="">
+                    Erro ao carregar clubes
+                </option>
+            `;
+
+        }
+
+    }
+
+
+    // =====================================================
+    // CARREGAR UNIDADES
+    // =====================================================
+
+    clubeSelect.addEventListener(
+        "change",
+        async function () {
+
+            const clubeId = this.value;
+
+
+            unidadeSelect.innerHTML = `
+                <option value="">
+                    Carregando unidades...
+                </option>
+            `;
+
+
+            unidadeSelect.disabled = true;
+
+
+            if (!clubeId) {
+
+                unidadeSelect.innerHTML = `
+                    <option value="">
+                        Selecione primeiro o clube
+                    </option>
+                `;
+
+                return;
+
+            }
+
+
+            try {
+
+                const {
+                    data,
+                    error
+                } = await banco
+                    .from("unidades")
+                    .select("id,nome")
+                    .eq("clube_id", clubeId)
+                    .order("nome");
+
+
+                if (error) {
+
+                    console.error(
+                        "Erro ao carregar unidades:",
+                        error
+                    );
+
+                    unidadeSelect.innerHTML = `
+                        <option value="">
+                            Não foi possível carregar
+                        </option>
+                    `;
+
+                    return;
+
+                }
+
+
+                unidadeSelect.innerHTML = `
+                    <option value="">
+                        Selecione sua unidade
+                    </option>
+                `;
+
+
+                if (!data || data.length === 0) {
+
+                    unidadeSelect.innerHTML = `
+                        <option value="">
+                            Nenhuma unidade cadastrada
+                        </option>
+                    `;
+
+                    return;
+
+                }
+
+
+                data.forEach(function (unidade) {
+
+                    const option =
+                        document.createElement("option");
+
+                    option.value = unidade.id;
+
+                    option.textContent =
+                        unidade.nome;
+
+                    unidadeSelect.appendChild(option);
+
+                });
+
+
+                unidadeSelect.disabled = false;
+
+
+            } catch (erro) {
+
+                console.error(
+                    "Erro:",
+                    erro
+                );
+
+            }
+
+        }
+    );
+
+
+    // =====================================================
+    // CADASTRO
+    // =====================================================
+
+    cadastroForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+
+            if (!banco) {
+
+                alert(
+                    "O sistema não conseguiu conectar ao banco de dados."
+                );
+
+                return;
+
+            }
+
+
+            const nome =
+                document
+                    .getElementById("nome")
+                    .value
+                    .trim();
+
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+
+            const senha =
+                password.value;
+
+
+            const senhaConfirmacao =
+                passwordConfirm.value;
+
+
+            const clubeId =
+                clubeSelect.value;
+
+
+            const unidadeId =
+                unidadeSelect.value;
+
+
+            // =================================================
+            // VALIDAÇÕES
+            // =================================================
+
+            if (senha !== senhaConfirmacao) {
+
+                alert(
+                    "As senhas não são iguais."
+                );
+
+                passwordConfirm.focus();
+
+                return;
+
+            }
+
+
+            if (senha.length < 6) {
+
+                alert(
+                    "A senha precisa ter pelo menos 6 caracteres."
+                );
+
+                return;
+
+            }
+
+
+            if (!clubeId) {
+
+                alert(
+                    "Selecione seu clube."
+                );
+
+                return;
+
+            }
+
+
+            if (!unidadeId) {
+
+                alert(
+                    "Selecione sua unidade."
+                );
+
+                return;
+
+            }
+
+
+            // =================================================
+            // BOTÃO
+            // =================================================
+
+            cadastroButton.disabled = true;
+
+            cadastroButton.textContent =
+                "Criando conta...";
+
+
+            try {
+
+
+                // =============================================
+                // CRIAR USUÁRIO NO SUPABASE AUTH
+                // =============================================
+
+                const {
+                    data: authData,
+                    error: authError
+                } = await banco.auth.signUp({
+
+                    email: email,
+
+                    password: senha
+
+                });
+
+
+                if (authError) {
+
+                    console.error(
+                        "Erro Auth:",
+                        authError
+                    );
+
+                    alert(
+                        authError.message ||
+                        "Não foi possível criar sua conta."
+                    );
+
+                    return;
+
+                }
+
+
+                const authUser =
+                    authData?.user;
+
+
+                if (!authUser) {
+
+                    alert(
+                        "Não foi possível obter os dados do usuário."
+                    );
+
+                    return;
+
+                }
+
+
+                // =============================================
+                // SALVAR DADOS DO USUÁRIO
+                // =============================================
+
+                const {
+                    error: usuarioError
+                } = await banco
+                    .from("usuarios")
+                    .insert({
+
+                        auth_id:
+                            authUser.id,
+
+                        nome:
+                            nome,
+
+                        email:
+                            email,
+
+                        clube_id:
+                            clubeId,
+
+                        unidade_id:
+                            unidadeId,
+
+                        nivel_acesso:
+                            "usuario",
+
+                        status:
+                            "pendente"
+
+                    });
+
+
+                if (usuarioError) {
+
+                    console.error(
+                        "Erro ao salvar usuário:",
+                        usuarioError
+                    );
+
+                    alert(
+                        "A conta foi criada, mas houve um problema ao registrar seus dados. Entre em contato com o suporte."
+                    );
+
+                    return;
+
+                }
+
+
+                // =============================================
+                // SUCESSO
+                // =============================================
+
+                alert(
+                    "Cadastro realizado com sucesso! 🎉\n\n" +
+                    "Sua conta está aguardando aprovação do ADM.\n\n" +
+                    "Depois da aprovação, a administração definirá seu cargo."
+                );
+
+
+                window.location.href =
+                    "login.html";
+
+
+            } catch (erro) {
+
+                console.error(
+                    "Erro inesperado:",
+                    erro
+                );
+
+                alert(
+                    "Ocorreu um erro ao criar sua conta."
+                );
+
+            } finally {
+
+                cadastroButton.disabled = false;
+
+                cadastroButton.textContent =
+                    "Criar minha conta";
+
+            }
+
+        }
+    );
+
+
+    // =====================================================
+    // INICIAR
+    // =====================================================
+
+    carregarClubes();
+
+</script>
+```
+
+</body>
+
+</html>
