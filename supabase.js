@@ -1,7 +1,8 @@
+/* =========================================================
+   DESBRAVA+ — SUPABASE
+========================================================= */
 
-/* DESBRAVA+ — configuração central do Supabase */
-
-(function configurarSupabase() {
+(function () {
 
     "use strict";
 
@@ -16,9 +17,11 @@
         typeof window.supabase.createClient !== "function"
     ) {
 
-        throw new Error(
-            "Supabase JS não foi carregado antes de supabase.js."
+        console.error(
+            "Supabase JS não foi carregado."
         );
+
+        return;
 
     }
 
@@ -28,5 +31,8 @@
             SUPABASE_KEY
         );
 
-})();
+    console.log(
+        "✅ Supabase conectado."
+    );
 
+})();
