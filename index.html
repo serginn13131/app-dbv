@@ -1,779 +1,701 @@
-
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>Desbrava+</title>
+<title>Desbrava+</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+>
+```
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
+```
+<!-- =====================================================
+     MENU LATERAL
+====================================================== -->
 
-    <!-- =====================================================
-         MENU LATERAL
-    ====================================================== -->
-
-    <aside class="sidebar">
+<aside class="sidebar">
 
 
-        <!-- LOGO -->
+    <!-- LOGO -->
 
-        <div class="logo-area">
+    <div class="logo-area">
 
-            <div class="logo-icon">
-                +
-            </div>
+        <div class="logo-image">
 
-            <div>
-
-                <h1>
-                    DESBRAVA<span>+</span>
-                </h1>
-
-                <p>
-                    Clube de Desbravadores
-                </p>
-
-            </div>
+            <img
+                src="dbv.png"
+                alt="Logo Desbrava+"
+            >
 
         </div>
 
-
-        <!-- MENU -->
-
-        <nav class="menu">
-
-
-            <!-- INÍCIO -->
-
-            <button
-                class="menu-item active"
-                type="button"
-            >
-
-                <span>🏠</span>
-
-                <span>
-                    Início
-                </span>
-
-            </button>
-
-
-            <!-- DESAFIOS -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>🎯</span>
-
-                <span>
-                    Desafios
-                </span>
-
-            </button>
-
-
-            <!-- RANKING -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>🏆</span>
-
-                <span>
-                    Ranking
-                </span>
-
-            </button>
-
-
-            <!-- UNIDADES -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>👥</span>
-
-                <span>
-                    Minha Unidade
-                </span>
-
-            </button>
-
-
-            <!-- CONQUISTAS -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>⭐</span>
-
-                <span>
-                    Conquistas
-                </span>
-
-            </button>
-
-
-            <!-- REUNIÕES -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>📅</span>
-
-                <span>
-                    Reuniões
-                </span>
-
-            </button>
-
-
-            <!-- FREQUÊNCIA -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>📋</span>
-
-                <span>
-                    Frequência
-                </span>
-
-            </button>
-
-
-            <!-- UNIFORME -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>🎽</span>
-
-                <span>
-                    Uniforme
-                </span>
-
-            </button>
-
-
-            <!-- TAREFAS -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>📝</span>
-
-                <span>
-                    Tarefas
-                </span>
-
-            </button>
-
-
-            <!-- MEMBROS -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>👤</span>
-
-                <span>
-                    Membros
-                </span>
-
-            </button>
-
-
-            <!-- CARGOS -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>🛡️</span>
-
-                <span>
-                    Cargos e permissões
-                </span>
-
-            </button>
-
-
-            <!-- SUPORTE -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>🆘</span>
-
-                <span>
-                    Suporte
-                </span>
-
-            </button>
-
-
-            <!-- CONFIGURAÇÕES -->
-
-            <button
-                class="menu-item"
-                type="button"
-            >
-
-                <span>⚙️</span>
-
-                <span>
-                    Configurações
-                </span>
-
-            </button>
-
-
-            <!-- =================================================
-                 SAIR
-            ================================================== -->
-
-            <button
-                class="menu-item"
-                id="logoutButton"
-                type="button"
-            >
-
-                <span>🚪</span>
-
-                <span>
-                    Sair da conta
-                </span>
-
-            </button>
-
-
-        </nav>
-
-
-        <!-- =================================================
-             INFORMAÇÃO DA UNIDADE
-        ================================================== -->
-
-        <div class="sidebar-bottom">
+        <div>
+
+            <h1>
+                DESBRAVA<span>+</span>
+            </h1>
 
             <p>
-                Sua unidade está em
+                Clube de Desbravadores
             </p>
 
-            <strong>
-                🥇 1º lugar
-            </strong>
+        </div>
 
-            <small>
-                Continue assim! 🔥
-            </small>
+    </div>
+
+
+    <!-- MENU -->
+
+    <nav class="menu">
+
+
+        <button
+            class="menu-item active"
+            type="button"
+        >
+            <span>🏠</span>
+            <span>Início</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>🎯</span>
+            <span>Desafios</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>🏆</span>
+            <span>Ranking</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>👥</span>
+            <span>Minha Unidade</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>⭐</span>
+            <span>Conquistas</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>📅</span>
+            <span>Reuniões</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>📋</span>
+            <span>Frequência</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>🎽</span>
+            <span>Uniforme</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>📝</span>
+            <span>Tarefas</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>👤</span>
+            <span>Membros</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>🛡️</span>
+            <span>Cargos e permissões</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>🆘</span>
+            <span>Suporte</span>
+        </button>
+
+
+        <button
+            class="menu-item"
+            type="button"
+        >
+            <span>⚙️</span>
+            <span>Configurações</span>
+        </button>
+
+
+        <!-- SAIR -->
+
+        <button
+            class="menu-item"
+            id="logoutButton"
+            type="button"
+        >
+
+            <span>🚪</span>
+
+            <span>
+                Sair da conta
+            </span>
+
+        </button>
+
+
+    </nav>
+
+
+    <!-- INFORMAÇÃO DA UNIDADE -->
+
+    <div class="sidebar-bottom">
+
+        <p>
+            Sua unidade está em
+        </p>
+
+        <strong>
+            🥇 1º lugar
+        </strong>
+
+        <small>
+            Continue assim! 🔥
+        </small>
+
+    </div>
+
+
+</aside>
+
+
+<!-- =====================================================
+     CONTEÚDO PRINCIPAL
+====================================================== -->
+
+<main class="main">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+
+            <p
+                class="date"
+                id="currentDate"
+            >
+                Carregando data...
+            </p>
+
+            <h2>
+                Olá,
+                <span id="userName">
+                    Desbravador
+                </span>!
+                👋
+            </h2>
 
         </div>
 
 
-    </aside>
+        <div
+            class="profile-avatar"
+            id="profileAvatar"
+            aria-label="Avatar do usuário"
+        >
+            👤
+        </div>
+
+    </header>
 
 
-    <!-- =====================================================
-         CONTEÚDO PRINCIPAL
-    ====================================================== -->
+    <!-- =================================================
+         CONTEÚDO
+    ================================================== -->
 
-    <main class="main">
-
-
-        <!-- HEADER -->
-
-        <header class="header">
+    <div class="content">
 
 
-            <div>
+        <!-- HERO -->
 
-                <p class="date" id="currentDate">
-                    Carregando data...
+        <section class="hero-card">
+
+
+            <div class="hero-info">
+
+
+                <div
+                    class="unit-badge"
+                    id="userUnit"
+                >
+                    Unidade não definida
+                </div>
+
+
+                <h3 id="userPoints">
+                    0 pontos
+                </h3>
+
+
+                <p id="userLevel">
+                    Nível 1 • Desbravador
                 </p>
 
-                <h2>
-                    Olá, <span id="userName">Desbravador</span>! 👋
-                </h2>
+
+                <!-- PROGRESSO -->
+
+                <div class="progress-area">
+
+
+                    <div class="progress-label">
+
+                        <span id="levelProgressLabel">
+                            Progresso para o nível 2
+                        </span>
+
+                        <span id="levelProgressPercent">
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill"
+                            id="levelProgressFill"
+                        ></div>
+
+                    </div>
+
+
+                    <small id="levelProgressHint">
+                        Comece a acumular pontos para subir de nível.
+                    </small>
+
+
+                </div>
+
 
             </div>
 
 
-            <div class="profile-avatar" id="profileAvatar" aria-label="Avatar do usuário">
-                👤
+            <!-- TROFÉU -->
+
+            <div class="hero-trophy">
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+                <strong>
+                    Continue evoluindo!
+                </strong>
+
             </div>
 
 
-        </header>
+        </section>
 
 
         <!-- =================================================
-             CONTEÚDO
+             CARDS
         ================================================== -->
 
-        <div class="content">
+        <section class="main-grid">
 
 
-            <!-- HERO -->
+            <!-- DESAFIO -->
 
-            <section class="hero-card">
+            <div class="card challenge-card">
 
 
-                <div class="hero-info">
-
-
-                    <div class="unit-badge" id="userUnit">
-
-                        Unidade não definida
-
-                    </div>
-
-
-                    <h3 id="userPoints">
-                        0 pontos
-                    </h3>
-
-
-                    <p id="userLevel">
-                        Nível 1 • Desbravador
-                    </p>
-
-
-                    <!-- PROGRESSO -->
-
-                    <div class="progress-area">
-
-
-                        <div class="progress-label">
-
-                            <span id="levelProgressLabel">
-                                Progresso para o nível 2
-                            </span>
-
-                            <span id="levelProgressPercent">
-                                0%
-                            </span>
-
-                        </div>
-
-
-                        <div class="progress-bar">
-
-                            <div class="progress-fill" id="levelProgressFill"></div>
-
-                        </div>
-
-
-                        <small id="levelProgressHint">
-                            Comece a acumular pontos para subir de nível.
-                        </small>
-
-
-                    </div>
-
-
-                </div>
-
-
-                <!-- TROFÉU -->
-
-                <div class="hero-trophy">
-
-                    <div class="trophy">
-                        🏆
-                    </div>
-
-                    <strong>
-                        Continue evoluindo!
-                    </strong>
-
-                </div>
-
-
-            </section>
-
-
-            <!-- =================================================
-                 CARDS
-            ================================================== -->
-
-            <section class="main-grid">
-
-
-                <!-- DESAFIO -->
-
-                <div class="card challenge-card">
-
-
-                    <div class="card-header">
-
-
-                        <div>
-
-                            <span class="section-label orange">
-                                DESAFIO DA SEMANA
-                            </span>
-
-                            <h3>
-                                🔥 Ajude em casa
-                            </h3>
-
-                        </div>
-
-
-                        <span class="points">
-                            +50 pontos
-                        </span>
-
-
-                    </div>
-
-
-                    <p class="description">
-
-                        Ajude sua família em uma tarefa de casa
-                        e mostre sua participação através de uma
-                        foto antes e depois.
-
-                    </p>
-
-
-                    <div class="buttons">
-
-
-                        <button
-                            class="primary-button"
-                            type="button"
-                        >
-                            Participar do desafio
-                        </button>
-
-
-                        <button
-                            class="secondary-button"
-                            type="button"
-                        >
-                            Ver detalhes →
-                        </button>
-
-
-                    </div>
-
-
-                </div>
-
-
-                <!-- REUNIÃO -->
-
-                <div class="card meeting-card">
-
-
-                    <div class="meeting-icon">
-                        📅
-                    </div>
-
-
-                    <span class="section-label">
-                        PRÓXIMA REUNIÃO
-                    </span>
-
-
-                    <h3>
-                        Sábado
-                    </h3>
-
-
-                    <p>
-                        15 de agosto • 15:00
-                    </p>
-
-
-                    <strong>
-                        ⏰ Faltam 6 dias
-                    </strong>
-
-
-                </div>
-
-
-            </section>
-
-
-            <!-- =================================================
-                 RANKING
-            ================================================== -->
-
-            <section class="card ranking-card">
-
-
-                <div class="ranking-header">
+                <div class="card-header">
 
 
                     <div>
 
                         <span class="section-label orange">
-                            COMPETIÇÃO
+                            DESAFIO DA SEMANA
                         </span>
 
                         <h3>
-                            🏆 Ranking das unidades
+                            🔥 Ajude em casa
                         </h3>
 
                     </div>
 
 
-                    <div class="ranking-tabs">
-
-
-                        <button
-                            class="tab active"
-                            type="button"
-                        >
-                            Semanal
-                        </button>
-
-
-                        <button
-                            class="tab"
-                            type="button"
-                        >
-                            Mensal
-                        </button>
-
-
-                        <button
-                            class="tab"
-                            type="button"
-                        >
-                            Anual
-                        </button>
-
-
-                    </div>
+                    <span class="points">
+                        +50 pontos
+                    </span>
 
 
                 </div>
 
 
-                <!-- ÁGUIAS -->
+                <p class="description">
 
-                <div class="ranking-item highlight">
+                    Ajude sua família em uma tarefa de casa
+                    e mostre sua participação através de uma
+                    foto antes e depois.
 
-
-                    <div class="ranking-left">
-
-
-                        <span class="position">
-                            🥇
-                        </span>
+                </p>
 
 
-                        <span class="unit-icon">
-                            🦅
-                        </span>
+                <div class="buttons">
 
 
-                        <div>
-
-                            <strong>
-                                Águias
-                            </strong>
-
-                            <small>
-                                Sua unidade
-                            </small>
-
-                        </div>
+                    <button
+                        class="primary-button"
+                        type="button"
+                    >
+                        Participar do desafio
+                    </button>
 
 
-                    </div>
-
-
-                    <strong>
-                        4.820 pts
-                    </strong>
+                    <button
+                        class="secondary-button"
+                        type="button"
+                    >
+                        Ver detalhes →
+                    </button>
 
 
                 </div>
 
 
-                <!-- LOBOS -->
-
-                <div class="ranking-item">
+            </div>
 
 
-                    <div class="ranking-left">
+            <!-- REUNIÃO -->
 
-                        <span class="position">
-                            🥈
-                        </span>
-
-                        <span class="unit-icon">
-                            🐺
-                        </span>
-
-                        <strong>
-                            Lobos
-                        </strong>
-
-                    </div>
+            <div class="card meeting-card">
 
 
-                    <strong>
-                        4.650 pts
-                    </strong>
-
-
+                <div class="meeting-icon">
+                    📅
                 </div>
 
 
-                <!-- LEÕES -->
-
-                <div class="ranking-item">
-
-
-                    <div class="ranking-left">
-
-                        <span class="position">
-                            🥉
-                        </span>
-
-                        <span class="unit-icon">
-                            🦁
-                        </span>
-
-                        <strong>
-                            Leões
-                        </strong>
-
-                    </div>
-
-
-                    <strong>
-                        4.310 pts
-                    </strong>
-
-
-                </div>
-
-
-                <!-- URSOS -->
-
-                <div class="ranking-item">
-
-
-                    <div class="ranking-left">
-
-                        <span class="position">
-                            4
-                        </span>
-
-                        <span class="unit-icon">
-                            🐻
-                        </span>
-
-                        <strong>
-                            Ursos
-                        </strong>
-
-                    </div>
-
-
-                    <strong>
-                        4.090 pts
-                    </strong>
-
-
-                </div>
-
-
-                <div class="ranking-message">
-
-                    🔥 Sua unidade está na liderança!
-
-                </div>
-
-
-            </section>
-
-
-            <!-- =================================================
-                 RODAPÉ
-            ================================================== -->
-
-            <footer>
-
-                <span>
-                    DESBRAVA+ • Crescer, servir e competir juntos.
+                <span class="section-label">
+                    PRÓXIMA REUNIÃO
                 </span>
 
-                <small>
-                    Desenvolvido por Sérgio
-                </small>
 
-            </footer>
-
-
-        </div>
+                <h3>
+                    Sábado
+                </h3>
 
 
-    </main>
+                <p>
+                    15 de agosto • 15:00
+                </p>
 
+
+                <strong>
+                    ⏰ Faltam 6 dias
+                </strong>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             RANKING
+        ================================================== -->
+
+        <section class="card ranking-card">
+
+
+            <div class="ranking-header">
+
+
+                <div>
+
+                    <span class="section-label orange">
+                        COMPETIÇÃO
+                    </span>
+
+                    <h3>
+                        🏆 Ranking das unidades
+                    </h3>
+
+                </div>
+
+
+                <div class="ranking-tabs">
+
+
+                    <button
+                        class="tab active"
+                        type="button"
+                    >
+                        Semanal
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                    >
+                        Mensal
+                    </button>
+
+
+                    <button
+                        class="tab"
+                        type="button"
+                    >
+                        Anual
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ÁGUIAS -->
+
+            <div class="ranking-item highlight">
+
+
+                <div class="ranking-left">
+
+
+                    <span class="position">
+                        🥇
+                    </span>
+
+
+                    <span class="unit-icon">
+                        🦅
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Águias
+                        </strong>
+
+                        <small>
+                            Sua unidade
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+                <strong>
+                    4.820 pts
+                </strong>
+
+
+            </div>
+
+
+            <!-- LOBOS -->
+
+            <div class="ranking-item">
+
+
+                <div class="ranking-left">
+
+                    <span class="position">
+                        🥈
+                    </span>
+
+                    <span class="unit-icon">
+                        🐺
+                    </span>
+
+                    <strong>
+                        Lobos
+                    </strong>
+
+                </div>
+
+
+                <strong>
+                    4.650 pts
+                </strong>
+
+
+            </div>
+
+
+            <!-- LEÕES -->
+
+            <div class="ranking-item">
+
+
+                <div class="ranking-left">
+
+                    <span class="position">
+                        🥉
+                    </span>
+
+                    <span class="unit-icon">
+                        🦁
+                    </span>
+
+                    <strong>
+                        Leões
+                    </strong>
+
+                </div>
+
+
+                <strong>
+                    4.310 pts
+                </strong>
+
+
+            </div>
+
+
+            <!-- URSOS -->
+
+            <div class="ranking-item">
+
+
+                <div class="ranking-left">
+
+                    <span class="position">
+                        4
+                    </span>
+
+                    <span class="unit-icon">
+                        🐻
+                    </span>
+
+                    <strong>
+                        Ursos
+                    </strong>
+
+                </div>
+
+
+                <strong>
+                    4.090 pts
+                </strong>
+
+
+            </div>
+
+
+            <div class="ranking-message">
+
+                🔥 Sua unidade está na liderança!
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             RODAPÉ
+        ================================================== -->
+
+        <footer>
+
+            <span>
+                DESBRAVA+ • Crescer, servir e competir juntos.
+            </span>
+
+            <small>
+                Desenvolvido por Sérgio
+            </small>
+
+        </footer>
+
+
+    </div>
+
+
+</main>
+```
 
 </div>
-
 
 <!-- =========================================================
      MENU MOBILE
@@ -781,130 +703,170 @@
 
 <nav class="mobile-menu">
 
+```
+<button
+    class="mobile-item active"
+    type="button"
+>
 
-    <button
-        class="mobile-item active"
-        type="button"
-    >
+    <span>
+        🏠
+    </span>
 
-        <span>
-            🏠
-        </span>
+    <small>
+        Início
+    </small>
 
-        <small>
-            Início
-        </small>
-
-    </button>
-
-
-    <button
-        class="mobile-item"
-        type="button"
-    >
-
-        <span>
-            🎯
-        </span>
-
-        <small>
-            Desafios
-        </small>
-
-    </button>
+</button>
 
 
-    <button
-        class="mobile-item"
-        type="button"
-    >
+<button
+    class="mobile-item"
+    type="button"
+>
 
-        <span>
-            🏆
-        </span>
+    <span>
+        🎯
+    </span>
 
-        <small>
-            Ranking
-        </small>
+    <small>
+        Desafios
+    </small>
 
-    </button>
-
-
-    <button
-        class="mobile-item"
-        type="button"
-    >
-
-        <span>
-            👥
-        </span>
-
-        <small>
-            Unidade
-        </small>
-
-    </button>
+</button>
 
 
-    <button
-        class="mobile-item"
-        type="button"
-    >
+<button
+    class="mobile-item"
+    type="button"
+>
 
-        <span>
-            👤
-        </span>
+    <span>
+        🏆
+    </span>
 
-        <small>
-            Perfil
-        </small>
+    <small>
+        Ranking
+    </small>
 
-    </button>
+</button>
 
+
+<button
+    class="mobile-item"
+    type="button"
+>
+
+    <span>
+        👥
+    </span>
+
+    <small>
+        Unidade
+    </small>
+
+</button>
+
+
+<button
+    class="mobile-item"
+    type="button"
+>
+
+    <span>
+        👤
+    </span>
+
+    <small>
+        Perfil
+    </small>
+
+</button>
+```
 
 </nav>
-
 
 <!-- =========================================================
      SUPABASE
 ========================================================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="supabase.js"></script>
 
+<script src="script.js"></script>
 
 <!-- =========================================================
-     SCRIPT DO DESBRAVA+
+     LOGOUT
 ========================================================= -->
 
-<script src="script.js"></script>
-    <script>
+<script>
 
 document
     .getElementById("logoutButton")
     ?.addEventListener("click", async function () {
 
+        const botao = this;
+
+        botao.disabled = true;
+
         try {
 
-            const { error } =
-                await window.supabaseClient.auth.signOut();
+            if (
+                !window.supabaseClient ||
+                !window.supabaseClient.auth
+            ) {
 
-            if (error) {
+                console.error(
+                    "Supabase não foi inicializado."
+                );
 
-                console.error("Erro ao sair:", error);
+                alert(
+                    "Não foi possível conectar ao sistema."
+                );
 
-                alert("Não foi possível sair da conta.");
+                botao.disabled = false;
 
                 return;
             }
 
+
+            const { error } =
+                await window.supabaseClient.auth.signOut();
+
+
+            if (error) {
+
+                console.error(
+                    "Erro ao sair:",
+                    error
+                );
+
+                alert(
+                    "Não foi possível sair da conta."
+                );
+
+                botao.disabled = false;
+
+                return;
+            }
+
+
             window.location.href = "login.html";
+
 
         } catch (erro) {
 
-            console.error("Erro inesperado:", erro);
+            console.error(
+                "Erro inesperado:",
+                erro
+            );
 
-            alert("Ocorreu um erro ao sair da conta.");
+            alert(
+                "Ocorreu um erro ao sair da conta."
+            );
+
+            botao.disabled = false;
 
         }
 
@@ -912,8 +874,6 @@ document
 
 </script>
 
-
 </body>
 
 </html>
-```
