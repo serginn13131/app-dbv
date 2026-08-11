@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -878,6 +878,39 @@
 ========================================================= -->
 
 <script src="script.js"></script>
+    <script>
+
+document
+    .getElementById("logoutButton")
+    ?.addEventListener("click", async function () {
+
+        try {
+
+            const { error } =
+                await window.supabaseClient.auth.signOut();
+
+            if (error) {
+
+                console.error("Erro ao sair:", error);
+
+                alert("Não foi possível sair da conta.");
+
+                return;
+            }
+
+            window.location.href = "login.html";
+
+        } catch (erro) {
+
+            console.error("Erro inesperado:", erro);
+
+            alert("Ocorreu um erro ao sair da conta.");
+
+        }
+
+    });
+
+</script>
 
 
 </body>
