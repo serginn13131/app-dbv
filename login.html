@@ -1,0 +1,598 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Entrar | Desbrava+</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body class="login-page">
+
+
+    <!-- =====================================================
+         LOGO DE FUNDO
+    ====================================================== -->
+
+    <img
+        src="logo.png"
+        class="login-background-logo"
+        alt=""
+        aria-hidden="true"
+    >
+
+
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
+
+    <main class="login-container">
+
+
+        <section class="login-card">
+
+
+            <!-- LOGO -->
+
+            <div class="login-logo">
+
+                <div class="login-logo-icon">
+                    +
+                </div>
+
+                <div>
+
+                    <h1>
+                        DESBRAVA<span>+</span>
+                    </h1>
+
+                    <p>
+                        Clube de Desbravadores
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TÍTULO -->
+
+            <div class="login-title">
+
+                <h2>
+                    Bem-vindo de volta! 👋
+                </h2>
+
+                <p>
+                    Entre na sua conta para continuar
+                    sua jornada no clube.
+                </p>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+
+            <form id="loginForm">
+
+
+                <!-- E-MAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seu@email.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SENHA -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <div class="password-field">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                            aria-label="Mostrar senha"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPÇÕES -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember"
+                        >
+
+                        Lembrar de mim
+
+                    </label>
+
+
+                    <a href="#">
+                        Esqueci minha senha
+                    </a>
+
+                </div>
+
+
+                <!-- MENSAGEM -->
+
+                <div
+                    id="loginMessage"
+                    style="
+                        display:none;
+                        margin-bottom:18px;
+                        padding:12px 14px;
+                        border-radius:12px;
+                        font-size:11px;
+                        line-height:1.5;
+                        font-weight:600;
+                    "
+                ></div>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+                    Entrar
+                </button>
+
+
+            </form>
+
+
+            <!-- CADASTRO -->
+
+            <div class="create-account">
+
+                <span>
+                    Ainda não possui uma conta?
+                </span>
+
+                <a href="cadastro.html">
+                    Criar conta
+                </a>
+
+            </div>
+
+
+            <!-- SUPORTE -->
+
+            <div class="login-support">
+
+                <span>
+                    Precisa de ajuda?
+                </span>
+
+                <a href="suporte.html">
+                    Falar com o suporte
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             RODAPÉ
+        ================================================== -->
+
+        <footer class="login-footer">
+
+            <span>
+                DESBRAVA+ • Crescer, servir e competir juntos.
+            </span>
+
+            <small>
+                Desenvolvido por Sérgio
+            </small>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
+
+    <script>
+
+        "use strict";
+
+
+        const banco =
+            window.supabaseClient;
+
+
+        const formulario =
+            document.getElementById("loginForm");
+
+
+        const botao =
+            document.getElementById("loginButton");
+
+
+        const mensagem =
+            document.getElementById("loginMessage");
+
+
+        const senha =
+            document.getElementById("password");
+
+
+        const toggleSenha =
+            document.getElementById("togglePassword");
+
+
+        // =====================================================
+        // MOSTRAR / OCULTAR SENHA
+        // =====================================================
+
+        toggleSenha.addEventListener(
+            "click",
+            function () {
+
+                const mostrar =
+                    senha.type === "password";
+
+
+                senha.type =
+                    mostrar
+                        ? "text"
+                        : "password";
+
+
+                toggleSenha.textContent =
+                    mostrar
+                        ? "🙈"
+                        : "👁️";
+
+            }
+        );
+
+
+        // =====================================================
+        // MENSAGEM
+        // =====================================================
+
+        function mostrarMensagem(
+            texto,
+            tipo
+        ) {
+
+            mensagem.style.display =
+                "block";
+
+            mensagem.textContent =
+                texto;
+
+
+            if (tipo === "sucesso") {
+
+                mensagem.style.background =
+                    "#dcfce7";
+
+                mensagem.style.color =
+                    "#166534";
+
+            } else {
+
+                mensagem.style.background =
+                    "#fee2e2";
+
+                mensagem.style.color =
+                    "#991b1b";
+
+            }
+
+        }
+
+
+        // =====================================================
+        // LOGIN
+        // =====================================================
+
+        formulario.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                if (!banco) {
+
+                    mostrarMensagem(
+                        "O sistema não conseguiu conectar ao banco de dados."
+                    );
+
+                    return;
+
+                }
+
+
+                mensagem.style.display =
+                    "none";
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const password =
+                    senha.value;
+
+
+                botao.disabled =
+                    true;
+
+                botao.textContent =
+                    "Entrando...";
+
+
+                try {
+
+                    // -----------------------------------------
+                    // AUTENTICAÇÃO
+                    // -----------------------------------------
+
+                    const {
+                        data,
+                        error
+                    } = await banco.auth.signInWithPassword({
+
+                        email:
+                            email,
+
+                        password:
+                            password
+
+                    });
+
+
+                    if (error) {
+
+                        console.error(error);
+
+                        mostrarMensagem(
+                            "E-mail ou senha incorretos."
+                        );
+
+                        return;
+
+                    }
+
+
+                    const usuario =
+                        data.user;
+
+
+                    if (!usuario) {
+
+                        mostrarMensagem(
+                            "Não foi possível iniciar sua sessão."
+                        );
+
+                        return;
+
+                    }
+
+
+                    // -----------------------------------------
+                    // BUSCAR PERFIL
+                    // -----------------------------------------
+
+                    const {
+                        data: perfil,
+                        error: perfilError
+                    } = await banco
+
+                        .from("usuarios")
+
+                        .select(
+                            "nome,nivel_acesso,status"
+                        )
+
+                        .eq(
+                            "auth_id",
+                            usuario.id
+                        )
+
+                        .maybeSingle();
+
+
+                    if (perfilError) {
+
+                        console.error(
+                            perfilError
+                        );
+
+                        await banco.auth.signOut();
+
+                        mostrarMensagem(
+                            "Não foi possível carregar seu perfil."
+                        );
+
+                        return;
+
+                    }
+
+
+                    if (!perfil) {
+
+                        await banco.auth.signOut();
+
+                        mostrarMensagem(
+                            "Seu cadastro ainda não foi configurado."
+                        );
+
+                        return;
+
+                    }
+
+
+                    // -----------------------------------------
+                    // VERIFICAR STATUS
+                    // -----------------------------------------
+
+                    if (
+                        perfil.status ===
+                        "pendente"
+                    ) {
+
+                        await banco.auth.signOut();
+
+                        mostrarMensagem(
+                            "Sua conta ainda está aguardando aprovação do administrador."
+                        );
+
+                        return;
+
+                    }
+
+
+                    if (
+                        perfil.status ===
+                        "bloqueado"
+                    ) {
+
+                        await banco.auth.signOut();
+
+                        mostrarMensagem(
+                            "Sua conta está bloqueada. Entre em contato com o suporte."
+                        );
+
+                        return;
+
+                    }
+
+
+                    // -----------------------------------------
+                    // LOGIN OK
+                    // -----------------------------------------
+
+                    mostrarMensagem(
+                        "Login realizado com sucesso! Redirecionando...",
+                        "sucesso"
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "index.html";
+
+                        },
+                        700
+                    );
+
+
+                } catch (erro) {
+
+                    console.error(
+                        erro
+                    );
+
+                    mostrarMensagem(
+                        "Ocorreu um erro inesperado. Tente novamente."
+                    );
+
+
+                } finally {
+
+                    botao.disabled =
+                        false;
+
+                    botao.textContent =
+                        "Entrar";
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
+```
