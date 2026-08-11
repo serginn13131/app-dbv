@@ -2013,33 +2013,3 @@ footer small {
 }
 ```
 
-### Importante
-
-O CSS acima **não cria a imagem sozinho**. O seu `login.html` precisa ter a logo apontando para exatamente:
-
-```html
-<img src="imagens/dbv.png" alt="Logo Desbrava+" class="login-background-logo">
-```
-
-E dentro da logo do cartão:
-
-```html
-<div class="login-logo-image">
-    <img src="imagens/dbv.png" alt="Logo Desbrava+">
-</div>
-```
-
-A estrutura precisa ser:
-
-```text
-index.html
-login.html
-supabase.js
-style.css
-imagens/
-└── dbv.png
-```
-
-Então **não precisa mexer mais no CSS para o nome da imagem**. Ele já está preparado para `dbv.png`.
-
-Se você me mandar agora o seu **`login.html` atual**, eu consigo ajustar ele para ficar 100% compatível com esse CSS sem mexer no que já funciona.
