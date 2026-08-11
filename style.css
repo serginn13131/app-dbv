@@ -1,574 +1,508 @@
+```html
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Criar conta | Desbrava+</title>
+    <title>Criar conta | Desbrava+</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
-```
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
 </head>
 
+
 <body class="login-page">
 
-```
-<!-- =====================================================
-     LOGO DE FUNDO
-====================================================== -->
 
-<img
-    src="logo.png"
-    class="login-background-logo"
-    alt=""
-    aria-hidden="true"
->
+    <!-- =====================================================
+         LOGO DE FUNDO
+    ====================================================== -->
 
+    <!--
+        Se você tiver a logo em PNG, coloque o arquivo
+        com o nome:
 
-<!-- =====================================================
-     CONTAINER
-====================================================== -->
+        logo.png
 
-<main class="login-container">
+        na mesma pasta deste cadastro.html.
+    -->
 
-
-    <!-- =================================================
-         CARD
-    ================================================== -->
-
-    <section class="login-card">
+    <img
+        src="logo.png"
+        class="login-background-logo"
+        alt=""
+        aria-hidden="true"
+    >
 
 
-        <!-- LOGO -->
+    <!-- =====================================================
+         CONTAINER
+    ====================================================== -->
 
-        <div class="login-logo">
+    <main class="login-container">
 
-            <div class="login-logo-image">
 
-                <img
-                    src="logo.png"
-                    alt="Desbrava+"
-                >
+        <!-- =================================================
+             CARD
+        ================================================== -->
+
+        <section class="login-card">
+
+
+            <!-- LOGO -->
+
+            <div class="login-logo">
+
+
+                <div class="login-logo-icon">
+                    +
+                </div>
+
+
+                <div>
+
+                    <h1>
+                        DESBRAVA<span>+</span>
+                    </h1>
+
+                    <p>
+                        Clube de Desbravadores
+                    </p>
+
+                </div>
+
 
             </div>
 
-            <div>
 
-                <h1>
-                    DESBRAVA<span>+</span>
-                </h1>
+            <!-- =================================================
+                 TÍTULO
+            ================================================== -->
+
+            <div class="login-title">
+
+                <h2>
+                    Criar minha conta 🚀
+                </h2>
 
                 <p>
-                    Clube de Desbravadores
+                    Cadastre-se para começar sua jornada
+                    no Desbrava+.
                 </p>
 
             </div>
 
-        </div>
+
+            <!-- =================================================
+                 FORMULÁRIO
+            ================================================== -->
+
+            <form id="cadastroForm">
 
 
-        <!-- TÍTULO -->
+                <!-- NOME -->
 
-        <div class="login-title">
+                <div class="form-group">
 
-            <h2>
-                Criar minha conta 🚀
-            </h2>
+                    <label for="nome">
+                        Nome completo
+                    </label>
 
-            <p>
-                Faça seu cadastro para começar
-                sua jornada no clube.
-            </p>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome completo"
+                        autocomplete="name"
+                        required
+                    >
 
-        </div>
-
-
-        <!-- =================================================
-             FORMULÁRIO
-        ================================================== -->
-
-        <form id="cadastroForm">
+                </div>
 
 
-            <!-- NOME -->
+                <!-- EMAIL -->
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <label for="nome">
-                    Nome completo
-                </label>
+                    <label for="email">
+                        E-mail
+                    </label>
 
-                <input
-                    type="text"
-                    id="nome"
-                    placeholder="Digite seu nome completo"
-                    autocomplete="name"
-                    required
-                >
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seu@email.com"
+                        autocomplete="email"
+                        required
+                    >
 
-            </div>
-
-
-            <!-- EMAIL -->
-
-            <div class="form-group">
-
-                <label for="email">
-                    E-mail
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="seu@email.com"
-                    autocomplete="email"
-                    required
-                >
-
-            </div>
+                </div>
 
 
-            <!-- SENHA -->
+                <!-- SENHA -->
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <label for="password">
-                    Senha
-                </label>
+                    <label for="password">
+                        Senha
+                    </label>
 
-                <div class="password-field">
+
+                    <div class="password-field">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Crie uma senha"
+                            minlength="6"
+                            autocomplete="new-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            id="toggleCadastroPassword"
+                            class="password-toggle"
+                            aria-label="Mostrar senha"
+                        >
+                            👁️
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRMAR SENHA -->
+
+                <div class="form-group">
+
+                    <label for="passwordConfirm">
+                        Confirmar senha
+                    </label>
 
                     <input
                         type="password"
-                        id="password"
-                        placeholder="Crie uma senha"
+                        id="passwordConfirm"
+                        placeholder="Digite a senha novamente"
                         minlength="6"
                         autocomplete="new-password"
                         required
                     >
 
-                    <button
-                        type="button"
-                        id="toggleCadastroPassword"
-                        class="password-toggle"
-                        aria-label="Mostrar senha"
+                </div>
+
+
+                <!-- CLUBE -->
+
+                <div class="form-group">
+
+                    <label for="clube">
+                        Clube
+                    </label>
+
+                    <select
+                        id="clube"
+                        required
                     >
-                        👁️
-                    </button>
+
+                        <option value="">
+                            Selecione seu clube
+                        </option>
+
+                    </select>
 
                 </div>
 
-            </div>
+
+                <!-- UNIDADE -->
+
+                <div class="form-group">
+
+                    <label for="unidade">
+                        Unidade
+                    </label>
+
+                    <select
+                        id="unidade"
+                        disabled
+                        required
+                    >
+
+                        <option value="">
+                            Selecione primeiro o clube
+                        </option>
+
+                    </select>
+
+                </div>
 
 
-            <!-- CONFIRMAR SENHA -->
+                <!-- CARGO -->
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <label for="passwordConfirm">
-                    Confirmar senha
-                </label>
+                    <label for="cargo">
+                        Cargo
+                    </label>
 
-                <input
-                    type="password"
-                    id="passwordConfirm"
-                    placeholder="Digite a senha novamente"
-                    minlength="6"
-                    autocomplete="new-password"
-                    required
+                    <select
+                        id="cargo"
+                        disabled
+                    >
+
+                        <option value="">
+                            Definido pelo administrador
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- AVISO -->
+
+                <div
+                    id="cadastroMensagem"
+                    style="
+                        display:none;
+                        margin-bottom:18px;
+                        padding:12px 14px;
+                        border-radius:12px;
+                        font-size:11px;
+                        line-height:1.5;
+                        font-weight:600;
+                    "
+                ></div>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="cadastroButton"
                 >
+                    Criar minha conta
+                </button>
+
+
+            </form>
+
+
+            <!-- =================================================
+                 LOGIN
+            ================================================== -->
+
+            <div class="create-account">
+
+                <span>
+                    Já possui uma conta?
+                </span>
+
+                <a href="login.html">
+                    Entrar
+                </a>
 
             </div>
 
 
             <!-- =================================================
-                 CLUBE
+                 SUPORTE
             ================================================== -->
 
-            <div class="form-group">
+            <div class="login-support">
 
-                <label for="clube">
-                    Clube
-                </label>
+                <span>
+                    Precisa de ajuda?
+                </span>
 
-                <select
-                    id="clube"
-                    required
-                >
-
-                    <option value="">
-                        Carregando clubes...
-                    </option>
-
-                </select>
+                <a href="suporte.html">
+                    Falar com o suporte
+                </a>
 
             </div>
 
 
-            <!-- =================================================
-                 UNIDADE
-            ================================================== -->
-
-            <div class="form-group">
-
-                <label for="unidade">
-                    Unidade
-                </label>
-
-                <select
-                    id="unidade"
-                    disabled
-                    required
-                >
-
-                    <option value="">
-                        Selecione primeiro o clube
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <!-- =================================================
-                 AVISO SOBRE CARGO
-            ================================================== -->
-
-            <div
-                style="
-                    margin-bottom:18px;
-                    padding:12px 14px;
-                    border-radius:12px;
-                    background:#fffbeb;
-                    border:1px solid #fde68a;
-                    color:#92400e;
-                    font-size:10px;
-                    line-height:1.5;
-                "
-            >
-
-                🛡️ Seu cargo será definido pela administração
-                do clube após a aprovação do cadastro.
-
-            </div>
-
-
-            <!-- BOTÃO -->
-
-            <button
-                type="submit"
-                class="login-button"
-                id="cadastroButton"
-            >
-                Criar minha conta
-            </button>
-
-
-        </form>
+        </section>
 
 
         <!-- =================================================
-             LOGIN
+             RODAPÉ
         ================================================== -->
 
-        <div class="create-account">
+        <footer class="login-footer">
 
             <span>
-                Já possui uma conta?
+                DESBRAVA+ • Crescer, servir e competir juntos.
             </span>
 
-            <a href="login.html">
-                Entrar
-            </a>
+            <small>
+                Desenvolvido por Sérgio
+            </small>
 
-        </div>
-
-
-        <!-- =================================================
-             SUPORTE
-        ================================================== -->
-
-        <div class="login-support">
-
-            <span>
-                Precisa de ajuda?
-            </span>
-
-            <a href="suporte.html">
-                Falar com o suporte
-            </a>
-
-        </div>
+        </footer>
 
 
-    </section>
+    </main>
 
 
-    <!-- =================================================
-         RODAPÉ
-    ================================================== -->
+    <!-- =====================================================
+         SUPABASE
+    ====================================================== -->
 
-    <footer class="login-footer">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-        <span>
-            DESBRAVA+ • Crescer, servir e competir juntos.
-        </span>
-
-        <small>
-            Desenvolvido por Sérgio
-        </small>
-
-    </footer>
+    <script src="supabase.js"></script>
 
 
-</main>
+    <!-- =====================================================
+         CADASTRO
+    ====================================================== -->
+
+    <script>
+
+        "use strict";
 
 
-<!-- =====================================================
-     SUPABASE
-====================================================== -->
+        // =====================================================
+        // SUPABASE
+        // =====================================================
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="supabase.js"></script>
+        const banco = window.supabaseClient;
 
 
-<!-- =====================================================
-     CADASTRO
-====================================================== -->
+        if (!banco) {
 
-<script>
+            console.error(
+                "Supabase não foi inicializado."
+            );
 
-    "use strict";
-
-
-    // =====================================================
-    // SUPABASE
-    // =====================================================
-
-    const banco = window.supabaseClient;
+        }
 
 
-    if (!banco) {
+        // =====================================================
+        // ELEMENTOS
+        // =====================================================
 
-        console.error(
-            "Supabase não foi inicializado."
-        );
+        const formulario =
+            document.getElementById("cadastroForm");
 
-    }
+        const botao =
+            document.getElementById("cadastroButton");
 
+        const mensagem =
+            document.getElementById("cadastroMensagem");
 
-    // =====================================================
-    // ELEMENTOS
-    // =====================================================
+        const clube =
+            document.getElementById("clube");
 
-    const cadastroForm =
-        document.getElementById("cadastroForm");
+        const unidade =
+            document.getElementById("unidade");
 
-    const cadastroButton =
-        document.getElementById("cadastroButton");
-
-    const clubeSelect =
-        document.getElementById("clube");
-
-    const unidadeSelect =
-        document.getElementById("unidade");
-
-    const password =
-        document.getElementById("password");
-
-    const passwordConfirm =
-        document.getElementById("passwordConfirm");
-
-    const togglePassword =
-        document.getElementById(
-            "toggleCadastroPassword"
-        );
+        const cargo =
+            document.getElementById("cargo");
 
 
-    // =====================================================
-    // MOSTRAR / OCULTAR SENHA
-    // =====================================================
+        // =====================================================
+        // MENSAGEM
+        // =====================================================
 
-    togglePassword.addEventListener(
-        "click",
-        function () {
+        function mostrarMensagem(
+            texto,
+            tipo = "erro"
+        ) {
 
-            if (password.type === "password") {
+            mensagem.style.display = "block";
 
-                password.type = "text";
+            mensagem.textContent = texto;
 
-                this.textContent = "🙈";
 
-                this.setAttribute(
-                    "aria-label",
-                    "Ocultar senha"
-                );
+            if (tipo === "sucesso") {
+
+                mensagem.style.background =
+                    "#dcfce7";
+
+                mensagem.style.color =
+                    "#166534";
 
             } else {
 
-                password.type = "password";
+                mensagem.style.background =
+                    "#fee2e2";
 
-                this.textContent = "👁️";
-
-                this.setAttribute(
-                    "aria-label",
-                    "Mostrar senha"
-                );
+                mensagem.style.color =
+                    "#991b1b";
 
             }
 
         }
-    );
 
 
-    // =====================================================
-    // CARREGAR CLUBES
-    // =====================================================
+        // =====================================================
+        // MOSTRAR / OCULTAR SENHA
+        // =====================================================
 
-    async function carregarClubes() {
+        const senha =
+            document.getElementById("password");
 
-        if (!banco) return;
+        const confirmarSenha =
+            document.getElementById("passwordConfirm");
 
-
-        clubeSelect.innerHTML = `
-            <option value="">
-                Carregando clubes...
-            </option>
-        `;
-
-
-        try {
-
-            const {
-                data,
-                error
-            } = await banco
-                .from("clubes")
-                .select("id,nome")
-                .order("nome");
-
-
-            if (error) {
-
-                console.error(
-                    "Erro ao carregar clubes:",
-                    error
-                );
-
-                clubeSelect.innerHTML = `
-                    <option value="">
-                        Não foi possível carregar os clubes
-                    </option>
-                `;
-
-                return;
-
-            }
-
-
-            if (!data || data.length === 0) {
-
-                clubeSelect.innerHTML = `
-                    <option value="">
-                        Nenhum clube cadastrado
-                    </option>
-                `;
-
-                return;
-
-            }
-
-
-            clubeSelect.innerHTML = `
-                <option value="">
-                    Selecione seu clube
-                </option>
-            `;
-
-
-            data.forEach(function (clube) {
-
-                const option =
-                    document.createElement("option");
-
-                option.value = clube.id;
-
-                option.textContent = clube.nome;
-
-                clubeSelect.appendChild(option);
-
-            });
-
-
-        } catch (erro) {
-
-            console.error(
-                "Erro:",
-                erro
+        const toggleSenha =
+            document.getElementById(
+                "toggleCadastroPassword"
             );
 
-            clubeSelect.innerHTML = `
-                <option value="">
-                    Erro ao carregar clubes
-                </option>
-            `;
 
-        }
+        toggleSenha.addEventListener(
+            "click",
+            function () {
 
-    }
+                const mostrar =
+                    senha.type === "password";
 
 
-    // =====================================================
-    // CARREGAR UNIDADES
-    // =====================================================
-
-    clubeSelect.addEventListener(
-        "change",
-        async function () {
-
-            const clubeId = this.value;
+                senha.type =
+                    mostrar
+                        ? "text"
+                        : "password";
 
 
-            unidadeSelect.innerHTML = `
-                <option value="">
-                    Carregando unidades...
-                </option>
-            `;
-
-
-            unidadeSelect.disabled = true;
-
-
-            if (!clubeId) {
-
-                unidadeSelect.innerHTML = `
-                    <option value="">
-                        Selecione primeiro o clube
-                    </option>
-                `;
-
-                return;
+                toggleSenha.textContent =
+                    mostrar
+                        ? "🙈"
+                        : "👁️";
 
             }
+        );
 
+
+        // =====================================================
+        // CARREGAR CLUBES
+        // =====================================================
+
+        async function carregarClubes() {
 
             try {
 
@@ -576,223 +510,241 @@
                     data,
                     error
                 } = await banco
-                    .from("unidades")
-                    .select("id,nome")
-                    .eq("clube_id", clubeId)
+
+                    .from("clubes")
+
+                    .select("*")
+
                     .order("nome");
 
 
                 if (error) {
 
                     console.error(
-                        "Erro ao carregar unidades:",
+                        "Erro ao carregar clubes:",
                         error
                     );
 
-                    unidadeSelect.innerHTML = `
-                        <option value="">
-                            Não foi possível carregar
-                        </option>
-                    `;
-
                     return;
 
                 }
 
 
-                unidadeSelect.innerHTML = `
-                    <option value="">
-                        Selecione sua unidade
-                    </option>
-                `;
+                clube.innerHTML =
+                    `<option value="">
+                        Selecione seu clube
+                    </option>`;
 
 
-                if (!data || data.length === 0) {
+                (data || []).forEach(
+                    function (item) {
 
-                    unidadeSelect.innerHTML = `
-                        <option value="">
-                            Nenhuma unidade cadastrada
-                        </option>
-                    `;
+                        const option =
+                            document.createElement(
+                                "option"
+                            );
 
-                    return;
+                        option.value =
+                            item.id;
 
-                }
+                        option.textContent =
+                            item.nome;
 
+                        clube.appendChild(
+                            option
+                        );
 
-                data.forEach(function (unidade) {
-
-                    const option =
-                        document.createElement("option");
-
-                    option.value = unidade.id;
-
-                    option.textContent =
-                        unidade.nome;
-
-                    unidadeSelect.appendChild(option);
-
-                });
-
-
-                unidadeSelect.disabled = false;
+                    }
+                );
 
 
             } catch (erro) {
 
-                console.error(
-                    "Erro:",
-                    erro
-                );
+                console.error(erro);
 
             }
 
         }
-    );
 
 
-    // =====================================================
-    // CADASTRO
-    // =====================================================
+        // =====================================================
+        // CARREGAR UNIDADES
+        // =====================================================
 
-    cadastroForm.addEventListener(
-        "submit",
-        async function (event) {
+        clube.addEventListener(
+            "change",
+            async function () {
 
-            event.preventDefault();
-
-
-            if (!banco) {
-
-                alert(
-                    "O sistema não conseguiu conectar ao banco de dados."
-                );
-
-                return;
-
-            }
+                const clubeId =
+                    this.value;
 
 
-            const nome =
-                document
-                    .getElementById("nome")
-                    .value
-                    .trim();
+                unidade.innerHTML =
+                    `<option value="">
+                        Carregando unidades...
+                    </option>`;
 
 
-            const email =
-                document
-                    .getElementById("email")
-                    .value
-                    .trim()
-                    .toLowerCase();
+                unidade.disabled =
+                    true;
 
 
-            const senha =
-                password.value;
+                if (!clubeId) {
+
+                    unidade.innerHTML =
+                        `<option value="">
+                            Selecione primeiro o clube
+                        </option>`;
+
+                    return;
+
+                }
 
 
-            const senhaConfirmacao =
-                passwordConfirm.value;
+                try {
+
+                    const {
+                        data,
+                        error
+                    } = await banco
+
+                        .from("unidades")
+
+                        .select("*")
+
+                        .eq(
+                            "clube_id",
+                            clubeId
+                        )
+
+                        .order("nome");
 
 
-            const clubeId =
-                clubeSelect.value;
+                    if (error) {
+
+                        console.error(
+                            "Erro ao carregar unidades:",
+                            error
+                        );
+
+                        unidade.innerHTML =
+                            `<option value="">
+                                Erro ao carregar unidades
+                            </option>`;
+
+                        return;
+
+                    }
 
 
-            const unidadeId =
-                unidadeSelect.value;
+                    unidade.innerHTML =
+                        `<option value="">
+                            Selecione sua unidade
+                        </option>`;
 
 
-            // =================================================
-            // VALIDAÇÕES
-            // =================================================
+                    (data || []).forEach(
+                        function (item) {
 
-            if (senha !== senhaConfirmacao) {
+                            const option =
+                                document.createElement(
+                                    "option"
+                                );
 
-                alert(
-                    "As senhas não são iguais."
-                );
+                            option.value =
+                                item.id;
 
-                passwordConfirm.focus();
+                            option.textContent =
+                                item.nome;
 
-                return;
+                            unidade.appendChild(
+                                option
+                            );
 
-            }
-
-
-            if (senha.length < 6) {
-
-                alert(
-                    "A senha precisa ter pelo menos 6 caracteres."
-                );
-
-                return;
-
-            }
-
-
-            if (!clubeId) {
-
-                alert(
-                    "Selecione seu clube."
-                );
-
-                return;
-
-            }
-
-
-            if (!unidadeId) {
-
-                alert(
-                    "Selecione sua unidade."
-                );
-
-                return;
-
-            }
-
-
-            // =================================================
-            // BOTÃO
-            // =================================================
-
-            cadastroButton.disabled = true;
-
-            cadastroButton.textContent =
-                "Criando conta...";
-
-
-            try {
-
-
-                // =============================================
-                // CRIAR USUÁRIO NO SUPABASE AUTH
-                // =============================================
-
-                const {
-                    data: authData,
-                    error: authError
-                } = await banco.auth.signUp({
-
-                    email: email,
-
-                    password: senha
-
-                });
-
-
-                if (authError) {
-
-                    console.error(
-                        "Erro Auth:",
-                        authError
+                        }
                     );
 
-                    alert(
-                        authError.message ||
-                        "Não foi possível criar sua conta."
+
+                    unidade.disabled =
+                        false;
+
+
+                } catch (erro) {
+
+                    console.error(erro);
+
+                }
+
+            }
+        );
+
+
+        // =====================================================
+        // CARGO
+        // =====================================================
+
+        cargo.innerHTML =
+            `<option value="">
+                Definido pelo administrador
+            </option>`;
+
+
+        // =====================================================
+        // CADASTRO
+        // =====================================================
+
+        formulario.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                mensagem.style.display =
+                    "none";
+
+
+                const nome =
+                    document
+                        .getElementById("nome")
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const senhaValor =
+                    senha.value;
+
+
+                const confirmarValor =
+                    confirmarSenha.value;
+
+
+                const clubeId =
+                    clube.value;
+
+
+                const unidadeId =
+                    unidade.value;
+
+
+                // ---------------------------------------------
+                // VALIDAÇÕES
+                // ---------------------------------------------
+
+                if (
+                    senhaValor !==
+                    confirmarValor
+                ) {
+
+                    mostrarMensagem(
+                        "As senhas não são iguais."
                     );
 
                     return;
@@ -800,14 +752,10 @@
                 }
 
 
-                const authUser =
-                    authData?.user;
+                if (senhaValor.length < 6) {
 
-
-                if (!authUser) {
-
-                    alert(
-                        "Não foi possível obter os dados do usuário."
+                    mostrarMensagem(
+                        "A senha precisa ter pelo menos 6 caracteres."
                     );
 
                     return;
@@ -815,104 +763,216 @@
                 }
 
 
-                // =============================================
-                // SALVAR DADOS DO USUÁRIO
-                // =============================================
+                if (!clubeId) {
 
-                const {
-                    error: usuarioError
-                } = await banco
-                    .from("usuarios")
-                    .insert({
+                    mostrarMensagem(
+                        "Selecione seu clube."
+                    );
 
-                        auth_id:
-                            authUser.id,
+                    return;
 
-                        nome:
-                            nome,
+                }
+
+
+                if (!unidadeId) {
+
+                    mostrarMensagem(
+                        "Selecione sua unidade."
+                    );
+
+                    return;
+
+                }
+
+
+                botao.disabled =
+                    true;
+
+                botao.textContent =
+                    "Criando conta...";
+
+
+                try {
+
+                    // -----------------------------------------
+                    // CRIAR USUÁRIO AUTH
+                    // -----------------------------------------
+
+                    const {
+                        data,
+                        error
+                    } = await banco.auth.signUp({
 
                         email:
                             email,
 
-                        clube_id:
-                            clubeId,
-
-                        unidade_id:
-                            unidadeId,
-
-                        nivel_acesso:
-                            "usuario",
-
-                        status:
-                            "pendente"
+                        password:
+                            senhaValor
 
                     });
 
 
-                if (usuarioError) {
+                    if (error) {
+
+                        console.error(
+                            error
+                        );
+
+                        mostrarMensagem(
+                            error.message
+                        );
+
+                        return;
+
+                    }
+
+
+                    const usuario =
+                        data.user;
+
+
+                    if (!usuario) {
+
+                        mostrarMensagem(
+                            "Não foi possível criar o usuário."
+                        );
+
+                        return;
+
+                    }
+
+
+                    // -----------------------------------------
+                    // SALVAR PERFIL
+                    // -----------------------------------------
+
+                    const {
+                        error:
+                        perfilError
+                    } = await banco
+
+                        .from("usuarios")
+
+                        .insert({
+
+                            auth_id:
+                                usuario.id,
+
+                            nome:
+                                nome,
+
+                            email:
+                                email,
+
+                            nivel_acesso:
+                                "usuario",
+
+                            status:
+                                "pendente",
+
+                            clube_id:
+                                clubeId,
+
+                            unidade_id:
+                                unidadeId
+
+                        });
+
+
+                    if (perfilError) {
+
+                        console.error(
+                            perfilError
+                        );
+
+                        mostrarMensagem(
+                            "A conta foi criada, mas não foi possível salvar seus dados. Entre em contato com o suporte."
+                        );
+
+                        return;
+
+                    }
+
+
+                    // -----------------------------------------
+                    // SUCESSO
+                    // -----------------------------------------
+
+                    mostrarMensagem(
+                        "Cadastro realizado com sucesso! Sua conta está aguardando aprovação do administrador. ⏳",
+                        "sucesso"
+                    );
+
+
+                    formulario.reset();
+
+
+                    unidade.disabled =
+                        true;
+
+
+                    unidade.innerHTML =
+                        `<option value="">
+                            Selecione primeiro o clube
+                        </option>`;
+
+
+                    cargo.innerHTML =
+                        `<option value="">
+                            Definido pelo administrador
+                        </option>`;
+
+
+                    // -----------------------------------------
+                    // REDIRECIONAR
+                    // -----------------------------------------
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "login.html";
+
+                        },
+                        3000
+                    );
+
+
+                } catch (erro) {
 
                     console.error(
-                        "Erro ao salvar usuário:",
-                        usuarioError
+                        erro
                     );
 
-                    alert(
-                        "A conta foi criada, mas houve um problema ao registrar seus dados. Entre em contato com o suporte."
+                    mostrarMensagem(
+                        "Ocorreu um erro inesperado. Tente novamente."
                     );
 
-                    return;
+
+                } finally {
+
+                    botao.disabled =
+                        false;
+
+                    botao.textContent =
+                        "Criar minha conta";
 
                 }
 
-
-                // =============================================
-                // SUCESSO
-                // =============================================
-
-                alert(
-                    "Cadastro realizado com sucesso! 🎉\n\n" +
-                    "Sua conta está aguardando aprovação do ADM.\n\n" +
-                    "Depois da aprovação, a administração definirá seu cargo."
-                );
-
-
-                window.location.href =
-                    "login.html";
-
-
-            } catch (erro) {
-
-                console.error(
-                    "Erro inesperado:",
-                    erro
-                );
-
-                alert(
-                    "Ocorreu um erro ao criar sua conta."
-                );
-
-            } finally {
-
-                cadastroButton.disabled = false;
-
-                cadastroButton.textContent =
-                    "Criar minha conta";
-
             }
-
-        }
-    );
+        );
 
 
-    // =====================================================
-    // INICIAR
-    // =====================================================
+        // =====================================================
+        // INICIAR
+        // =====================================================
 
-    carregarClubes();
+        carregarClubes();
 
-</script>
-```
+    </script>
+
 
 </body>
 
 </html>
+```
