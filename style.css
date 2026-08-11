@@ -1,9 +1,14 @@
-
+```css
 /* =========================================================
    DESBRAVA+
    STYLE.CSS COMPLETO
    Dashboard + Login + Cadastro + Suporte
-   Logo: dbv.png
+   Logo: imagens/dbv.png
+========================================================= */
+
+
+/* =========================================================
+   RESET
 ========================================================= */
 
 * {
@@ -15,17 +20,23 @@
 :root {
     --primary: #f5b700;
     --primary-dark: #d99f00;
+
     --dark: #0f172a;
     --dark-2: #172033;
+
     --background: #f1f5f9;
     --white: #ffffff;
+
     --text: #0f172a;
     --text-light: #64748b;
+
     --border: #e2e8f0;
+
     --orange: #f97316;
     --green: #16a34a;
     --red: #dc2626;
     --blue: #2563eb;
+
     --radius: 20px;
 }
 
@@ -56,6 +67,7 @@ a {
     color: inherit;
 }
 
+
 /* =========================================================
    APP
 ========================================================= */
@@ -64,6 +76,7 @@ a {
     min-height: 100vh;
     display: flex;
 }
+
 
 /* =========================================================
    SIDEBAR
@@ -105,33 +118,18 @@ a {
     border-radius: 10px;
 }
 
+
 /* =========================================================
-   LOGO DO MENU
+   LOGO DA SIDEBAR
 ========================================================= */
 
 .logo-area {
     display: flex;
     align-items: center;
     gap: 12px;
+
     padding: 5px 10px 35px;
 }
-
-/* Logo real */
-
-.logo-image {
-    width: 48px;
-    height: 48px;
-
-    object-fit: contain;
-
-    border-radius: 12px;
-
-    flex-shrink: 0;
-
-    display: block;
-}
-
-/* Caso ainda exista o antigo logo-icon */
 
 .logo-icon {
     width: 42px;
@@ -166,6 +164,7 @@ a {
     font-size: 10px;
     color: #94a3b8;
 }
+
 
 /* =========================================================
    MENU
@@ -209,14 +208,18 @@ a {
     color: var(--dark);
 }
 
+
 /* =========================================================
    SIDEBAR INFERIOR
 ========================================================= */
 
 .sidebar-bottom {
     margin-top: auto;
+
     padding: 16px;
+
     background: var(--dark-2);
+
     border-radius: 16px;
 }
 
@@ -234,9 +237,11 @@ a {
 .sidebar-bottom small {
     display: block;
     margin-top: 4px;
+
     color: var(--primary);
     font-size: 11px;
 }
+
 
 /* =========================================================
    MAIN
@@ -245,8 +250,10 @@ a {
 .main {
     width: calc(100% - 260px);
     margin-left: 260px;
+
     min-height: 100vh;
 }
+
 
 /* =========================================================
    HEADER
@@ -276,10 +283,6 @@ a {
     font-weight: 800;
 }
 
-/* =========================================================
-   AVATAR
-========================================================= */
-
 .profile-avatar {
     width: 42px;
     height: 42px;
@@ -303,6 +306,7 @@ a {
     object-fit: cover;
 }
 
+
 /* =========================================================
    CONTENT
 ========================================================= */
@@ -310,8 +314,10 @@ a {
 .content {
     max-width: 1200px;
     margin: auto;
+
     padding: 30px;
 }
+
 
 /* =========================================================
    HERO
@@ -356,19 +362,23 @@ a {
 
 .hero-info h3 {
     margin-top: 15px;
+
     font-size: 36px;
     font-weight: 900;
 }
 
 .hero-info > p {
     margin-top: 3px;
+
     color: #94a3b8;
+
     font-size: 13px;
 }
 
 .progress-area {
     width: 400px;
     max-width: 100%;
+
     margin-top: 25px;
 }
 
@@ -434,6 +444,7 @@ a {
 
     font-size: 12px;
 }
+
 
 /* =========================================================
    CARDS
@@ -519,6 +530,7 @@ a {
     line-height: 1.7;
 }
 
+
 /* =========================================================
    BOTÕES
 ========================================================= */
@@ -526,6 +538,7 @@ a {
 .buttons {
     display: flex;
     gap: 10px;
+
     margin-top: 22px;
 }
 
@@ -560,6 +573,7 @@ a {
     background: #e2e8f0;
 }
 
+
 /* =========================================================
    REUNIÃO
 ========================================================= */
@@ -588,6 +602,7 @@ a {
     margin-top: 22px;
     font-size: 11px;
 }
+
 
 /* =========================================================
    RANKING
@@ -706,6 +721,7 @@ a {
     font-weight: 800;
 }
 
+
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -734,6 +750,7 @@ footer small {
     color: #64748b;
 }
 
+
 /* =========================================================
    MENU MOBILE
 ========================================================= */
@@ -742,8 +759,9 @@ footer small {
     display: none;
 }
 
+
 /* =========================================================
-   LOGIN
+   LOGIN / CADASTRO
 ========================================================= */
 
 .login-page {
@@ -774,8 +792,10 @@ footer small {
     overflow-x: hidden;
 }
 
+
 /* =========================================================
-   LOGO GRANDE DE FUNDO
+   LOGO GRANDE NO FUNDO
+   ARQUIVO: imagens/dbv.png
 ========================================================= */
 
 .login-background-logo {
@@ -784,6 +804,9 @@ footer small {
     width: 850px;
     height: 850px;
 
+    max-width: none;
+    max-height: none;
+
     object-fit: contain;
 
     left: 50%;
@@ -791,13 +814,14 @@ footer small {
 
     transform: translate(-50%, -50%);
 
-    opacity: 0.10;
+    opacity: 0.08;
 
     pointer-events: none;
     user-select: none;
 
     z-index: 0;
 }
+
 
 /* =========================================================
    CONTAINER LOGIN
@@ -811,6 +835,7 @@ footer small {
 
     z-index: 10;
 }
+
 
 /* =========================================================
    CARD LOGIN
@@ -833,33 +858,42 @@ footer small {
     backdrop-filter: blur(10px);
 }
 
+
 /* =========================================================
-   LOGO DO LOGIN
+   LOGO LOGIN
+   ARQUIVO: imagens/dbv.png
 ========================================================= */
 
 .login-logo {
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
-    gap: 12px;
+    gap: 10px;
 
     margin-bottom: 30px;
+
+    text-align: center;
 }
 
-/* Logo usando dbv.png */
+
+/* =========================================================
+   IMAGEM DA LOGO
+========================================================= */
 
 .login-logo-image {
-    width: 65px;
-    height: 65px;
+    width: 110px;
+    height: 110px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
+    margin-bottom: 5px;
 }
 
 .login-logo-image img {
@@ -870,49 +904,22 @@ footer small {
 
     object-fit: contain;
 
-    max-width: 100%;
-    max-height: 100%;
+    border: none;
 }
 
-/* Caso queira simplesmente usar uma img dentro de .login-logo */
 
-.login-logo > img {
-    width: 65px;
-    height: 65px;
-
-    object-fit: contain;
-
-    display: block;
-
-    flex-shrink: 0;
-}
-
-/* Antigo ícone */
-
-.login-logo-icon {
-    width: 50px;
-    height: 50px;
-
-    border-radius: 15px;
-
-    background: var(--primary);
-
-    color: var(--dark);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 28px;
-    font-weight: 900;
-
-    flex-shrink: 0;
-}
+/* =========================================================
+   TEXTO DA LOGO
+========================================================= */
 
 .login-logo h1 {
     font-size: 21px;
+
     font-weight: 900;
+
+    color: var(--text);
+
+    margin: 0;
 }
 
 .login-logo h1 span {
@@ -927,18 +934,22 @@ footer small {
     font-size: 10px;
 }
 
+
 /* =========================================================
    TÍTULO LOGIN
 ========================================================= */
 
 .login-title {
     text-align: center;
+
     margin-bottom: 28px;
 }
 
 .login-title h2 {
     font-size: 24px;
+
     font-weight: 900;
+
     letter-spacing: -0.5px;
 }
 
@@ -951,6 +962,7 @@ footer small {
 
     line-height: 1.6;
 }
+
 
 /* =========================================================
    FORMULÁRIOS
@@ -995,12 +1007,15 @@ footer small {
 .form-group input,
 .form-group select {
     height: 48px;
+
     padding: 0 14px;
 }
 
 .form-group textarea {
     min-height: 120px;
+
     padding: 14px;
+
     resize: vertical;
 }
 
@@ -1022,8 +1037,10 @@ footer small {
 
 .form-group select:disabled {
     opacity: 0.6;
+
     cursor: not-allowed;
 }
+
 
 /* =========================================================
    SENHA
@@ -1058,6 +1075,7 @@ footer small {
 .password-toggle:hover {
     background: #f1f5f9;
 }
+
 
 /* =========================================================
    OPÇÕES LOGIN
@@ -1103,6 +1121,7 @@ footer small {
     text-decoration: underline;
 }
 
+
 /* =========================================================
    BOTÃO LOGIN
 ========================================================= */
@@ -1133,10 +1152,12 @@ footer small {
 
 .login-button:disabled {
     opacity: 0.65;
+
     cursor: wait;
 
     transform: none;
 }
+
 
 /* =========================================================
    CRIAR CONTA
@@ -1170,8 +1191,9 @@ footer small {
     text-decoration: underline;
 }
 
+
 /* =========================================================
-   SUPORTE LOGIN
+   SUPORTE DO LOGIN
 ========================================================= */
 
 .login-support {
@@ -1208,6 +1230,7 @@ footer small {
     color: var(--primary-dark);
 }
 
+
 /* =========================================================
    FOOTER LOGIN
 ========================================================= */
@@ -1238,6 +1261,7 @@ footer small {
     font-weight: 700;
 }
 
+
 /* =========================================================
    SUPORTE
 ========================================================= */
@@ -1260,6 +1284,7 @@ footer small {
 
 .support-title p {
     margin: 0;
+
     color: var(--text-light);
 }
 
@@ -1293,6 +1318,7 @@ footer small {
     border-radius: 14px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1305,6 +1331,7 @@ footer small {
 
 .support-card h3 {
     margin: 0 0 8px;
+
     font-size: 18px;
 }
 
@@ -1340,14 +1367,18 @@ footer small {
 
 .support-button:hover {
     background: #1e293b;
+
     transform: translateY(-1px);
 }
 
 .support-button:disabled {
     opacity: 0.6;
+
     cursor: wait;
+
     transform: none;
 }
+
 
 /* =========================================================
    SEÇÕES SUPORTE
@@ -1371,6 +1402,7 @@ footer small {
     margin-bottom: 15px;
 }
 
+
 /* =========================================================
    FAQ
 ========================================================= */
@@ -1387,6 +1419,7 @@ footer small {
     width: 100%;
 
     background: none;
+
     border: none;
 
     padding: 18px 0;
@@ -1431,17 +1464,20 @@ footer small {
     display: block;
 }
 
+
 /* =========================================================
    CHAMADOS
 ========================================================= */
 
 .ticket-form {
     display: grid;
+
     gap: 15px;
 }
 
 .ticket-form label {
     font-weight: 700;
+
     font-size: 12px;
 }
 
@@ -1478,11 +1514,13 @@ footer small {
 
 .ticket-form textarea {
     min-height: 130px;
+
     resize: vertical;
 }
 
 .ticket-list {
     display: grid;
+
     gap: 12px;
 }
 
@@ -1520,16 +1558,19 @@ footer small {
 
 .status-aberto {
     background: #fff3cd;
+
     color: #856404;
 }
 
 .status-atendimento {
     background: #dbeafe;
+
     color: #1d4ed8;
 }
 
 .status-resolvido {
     background: #dcfce7;
+
     color: #166534;
 }
 
@@ -1545,6 +1586,7 @@ footer small {
 
 .ticket small {
     color: #888;
+
     font-size: 10px;
 }
 
@@ -1555,6 +1597,7 @@ footer small {
 
     padding: 25px;
 }
+
 
 /* =========================================================
    MODAL
@@ -1628,8 +1671,9 @@ footer small {
     color: var(--red);
 }
 
+
 /* =========================================================
-   ALERTAS
+   MENSAGENS / ALERTAS
 ========================================================= */
 
 .alert {
@@ -1646,18 +1690,22 @@ footer small {
 
 .alert-error {
     background: #fee2e2;
+
     color: #991b1b;
 }
 
 .alert-success {
     background: #dcfce7;
+
     color: #166534;
 }
 
 .alert-info {
     background: #dbeafe;
+
     color: #1e40af;
 }
+
 
 /* =========================================================
    TABLET
@@ -1671,6 +1719,7 @@ footer small {
 
     .main {
         width: calc(100% - 220px);
+
         margin-left: 220px;
     }
 
@@ -1691,6 +1740,7 @@ footer small {
     }
 }
 
+
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -1707,11 +1757,13 @@ footer small {
 
     .main {
         width: 100%;
+
         margin-left: 0;
     }
 
     .header {
         height: 70px;
+
         padding: 0 18px;
     }
 
@@ -1741,11 +1793,13 @@ footer small {
 
     .main-grid {
         margin-top: 15px;
+
         gap: 15px;
     }
 
     .card {
         padding: 20px;
+
         border-radius: 18px;
     }
 
@@ -1768,6 +1822,7 @@ footer small {
 
     .ranking-header {
         align-items: flex-start;
+
         flex-direction: column;
     }
 
@@ -1826,6 +1881,7 @@ footer small {
 
     .mobile-item small {
         font-size: 8px;
+
         font-weight: 800;
     }
 
@@ -1837,7 +1893,10 @@ footer small {
         padding-bottom: 15px;
     }
 
-    /* LOGIN */
+
+    /* =====================================================
+       LOGIN MOBILE
+    ===================================================== */
 
     .login-page {
         padding: 15px;
@@ -1845,6 +1904,7 @@ footer small {
 
     .login-card {
         padding: 25px 20px;
+
         border-radius: 20px;
     }
 
@@ -1853,13 +1913,8 @@ footer small {
     }
 
     .login-logo-image {
-        width: 55px;
-        height: 55px;
-    }
-
-    .login-logo > img {
-        width: 55px;
-        height: 55px;
+        width: 95px;
+        height: 95px;
     }
 
     .login-title h2 {
@@ -1873,10 +1928,14 @@ footer small {
     .login-background-logo {
         width: 600px;
         height: 600px;
-        opacity: 0.08;
+
+        opacity: 0.06;
     }
 
-    /* SUPORTE */
+
+    /* =====================================================
+       SUPORTE MOBILE
+    ===================================================== */
 
     .support-title h2 {
         font-size: 24px;
@@ -1884,6 +1943,7 @@ footer small {
 
     .support-section {
         padding: 20px;
+
         border-radius: 16px;
     }
 
@@ -1893,6 +1953,7 @@ footer small {
 
     .ticket-top {
         flex-direction: column;
+
         align-items: flex-start;
     }
 
@@ -1906,9 +1967,11 @@ footer small {
 
     .modal-content {
         padding: 20px;
+
         border-radius: 16px;
     }
 }
+
 
 /* =========================================================
    CELULAR PEQUENO
@@ -1936,20 +1999,47 @@ footer small {
         padding: 22px 18px;
     }
 
+    .login-logo-image {
+        width: 85px;
+        height: 85px;
+    }
+
     .login-background-logo {
         width: 500px;
         height: 500px;
+
         opacity: 0.06;
-    }
-
-    .login-logo-image {
-        width: 50px;
-        height: 50px;
-    }
-
-    .login-logo > img {
-        width: 50px;
-        height: 50px;
     }
 }
 ```
+
+### Importante
+
+O CSS acima **não cria a imagem sozinho**. O seu `login.html` precisa ter a logo apontando para exatamente:
+
+```html
+<img src="imagens/dbv.png" alt="Logo Desbrava+" class="login-background-logo">
+```
+
+E dentro da logo do cartão:
+
+```html
+<div class="login-logo-image">
+    <img src="imagens/dbv.png" alt="Logo Desbrava+">
+</div>
+```
+
+A estrutura precisa ser:
+
+```text
+index.html
+login.html
+supabase.js
+style.css
+imagens/
+└── dbv.png
+```
+
+Então **não precisa mexer mais no CSS para o nome da imagem**. Ele já está preparado para `dbv.png`.
+
+Se você me mandar agora o seu **`login.html` atual**, eu consigo ajustar ele para ficar 100% compatível com esse CSS sem mexer no que já funciona.
